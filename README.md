@@ -19,3 +19,6 @@ Aplicación para control de cultivos hidrofónicos.
 ## Hydroponic Farming 
 
 [Introduction to Hydroponic Farming](https://www.cleantechloops.com/hydroponic-farming/)
+
+## IoT
+[Azure IoT reference architecture](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/iot/)
