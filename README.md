@@ -15,3 +15,7 @@ Aplicación para control de cultivos hidrofónicos.
 [Documentación en Google Drive](https://drive.google.com/drive/folders/1yf9pmmHMKh9kFmhu8_8VTCe0MooUW861?usp=sharing)
 
 [Variamos Web](https://variamos.com/variamosweb/#/)
+
+## Hydroponic Farming 
+
+[Introduction to Hydroponic Farming](https://www.cleantechloops.com/hydroponic-farming/)
