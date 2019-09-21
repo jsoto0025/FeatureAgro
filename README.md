@@ -24,3 +24,5 @@ Aplicación para control de cultivos hidrofónicos.
 [Azure IoT reference architecture](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/iot/)
 
 [Rise of the SMACK Stack](https://sweetcode.io/rise-of-smack-stack/)
+
+[Azure IoT Documentation](https://docs.microsoft.com/en-us/azure/iot-fundamentals/)
