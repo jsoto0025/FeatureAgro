@@ -32,3 +32,7 @@ Is a method of growing plants using mineral nutrient solutions, in water, withou
 [Rise of the SMACK Stack](https://sweetcode.io/rise-of-smack-stack/)
 
 [Azure IoT Documentation](https://docs.microsoft.com/en-us/azure/iot-fundamentals/)
+
+[https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured](https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured)
+
+[]()
