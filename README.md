@@ -10,6 +10,14 @@ Aplicación para control de cultivos hidrofónicos.
 - [Alexandra Troyano Perenguez](atroyanop@eafit.edu.co)
 - [Fabio Andres Tangarife Alvarez](fatangaria@eafit.edu.co)
 
+# Sitios del proyecto
+
+[Proyecto en Azure DevOps](https://dev.azure.com/jasotov-eafit/FutureAgro)
+
+[Grupo de Recursos en Azure](https://portal.azure.com/#@recordlaboutlook.onmicrosoft.com/resource/subscriptions/71b48ca7-ff64-4f69-8e94-de0d40a7c7c6/resourceGroups/FUTUREAGRO/overviewo)
+
+[Documentos Google Drive](https://drive.google.com/drive/folders/1yf9pmmHMKh9kFmhu8_8VTCe0MooUW861?usp=sharing)
+
 # Terminos
 
 **Hydroponic farming**
