@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\FuentesTFS\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj": {}
+  },
+  "projects": {
+    "D:\\FuentesTFS\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FuentesTFS\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
+        "projectName": "FutureAgro.Api",
+        "projectPath": "D:\\FuentesTFS\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
+        "packagesPath": "C:\\Users\\jsoto\\.nuget\\packages\\",
+        "outputPath": "D:\\FuentesTFS\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jsoto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\ServiceFabricSDK.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\Service Fabric\\packages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://jsoto25.pkgs.visualstudio.com/_packaging/DevOpsLabsFeed/nuget/v3/index.json": {},
+          "https://totemapps.pkgs.visualstudio.com/_packaging/ApplipetsTotemApssPkgSvr/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
