@@ -1,0 +1,50 @@
+﻿@page
+@model FutureAgro.Web.Pages.Modulos.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Módulos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Plantas</th>
+            <th scope="col">Tipo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><a asp-page="/Modulos/Detail">Módulo 1</a></th>
+            <td>3</td>
+            <td>Lechuga</td>
+            <td><img src="~/Imagenes/Lechuga.png" height="30" width="30" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><a asp-page="/Modulos/Detail">Módulo 2</a></th>
+            <td>8</td>
+            <td>Lechuga</td>
+            <td><img src="~/Imagenes/Lechuga.png" height="30" width="30" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><a asp-page="/Modulos/Detail">Módulo 3</a></th>
+            <td>10</td>
+            <td>Lechuga</td>
+            <td><img src="~/Imagenes/Lechuga.png" height="30" width="30" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><a asp-page="/Modulos/Detail">Módulo 4</a></th>
+            <td>8</td>
+            <td>Tomate</td>
+            <td><img src="~/Imagenes/Tomate.png" height="30" width="30" /></td>
+        </tr>
+        <tr>
+            <th scope="row"><a asp-page="/Modulos/Detail">Módulo 5</a></th>
+            <td>15</td>
+            <td>Tomate</td>
+            <td><img src="~/Imagenes/Tomate.png" height="30" width="30" /></td>
+        </tr>
+    </tbody>
+</table>
