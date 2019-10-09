@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="44dc1fbe-c683-4092-9cd9-2e3485a6e62e" ChangeDateTime="10/08/2019 16:41:39">
+    <Property Name="ElementName" Value="[dbo].[DEVOPS_USUARIOS].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DEVOPS_USUARIOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="917179d6-c16a-4acd-9db0-80ebf0955678" ChangeDateTime="10/08/2019 23:23:07">
+    <Property Name="ElementName" Value="[dbo].[DEVOPS_GRUPOS].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DEVOPS_GRUPOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ed8b504e-46a8-4187-baac-d9ab96d5bb16" ChangeDateTime="10/08/2019 23:23:43">
+    <Property Name="ElementName" Value="[dbo].[DEVOPS_GRUPOS].[NOMBRE_GRUPO]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DEVOPS_GRUPOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NOMBRE" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9cbafe6a-dfbf-4adc-b6b9-fa3c9f30f123" ChangeDateTime="10/08/2019 23:23:51">
+    <Property Name="ElementName" Value="[dbo].[DEVOPS_GRUPOS].[de]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DEVOPS_GRUPOS]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DESCRIPCION" />
+  </Operation>
+</Operations>

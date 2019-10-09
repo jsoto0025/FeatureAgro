@@ -1,0 +1,6 @@
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\bin\Debug\DBFeatureAgro.dacpac
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\bin\Debug\DBFeatureAgro.dll
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\bin\Debug\DBFeatureAgro.pdb
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\obj\Debug\DBFeatureAgro.sqlprojAssemblyReference.cache
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\obj\Debug\DBFeatureAgro.dll
+D:\FuentesTFS\FeatureAgro\DevOps Labs\Tutorial\DBFeatureAgro\obj\Debug\DBFeatureAgro.pdb
