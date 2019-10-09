@@ -3,3 +3,15 @@
 ################################################################################
 
 /DevOps Labs/Tutorial/.vs/Tutorial/v16
+/DevOps Labs/Tutorial/DBFeatureAgro/bin/Debug
+/.vs
+/DevOps Labs/aspnetcoreapp/bin/Debug/netcoreapp3.0
+/DevOps Labs/aspnetcoreapp/obj
+/DevOps Labs/Tutorial/RazorPagesMovie/bin/Debug/netcoreapp2.2
+/DevOps Labs/Tutorial/RazorPagesMovie/wwwroot/css/site.css
+/DevOps Labs/Tutorial/RazorPagesMovie/wwwroot/js/site.js
+/DevOps Labs/Tutorial/RazorPagesMovie/wwwroot/lib
+/DevOps Labs/WebAppBlazor/bin/Debug/netcoreapp3.0
+/DevOps Labs/WebAppBlazor/obj
+/DevOps Labs/WebAppBlazor/wwwroot/css/bootstrap
+/DevOps Labs/WebAppBlazor/wwwroot/css/open-iconic
