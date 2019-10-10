@@ -1,3 +1,5 @@
 /FutureAgro/.vs
 /**/obj
 /**/bin
+/FutureAgro/**/obj
+/FutureAgro/**/bin
