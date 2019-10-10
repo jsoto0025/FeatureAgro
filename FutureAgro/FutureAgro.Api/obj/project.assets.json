@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v2.2": {
       "Microsoft.NETCore.App/2.2.0": {
         "type": "package",
@@ -679,30 +680,48 @@
         "netstandard.library.nuspec"
       ]
     }
+=======
+    ".NETCoreApp,Version=v2.2": {}
+>>>>>>> se versiona el script para crear la BD
   },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v2.2": [
-      "Microsoft.NETCore.App >= 2.2.0"
-    ]
+    ".NETCoreApp,Version=v2.2": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Computer GAP\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\dasap\\.nuget\\packages\\": {},
+>>>>>>> se versiona el script para crear la BD
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
       "projectName": "FutureAgro.Api",
       "projectPath": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
       "packagesPath": "C:\\Users\\Computer GAP\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\obj\\",
+=======
+      "projectUniqueName": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
+      "projectName": "FutureAgro.Api",
+      "projectPath": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\FutureAgro.Api.csproj",
+      "packagesPath": "C:\\Users\\dasap\\.nuget\\packages\\",
+      "outputPath": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Api\\obj\\",
+>>>>>>> se versiona el script para crear la BD
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Computer GAP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\dasap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> se versiona el script para crear la BD
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -710,6 +729,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
         "https://api.nuget.org/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/MB-Services/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/MB-Utilities/nuget/v3/index.json": {},
@@ -717,6 +737,9 @@
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/ah-security-encryption/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/genesis/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/mb-libraries/nuget/v3/index.json": {}
+=======
+        "https://api.nuget.org/v3/index.json": {}
+>>>>>>> se versiona el script para crear la BD
       },
       "frameworks": {
         "netcoreapp2.2": {
@@ -731,14 +754,6 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
-        "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.2.0, )",
-            "autoReferenced": true
-          }
-        },
         "imports": [
           "net461"
         ],

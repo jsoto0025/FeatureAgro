@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v2.2": {
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
@@ -12923,8 +12924,13 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     }
+=======
+    ".NETCoreApp,Version=v2.2": {}
+>>>>>>> se versiona el script para crear la BD
   },
+  "libraries": {},
   "projectFileDependencyGroups": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -12934,22 +12940,40 @@
   },
   "packageFolders": {
     "C:\\Users\\Computer GAP\\.nuget\\packages\\": {},
+=======
+    ".NETCoreApp,Version=v2.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\dasap\\.nuget\\packages\\": {},
+>>>>>>> se versiona el script para crear la BD
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\FutureAgro.Web.csproj",
       "projectName": "FutureAgro.Web",
       "projectPath": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\FutureAgro.Web.csproj",
       "packagesPath": "C:\\Users\\Computer GAP\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Computer GAP\\Source\\Repos\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\obj\\",
+=======
+      "projectUniqueName": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\FutureAgro.Web.csproj",
+      "projectName": "FutureAgro.Web",
+      "projectPath": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\FutureAgro.Web.csproj",
+      "packagesPath": "C:\\Users\\dasap\\.nuget\\packages\\",
+      "outputPath": "U:\\Universidad EAFIT\\3 Semestre\\Laboratorio de Construccion de Software\\FeatureAgro\\FutureAgro\\FutureAgro.Web\\obj\\",
+>>>>>>> se versiona el script para crear la BD
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Computer GAP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\dasap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> se versiona el script para crear la BD
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12957,6 +12981,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
         "https://api.nuget.org/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/MB-Services/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/MB-Utilities/nuget/v3/index.json": {},
@@ -12964,6 +12989,9 @@
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/ah-security-encryption/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/genesis/nuget/v3/index.json": {},
         "https://newmarketrm.pkgs.visualstudio.com/_packaging/mb-libraries/nuget/v3/index.json": {}
+=======
+        "https://api.nuget.org/v3/index.json": {}
+>>>>>>> se versiona el script para crear la BD
       },
       "frameworks": {
         "netcoreapp2.2": {
@@ -12978,6 +13006,7 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
+<<<<<<< HEAD
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -13001,6 +13030,8 @@
             "version": "[2.2.3, )"
           }
         },
+=======
+>>>>>>> se versiona el script para crear la BD
         "imports": [
           "net461"
         ],

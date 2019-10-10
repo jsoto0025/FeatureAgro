@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "Do8JATJTvYgtEWuHZO36u2xXBGRL8DITCQhp2liLlOzOF+NtCyWTNLSPAiAVQ9LDtZO7x4zK39a1tPczoWgDlQ==",
+=======
+  "dgSpecHash": "iAk5BoyPIzzdsTzEcyVtyhEG3vBeWcokNM6/vpD5BtRGDtxRR4XbDCHkIe/ZTel5C9GUK99seQYmh0jxntEqMw==",
+>>>>>>> se versiona el script para crear la BD
   "success": true
 }
