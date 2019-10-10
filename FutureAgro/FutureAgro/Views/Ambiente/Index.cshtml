@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<h3>Control de ambiente</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Módulo</th>
+            <th scope="col">Temperatura</th>
+            <th scope="col">Humedad</th>
+            <th scope="col">Luminosidad</th>
+            <th scope="col">Calefacción</th>
+            <th scope="col">Aspersores</th>
+            <th scope="col">Luces</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><a asp-page="/Ambiente/Detail">1</a></th>
+            <td><div class="badge badge-danger">25°C</div></td>
+            <td><div class="badge badge-success">70%</div></td>
+            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                    <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                    <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                    <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"><a asp-page="/Ambiente/Detail">2</a></th>
+            <td><div class="badge badge-success">20°C</div></td>
+            <td><div class="badge badge-success">70%</div></td>
+            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                    <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                    <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" />
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                    <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"><a asp-page="/Ambiente/Detail">3</a></th>
+            <td><div class="badge badge-warning">22°C</div></td>
+            <td><div class="badge badge-success">70%</div></td>
+            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                    <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                    <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" />
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                    <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"><a asp-page="/Ambiente/Detail">4</a></th>
+            <td><div class="badge badge-success">20°C</div></td>
+            <td><div class="badge badge-danger">50%</div></td>
+            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                    <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                    <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                    <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"><a asp-page="/Ambiente/Detail">5</a></th>
+            <td><div class="badge badge-success">20°C</div></td>
+            <td><div class="badge badge-success">70%</div></td>
+            <td><div class="badge badge-warning">400 Lumens</div></td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                    <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                    <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" />
+                </label>
+            </td>
+            <td>
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                    <input type="checkbox" id="switch-Luces" class="mdl-switch__input" checked>
+                </label>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+

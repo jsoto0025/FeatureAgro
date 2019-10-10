@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FutureAgro.DataAccess.Data;
 using FutureAgro.DataAccess.Services;
 using Lamar;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -32,9 +36,79 @@ namespace FutureAgro.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            
+            services.AddDbContext<FutureAgroIdentityDbContext>(options =>
+                    options.UseInMemoryDatabase("InMemoryDb"));
+            
+            services.AddIdentityCore<IdentityUser>(options => {
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireDigit = false;
+            })
+                .AddDefaultTokenProviders()
+                .AddSignInManager()
+                .AddEntityFrameworkStores<FutureAgroIdentityDbContext>();
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+            })
+                .AddCookie(cookieOptions =>
+                {
+                    cookieOptions.AccessDeniedPath = "/Account/Login";
+                    cookieOptions.LoginPath = "/Account/Login";
+                    cookieOptions.LogoutPath = "/Account/Login";
+                })
+                .AddGoogle(options =>
+                {
+                    // Provide the Google Client ID
+                    options.ClientId = "84213285064-3bu6c7f6iuov5e2nj71j8kp09ldsgg8p.apps.googleusercontent.com";
+                    // Register with User Secrets using:
+                    // dotnet user-secrets set "Authentication:Google:ClientId" "{Client ID}"
+
+                    // Provide the Google Client Secret
+                    options.ClientSecret = "USukES39oKelSIhWjI5Nj2W6";
+                    // Register with User Secrets using:
+                    // dotnet user-secrets set "Authentication:Google:ClientSecret" "{Client Secret}"
+
+                    options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
+                    options.ClaimActions.MapJsonKey("urn:google:locale", "locale", "string");
+                    options.SaveTokens = true;
+
+                    options.Events.OnCreatingTicket = ctx =>
+                    {
+                        List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
+
+                        tokens.Add(new AuthenticationToken()
+                        {
+                            Name = "TicketCreated",
+                            Value = DateTime.UtcNow.ToString()
+                        });
+
+                        ctx.Properties.StoreTokens(tokens);
+
+                        return Task.CompletedTask;
+                    };
+                })
+                .AddIdentityCookies()
+                ;
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+                options.LoginPath = "/Account/Login";
+                options.AccessDeniedPath = "/Account/Login";
+                options.LogoutPath = "/Account/Login";
+                options.SlidingExpiration = true;
+            });
 
             // Also exposes Lamar specific registrations
             // and functionality
@@ -63,6 +137,8 @@ namespace FutureAgro.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseAuthentication();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

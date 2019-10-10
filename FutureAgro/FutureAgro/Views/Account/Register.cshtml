@@ -1,0 +1,47 @@
+﻿@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="container-fluid justify-content-center">
+    <div class="row">
+        <div class="offset-lg-4 col-lg-4 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+            <div class="card text-center align-items-center">
+                <img class="rounded-circle mt-2" src="~/Images/FutureAgro.jpg" height="200" width="200" />
+                <div class="card-body">
+                    <form action="/Account/Register" method="post">
+                        <h4>Crear una nueva cuenta</h4>
+                        <hr />
+                        @Html.ValidationSummary()
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            @Html.TextBoxFor(r => r.Email, new { @class = "mdl-textfield__input" })
+                            @Html.LabelFor(r => r.Email, new { @class = "mdl-textfield__label" })
+                            @Html.ValidationMessageFor(r => r.Email)
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            @Html.TextBoxFor(r => r.Password, new { @class = "mdl-textfield__input" })
+                            @Html.LabelFor(r => r.Password, new { @class = "mdl-textfield__label" })
+                            @Html.ValidationMessageFor(r => r.Password)
+                        </div>
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            @Html.TextBoxFor(r => r.ConfirmPassword, new { @class = "mdl-textfield__input" })
+                            @Html.LabelFor(r => r.ConfirmPassword, new { @class = "mdl-textfield__label" })
+                            @Html.ValidationMessageFor(r => r.ConfirmPassword)
+                        </div>
+                        <button type="submit" class="mt-2 btn btn-primary">Registrarme</button>
+                        <ul class="nav justify-content-sm-end small mt-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Account/Login">Regresar</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

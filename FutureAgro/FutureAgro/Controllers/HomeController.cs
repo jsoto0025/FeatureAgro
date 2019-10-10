@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FutureAgro.Web.Models;
 using FutureAgro.DataAccess.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FutureAgro.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IUserService _userService;
