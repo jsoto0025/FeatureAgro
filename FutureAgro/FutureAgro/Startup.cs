@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FutureAgro.DataAccess.Data;
+using FutureAgro.DataAccess.Database;
 using FutureAgro.DataAccess.Services;
 using Lamar;
 using Microsoft.AspNetCore.Authentication;
@@ -37,13 +37,7 @@ namespace FutureAgro.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-            //        options.UseInMemoryDatabase("InMemoryDb"));
-
-            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-            //       options.UseSqlServer("Server=tcp:futureagrosqlsvr.database.windows.net,1433;Initial Catalog=FutureAgroSQL;Persist Security Info=False;User ID=futureagro;Password=$us3rdb54321;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
-
-            services.AddDbContext<FutureAgroIdentityDbContext>(options =>
+            services.AddDbContext<FutureAgroSQLContext>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentityCore<IdentityUser>(options =>
@@ -53,9 +47,9 @@ namespace FutureAgro.Web
                 options.Password.RequireLowercase = false;
                 options.Password.RequireDigit = false;
             })
-                .AddDefaultTokenProviders()
-                .AddSignInManager()
-                .AddEntityFrameworkStores<FutureAgroIdentityDbContext>();
+            .AddDefaultTokenProviders()
+            .AddSignInManager()
+            .AddEntityFrameworkStores<FutureAgroSQLContext>();
 
 
             services.AddAuthentication(options =>
