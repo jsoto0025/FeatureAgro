@@ -18,6 +18,7 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             @Html.PasswordFor(r => r.Password, new { @class = "mdl-textfield__input" })
                             @Html.LabelFor(r => r.Password, new { @class = "mdl-textfield__label" })
+                            @Html.HiddenFor(r => r.ReturnUrl)
                         </div>
                         @if (!string.IsNullOrWhiteSpace(Model.Message))
                         {
@@ -31,7 +32,7 @@
                                     <a class="nav-link active" href="#">Olvidé mi usuario/contraseña</a>
                                 </li>*@
                             <li class="nav-item">
-                                <a class="nav-link active" href="/Account/Register">Registrarme</a>
+                                <a class="nav-link active" href="Register?returnUrl=@Model.ReturnUrl">Registrarme</a>
                             </li>
                         </ul>
                     </form>

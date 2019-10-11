@@ -44,7 +44,7 @@ namespace FutureAgro.Web.Controllers
 
             if (result.Succeeded)
             {
-                return LocalRedirect(model.ReturnUrl);
+                return LocalRedirect(model.ReturnUrl??"/");
             }
 
             if (result.RequiresTwoFactor)
@@ -65,8 +65,8 @@ namespace FutureAgro.Web.Controllers
         public async Task<IActionResult> LogOut()
         {
             //await HttpContext.SignOutAsync();
-            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-            //await signInManager.SignOutAsync();
+            //await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+            await signInManager.SignOutAsync();
 
             return RedirectToAction("Login");
         }
@@ -135,7 +135,7 @@ namespace FutureAgro.Web.Controllers
             if (remoteError != null)
             {
                 model.ErrorMessage = $"Error from external provider: {remoteError}";
-                return RedirectToPage("/Account/Login", new { ReturnUrl = returnUrl });
+                return RedirectToPage("/Account/Login", new { ReturnUrl = model.ReturnUrl });
             }
 
             var info = await signInManager.GetExternalLoginInfoAsync();
@@ -143,7 +143,7 @@ namespace FutureAgro.Web.Controllers
             if (info == null)
             {
                 model.ErrorMessage = "Error loading external login information.";
-                return RedirectToPage("/Account/Login", new { ReturnUrl = returnUrl });
+                return RedirectToPage("/Account/Login", new { ReturnUrl = model.ReturnUrl });
             }
 
             // Sign in the user with this external login provider if the user already 
@@ -166,7 +166,7 @@ namespace FutureAgro.Web.Controllers
                 //_logger.LogInformation("{Name} logged in with {LoginProvider} provider.",
                 //    info.Principal.Identity.Name, info.LoginProvider);
 
-                return LocalRedirect(returnUrl);
+                return LocalRedirect(model.ReturnUrl);
             }
 
             if (result.IsLockedOut)
@@ -177,7 +177,6 @@ namespace FutureAgro.Web.Controllers
             {
                 // If the user does not have an account, then ask the user to create an 
                 // account.
-                model.ReturnUrl = returnUrl;
                 model.LoginProvider = info.LoginProvider;
 
                 if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))

@@ -20,15 +20,16 @@
                             @Html.ValidationMessageFor(r => r.Email)
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            @Html.TextBoxFor(r => r.Password, new { @class = "mdl-textfield__input" })
+                            @Html.PasswordFor(r => r.Password, new { @class = "mdl-textfield__input" })
                             @Html.LabelFor(r => r.Password, new { @class = "mdl-textfield__label" })
                             @Html.ValidationMessageFor(r => r.Password)
                         </div>
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            @Html.TextBoxFor(r => r.ConfirmPassword, new { @class = "mdl-textfield__input" })
+                            @Html.PasswordFor(r => r.ConfirmPassword, new { @class = "mdl-textfield__input" })
                             @Html.LabelFor(r => r.ConfirmPassword, new { @class = "mdl-textfield__label" })
                             @Html.ValidationMessageFor(r => r.ConfirmPassword)
+                            @Html.HiddenFor(r => r.ReturnUrl)
                         </div>
                         <button type="submit" class="mt-2 btn btn-primary">Registrarme</button>
                         <ul class="nav justify-content-sm-end small mt-2">
