@@ -1,32 +1,24 @@
-﻿using FutureAgro.Web.Models;
-using FutureAgro.Web.Tickers;
+﻿using FutureAgro.DataAccess.Models;
+using FutureAgro.IoT.Contratos;
 using Microsoft.AspNetCore.SignalR;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FutureAgro.Web.Hubs
 {
     public class TemperaturaHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        private readonly ILector<Temperatura> _lectorTemperatura;
+        
+        public TemperaturaHub(ILector<Temperatura> lectorTemperatura)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            _lectorTemperatura = lectorTemperatura;
+            _lectorTemperatura.Lectura += InformarLectura;
         }
 
-        private readonly TemperaturaTicker _tempTicker;
-
-        public TemperaturaHub() : this(TemperaturaTicker.Instance) { }
-
-        public TemperaturaHub(TemperaturaTicker stockTicker)
+        private void InformarLectura(Temperatura dato)
         {
-            _tempTicker = stockTicker;
-        }
-
-        public IEnumerable<Temperatura> GetAllStocks()
-        {
-            return _tempTicker.GetAllTemperatures();
+            Startup.TemperatureHub.Clients.All.SendAsync("updateTemperatura", dato);
         }
     }
 }

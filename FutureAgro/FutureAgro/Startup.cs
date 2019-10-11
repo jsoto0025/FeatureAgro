@@ -17,6 +17,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.SignalR;
+using FutureAgro.DataAccess.Models;
+using FutureAgro.IoT.Contratos;
+using FutureAgro.IoT.Emuladores;
+using FutureAgro.DataAccess.Repositories;
 
 namespace FutureAgro.Web
 {
@@ -129,6 +133,9 @@ namespace FutureAgro.Web
                 s.AssembliesAndExecutablesFromApplicationBaseDirectory();
                 s.WithDefaultConventions();
             });
+
+            services.AddSingleton<ILector<Temperatura>, LectorTemperatura>();
+            services.AddTransient<TemperaturaRepository>();
         }
 
 

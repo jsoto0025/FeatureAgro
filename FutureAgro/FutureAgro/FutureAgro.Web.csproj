@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FutureAgro.DataAccess\FutureAgro.DataAccess.csproj" />
+    <ProjectReference Include="..\FutureAgro.IoT.Contratos\FutureAgro.IoT.Contratos.csproj" />
+    <ProjectReference Include="..\FutureAgro.IoT.Emuladores\FutureAgro.IoT.Emuladores.csproj" />
   </ItemGroup>
 
 </Project>
