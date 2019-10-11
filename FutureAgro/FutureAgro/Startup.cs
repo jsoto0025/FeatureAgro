@@ -36,11 +36,18 @@ namespace FutureAgro.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            
+
+            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
+            //        options.UseInMemoryDatabase("InMemoryDb"));
+
+            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
+            //       options.UseSqlServer("Server=tcp:futureagrosqlsvr.database.windows.net,1433;Initial Catalog=FutureAgroSQL;Persist Security Info=False;User ID=futureagro;Password=$us3rdb54321;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+
             services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-                    options.UseInMemoryDatabase("InMemoryDb"));
-            
-            services.AddIdentityCore<IdentityUser>(options => {
+                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentityCore<IdentityUser>(options =>
+            {
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
@@ -51,50 +58,50 @@ namespace FutureAgro.Web
                 .AddEntityFrameworkStores<FutureAgroIdentityDbContext>();
 
 
-            services.AddAuthentication(options => {
+            services.AddAuthentication(options =>
+            {
                 options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
                 options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
                 options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
             })
-                .AddCookie(cookieOptions =>
+            .AddCookie(cookieOptions =>
+            {
+                cookieOptions.AccessDeniedPath = "/Account/Login";
+                cookieOptions.LoginPath = "/Account/Login";
+                cookieOptions.LogoutPath = "/Account/Login";
+            })
+            .AddGoogle(options =>
+            {
+                // Provide the Google Client ID
+                options.ClientId = "84213285064-3bu6c7f6iuov5e2nj71j8kp09ldsgg8p.apps.googleusercontent.com";
+                // Register with User Secrets using:
+                // dotnet user-secrets set "Authentication:Google:ClientId" "{Client ID}"
+
+                // Provide the Google Client Secret
+                options.ClientSecret = "USukES39oKelSIhWjI5Nj2W6";
+                // Register with User Secrets using:
+                // dotnet user-secrets set "Authentication:Google:ClientSecret" "{Client Secret}"
+
+                options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
+                options.ClaimActions.MapJsonKey("urn:google:locale", "locale", "string");
+                options.SaveTokens = true;
+
+                options.Events.OnCreatingTicket = ctx =>
                 {
-                    cookieOptions.AccessDeniedPath = "/Account/Login";
-                    cookieOptions.LoginPath = "/Account/Login";
-                    cookieOptions.LogoutPath = "/Account/Login";
-                })
-                .AddGoogle(options =>
-                {
-                    // Provide the Google Client ID
-                    options.ClientId = "84213285064-3bu6c7f6iuov5e2nj71j8kp09ldsgg8p.apps.googleusercontent.com";
-                    // Register with User Secrets using:
-                    // dotnet user-secrets set "Authentication:Google:ClientId" "{Client ID}"
+                    List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
 
-                    // Provide the Google Client Secret
-                    options.ClientSecret = "USukES39oKelSIhWjI5Nj2W6";
-                    // Register with User Secrets using:
-                    // dotnet user-secrets set "Authentication:Google:ClientSecret" "{Client Secret}"
-
-                    options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
-                    options.ClaimActions.MapJsonKey("urn:google:locale", "locale", "string");
-                    options.SaveTokens = true;
-
-                    options.Events.OnCreatingTicket = ctx =>
+                    tokens.Add(new AuthenticationToken()
                     {
-                        List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
+                        Name = "TicketCreated",
+                        Value = DateTime.UtcNow.ToString()
+                    });
 
-                        tokens.Add(new AuthenticationToken()
-                        {
-                            Name = "TicketCreated",
-                            Value = DateTime.UtcNow.ToString()
-                        });
+                    ctx.Properties.StoreTokens(tokens);
 
-                        ctx.Properties.StoreTokens(tokens);
-
-                        return Task.CompletedTask;
-                    };
-                })
-                .AddIdentityCookies()
-                ;
+                    return Task.CompletedTask;
+                };
+            })
+            .AddIdentityCookies();
 
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -138,7 +145,7 @@ namespace FutureAgro.Web
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-            
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

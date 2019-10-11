@@ -44,7 +44,7 @@ namespace FutureAgro.Web.Controllers
 
             if (result.Succeeded)
             {
-                return LocalRedirect(model.ReturnUrl);
+                return LocalRedirect(model.ReturnUrl ?? "/");
             }
 
             if (result.RequiresTwoFactor)
@@ -57,16 +57,14 @@ namespace FutureAgro.Web.Controllers
             }
 
             model.Message = "Usuario/contraseña incorrecta";
-            
+
             return View(model);
         }
 
         [Authorize]
         public async Task<IActionResult> LogOut()
         {
-            //await HttpContext.SignOutAsync();
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-            //await signInManager.SignOutAsync();
 
             return RedirectToAction("Login");
         }
@@ -115,7 +113,7 @@ namespace FutureAgro.Web.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-        
+
         public IActionResult BeginExternalLogin(string provider, string returnUrl = null)
         {
             var redirectUrl = Url.Action("ExternalLogin", "Account", new { returnUrl });
