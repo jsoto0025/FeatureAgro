@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FutureAgro.DataAccess.Data;
 using FutureAgro.DataAccess.Services;
+using FutureAgro.Web.Hubs;
 using Lamar;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -15,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.SignalR;
 
 namespace FutureAgro.Web
 {
@@ -26,6 +28,7 @@ namespace FutureAgro.Web
         }
 
         public IConfiguration Configuration { get; }
+        public static IHubContext<TemperaturaHub> TemperatureHub {get;set;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureContainer(ServiceRegistry services)
@@ -117,6 +120,8 @@ namespace FutureAgro.Web
                 options.SlidingExpiration = true;
             });
 
+            services.AddSignalR();
+
             // Also exposes Lamar specific registrations
             // and functionality
             services.Scan(s =>
@@ -145,6 +150,11 @@ namespace FutureAgro.Web
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+            
+            app.UseSignalR(config =>
+            {
+                config.MapHub<TemperaturaHub>("/temperaturahub");
+            });
 
             app.UseMvc(routes =>
             {
@@ -152,6 +162,8 @@ namespace FutureAgro.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            TemperatureHub = app.ApplicationServices.GetService<IHubContext<TemperaturaHub>>();
         }
     }
 }
