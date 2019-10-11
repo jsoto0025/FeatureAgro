@@ -4,7 +4,9 @@
 
 @section scripts{
     <script src="~/lib/signalr/signalr.js"></script>
-    <script src="~/js/Temperatura/TemperaturaHub.js"></script>
+    <script src="~/js/Hubs/Temperatura.js"></script>
+    <script src="~/js/Hubs/Humedad.js"></script>
+    <script src="~/js/Hubs/Luminosidad.js"></script>
 }
 
 <h3>Control de ambiente</h3>
@@ -24,8 +26,8 @@
         <tr>
             <th scope="row"><a href="/Ambiente/Detail">1</a></th>
             <td><div class="badge badge-danger" id="divTemp-1">25°C</div></td>
-            <td><div class="badge badge-success">70%</div></td>
-            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td><div class="badge badge-success" id="divHumedad-1">70%</div></td>
+            <td><div class="badge badge-success" id="divLumens-1">500 Lumens</div></td>
             <td>
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
                     <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
@@ -46,8 +48,8 @@
         <tr>
             <th scope="row"><a href="/Ambiente/Detail">2</a></th>
             <td><div class="badge badge-success" id="divTemp-2">20°C</div></td>
-            <td><div class="badge badge-success">70%</div></td>
-            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td><div class="badge badge-success" id="divHumedad-2">70%</div></td>
+            <td><div class="badge badge-success" id="divLumens-2">500 Lumens</div></td>
             <td>
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
                     <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
@@ -68,8 +70,8 @@
         <tr>
             <th scope="row"><a href="/Ambiente/Detail">3</a></th>
             <td><div class="badge badge-warning" id="divTemp-3">22°C</div></td>
-            <td><div class="badge badge-success">70%</div></td>
-            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td><div class="badge badge-success" id="divHumedad-3">70%</div></td>
+            <td><div class="badge badge-success" id="divLumens-3">500 Lumens</div></td>
             <td>
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
                     <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
@@ -90,8 +92,8 @@
         <tr>
             <th scope="row"><a href="/Ambiente/Detail">4</a></th>
             <td><div class="badge badge-success" id="divTemp-4">20°C</div></td>
-            <td><div class="badge badge-danger">50%</div></td>
-            <td><div class="badge badge-success">500 Lumens</div></td>
+            <td><div class="badge badge-danger" id="divHumedad-4">50%</div></td>
+            <td><div class="badge badge-success" id="divLumens-4">500 Lumens</div></td>
             <td>
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
                     <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
@@ -111,9 +113,9 @@
 
         <tr>
             <th scope="row"><a href="/Ambiente/Detail">5</a></th>
-            <td><div class="badge badge-success"id="divTemp-5">20°C</div></td>
-            <td><div class="badge badge-success">70%</div></td>
-            <td><div class="badge badge-warning">400 Lumens</div></td>
+            <td><div class="badge badge-success" id="divTemp-5">20°C</div></td>
+            <td><div class="badge badge-success" id="divHumedad-5">70%</div></td>
+            <td><div class="badge badge-warning" id="divLumens-5">400 Lumens</div></td>
             <td>
                 <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
                     <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">

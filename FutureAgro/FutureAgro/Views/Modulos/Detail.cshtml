@@ -4,7 +4,9 @@
 
 @section scripts{
     <script src="~/lib/signalr/signalr.js"></script>
-    <script src="~/js/Temperatura/TemperaturaHub.js"></script>
+    <script src="~/js/Hubs/Temperatura.js"></script>
+    <script src="~/js/Hubs/Humedad.js"></script>
+    <script src="~/js/Hubs/Luminosidad.js"></script>
 }
 
 <div class="container-fluid">
@@ -115,7 +117,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><div class="badge badge-success">70%</div></td>
+                        <td><div class="badge badge-success" id="divHumedad-2">70%</div></td>
                         <td><div class="badge badge-success">69%</div></td>
                         <td><div class="badge badge-info">70%</div></td>
                     </tr>
@@ -141,7 +143,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><div class="badge badge-success">500 Lumens</div></td>
+                        <td><div class="badge badge-success" id="divLumens-2">500 Lumens</div></td>
                         <td><div class="badge badge-warning">450 Lumens</div></td>
                         <td><div class="badge badge-info">490 Lumens</div></td>
                     </tr>

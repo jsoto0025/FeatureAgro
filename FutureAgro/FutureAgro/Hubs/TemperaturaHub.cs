@@ -1,7 +1,6 @@
 ﻿using FutureAgro.DataAccess.Models;
 using FutureAgro.IoT.Contratos;
 using Microsoft.AspNetCore.SignalR;
-using System;
 using System.Threading.Tasks;
 
 namespace FutureAgro.Web.Hubs
@@ -18,7 +17,12 @@ namespace FutureAgro.Web.Hubs
 
         private void InformarLectura(Temperatura dato)
         {
-            Startup.TemperatureHub.Clients.All.SendAsync("updateTemperatura", dato);
+            Startup.TemperaturaHub.Clients.All.SendAsync("updateTemperatura", dato);
+        }
+
+        public override Task OnConnectedAsync()
+        {
+            return base.OnConnectedAsync();
         }
     }
 }

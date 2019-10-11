@@ -32,7 +32,9 @@ namespace FutureAgro.Web
         }
 
         public IConfiguration Configuration { get; }
-        public static IHubContext<TemperaturaHub> TemperatureHub {get;set;}
+        public static IHubContext<TemperaturaHub> TemperaturaHub {get;set;}
+        public static IHubContext<HumedadHub> HumedadHub { get; set; }
+        public static IHubContext<LuminosidadHub> LuminosidadHub { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureContainer(ServiceRegistry services)
@@ -124,7 +126,10 @@ namespace FutureAgro.Web
                 options.SlidingExpiration = true;
             });
 
-            services.AddSignalR();
+            services.AddSignalR(options =>
+            {
+                //options.EnableDetailedErrors = true;
+            });
 
             // Also exposes Lamar specific registrations
             // and functionality
@@ -136,6 +141,12 @@ namespace FutureAgro.Web
 
             services.AddSingleton<ILector<Temperatura>, LectorTemperatura>();
             services.AddTransient<TemperaturaRepository>();
+            
+            services.AddSingleton<ILector<Humedad>, LectorHumedad>();
+            services.AddTransient<HumedadRepository>();
+
+            services.AddSingleton<ILector<Luminosidad>, LectorLuminosidad>();
+            services.AddTransient<LuminosidadRepository>();
         }
 
 
@@ -161,6 +172,8 @@ namespace FutureAgro.Web
             app.UseSignalR(config =>
             {
                 config.MapHub<TemperaturaHub>("/temperaturahub");
+                config.MapHub<HumedadHub>("/humedadhub");
+                config.MapHub<LuminosidadHub>("/luminosidadhub");
             });
 
             app.UseMvc(routes =>
@@ -170,7 +183,9 @@ namespace FutureAgro.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            TemperatureHub = app.ApplicationServices.GetService<IHubContext<TemperaturaHub>>();
+            TemperaturaHub = app.ApplicationServices.GetService<IHubContext<TemperaturaHub>>();
+            HumedadHub = app.ApplicationServices.GetService<IHubContext<HumedadHub>>();
+            LuminosidadHub = app.ApplicationServices.GetService<IHubContext<LuminosidadHub>>();
         }
     }
 }
