@@ -62,12 +62,22 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="media m-4">
-                                    <i class="fas fa-user mr-3"></i>
+                                    @{
+                                        var picture = Context.User.Claims.FirstOrDefault(r => r.Type == "urn:google:picture")?.Value;
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(picture))
+                                    {
+                                        <img class="mr-2 rounded-circle" src="@picture" width="60" height="60" />
+                                    }
+                                    else
+                                    {
+                                        <i class="fas fa-user mr-3"></i>
+                                    }
                                     <div class="media-body">
-                                        <h6 class="media-title text-nowrap">@Context.User.Identity.Name</h6>
+                                        <h6 class="media-title text-nowrap small mt-1">@Context.User.Identity.Name</h6>
                                     </div>
                                 </div>
-                                <a class="dropdown-item" href="#">Perfil</a>
+                                @*<a class="dropdown-item" href="#">Perfil</a>*@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/Account/Logout">Salir</a>
                             </div>
