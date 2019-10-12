@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace FutureAgro.IoT.Emuladores
 {
-    public class LectorLuminosidad : LectorBase<Luminosidad>, ILector<Luminosidad>
+    public class LectorLuminosidad : LectorBase<Luminosidad>, ILector
     {
-        public event LecturaEventHandler<Luminosidad> Lectura;
+        public event LecturaEventHandler Lectura;
 
         public LectorLuminosidad(LuminosidadRepository repository) : base(repository.Get().ToList())
         {
@@ -16,7 +16,7 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Luminosidad luminosidad, double nuevaMedicion)
         {
             luminosidad.Medida = nuevaMedicion;
-            Lectura?.Invoke(luminosidad);
+            Lectura?.Invoke("updateLuminosidad", luminosidad);
         }
 
         protected override double ObtenerMedidaActual(Luminosidad luminosidad)

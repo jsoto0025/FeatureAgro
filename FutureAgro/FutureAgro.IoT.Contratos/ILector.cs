@@ -2,9 +2,9 @@
 
 namespace FutureAgro.IoT.Contratos
 {
-    public interface ILector<T>
+    public interface ILector
     {
-        event LecturaEventHandler<T> Lectura;
+        event LecturaEventHandler Lectura;
     }
-    public delegate void LecturaEventHandler<T>(T dato);
+    public delegate void LecturaEventHandler(string method, object dato);
 }

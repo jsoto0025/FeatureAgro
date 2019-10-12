@@ -1,17 +1,7 @@
 ﻿"use strict";
 
-var connection = new signalR.HubConnectionBuilder()
-    .withUrl("/temperaturahub", {
-        accessTokenFactory: () => "testing"
-    })
-    .build();
-
 connection.on("updateTemperatura", function (temperatura) {
     $("#divTemp-" + temperatura.modulo).text(temperatura.medida + "°C");
-});
-
-connection.start().catch(function (err) {
-    return console.error(err.toString());
 });
 
 //document.getElementById("sendButton").addEventListener("click", function (event) {

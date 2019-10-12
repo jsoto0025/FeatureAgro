@@ -32,9 +32,7 @@ namespace FutureAgro.Web
         }
 
         public IConfiguration Configuration { get; }
-        public static IHubContext<TemperaturaHub> TemperaturaHub {get;set;}
-        public static IHubContext<HumedadHub> HumedadHub { get; set; }
-        public static IHubContext<LuminosidadHub> LuminosidadHub { get; set; }
+        public static IHubContext<FutureAgroHub> FutureAgroHub { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureContainer(ServiceRegistry services)
@@ -45,13 +43,7 @@ namespace FutureAgro.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-            //        options.UseInMemoryDatabase("InMemoryDb"));
-
-            //services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-            //       options.UseSqlServer("Server=tcp:futureagrosqlsvr.database.windows.net,1433;Initial Catalog=FutureAgroSQL;Persist Security Info=False;User ID=futureagro;Password=$us3rdb54321;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
-
+            
             services.AddDbContext<FutureAgroIdentityDbContext>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -139,13 +131,13 @@ namespace FutureAgro.Web
                 s.WithDefaultConventions();
             });
 
-            services.AddSingleton<ILector<Temperatura>, LectorTemperatura>();
+            services.AddSingleton<ILector, LectorTemperatura>();
             services.AddTransient<TemperaturaRepository>();
             
-            services.AddSingleton<ILector<Humedad>, LectorHumedad>();
+            services.AddSingleton<ILector, LectorHumedad>();
             services.AddTransient<HumedadRepository>();
 
-            services.AddSingleton<ILector<Luminosidad>, LectorLuminosidad>();
+            services.AddSingleton<ILector, LectorLuminosidad>();
             services.AddTransient<LuminosidadRepository>();
         }
 
@@ -171,9 +163,7 @@ namespace FutureAgro.Web
             
             app.UseSignalR(config =>
             {
-                config.MapHub<TemperaturaHub>("/temperaturahub");
-                config.MapHub<HumedadHub>("/humedadhub");
-                config.MapHub<LuminosidadHub>("/luminosidadhub");
+                config.MapHub<FutureAgroHub>("/futureagrohub");
             });
 
             app.UseMvc(routes =>
@@ -182,10 +172,8 @@ namespace FutureAgro.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            TemperaturaHub = app.ApplicationServices.GetService<IHubContext<TemperaturaHub>>();
-            HumedadHub = app.ApplicationServices.GetService<IHubContext<HumedadHub>>();
-            LuminosidadHub = app.ApplicationServices.GetService<IHubContext<LuminosidadHub>>();
+            
+            FutureAgroHub = app.ApplicationServices.GetService<IHubContext<FutureAgroHub>>();
         }
     }
 }

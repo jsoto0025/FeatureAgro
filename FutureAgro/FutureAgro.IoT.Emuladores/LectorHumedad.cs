@@ -9,9 +9,9 @@ using System.Text;
 
 namespace FutureAgro.IoT.Emuladores
 {
-    public class LectorHumedad : LectorBase<Humedad>, ILector<Humedad>
+    public class LectorHumedad : LectorBase<Humedad>, ILector
     {
-        public event LecturaEventHandler<Humedad> Lectura;
+        public event LecturaEventHandler Lectura;
 
         public LectorHumedad(HumedadRepository repository) : base(repository.Get().ToList())
         {
@@ -20,7 +20,7 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Humedad humedad, double nuevaMedicion)
         {
             humedad.Medida = nuevaMedicion;
-            Lectura?.Invoke(humedad);
+            Lectura?.Invoke("updateHumedad", humedad);
         }
 
         protected override double ObtenerMedidaActual(Humedad humedad)

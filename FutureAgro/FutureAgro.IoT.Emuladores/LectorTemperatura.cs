@@ -10,9 +10,9 @@ using System.Threading;
 
 namespace FutureAgro.IoT.Emuladores
 {
-    public class LectorTemperatura : LectorBase<Temperatura>, ILector<Temperatura>
+    public class LectorTemperatura : LectorBase<Temperatura>, ILector
     {
-        public event LecturaEventHandler<Temperatura> Lectura;
+        public event LecturaEventHandler Lectura;
 
         public LectorTemperatura(TemperaturaRepository repository) : base(repository.Get().ToList())
         {
@@ -21,7 +21,7 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Temperatura temperatura, double nuevaMedicion)
         {
             temperatura.Medida = nuevaMedicion;
-            Lectura?.Invoke(temperatura);
+            Lectura?.Invoke("updateTemperatura", temperatura);
         }
 
         protected override double ObtenerMedidaActual(Temperatura temperatura)
