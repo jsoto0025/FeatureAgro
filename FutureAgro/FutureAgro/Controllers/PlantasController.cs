@@ -10,22 +10,23 @@ using FutureAgro.DataAccess.Models;
 
 namespace FutureAgro.Web.Controllers
 {
-    public class ModulosController : Controller
+    public class PlantasController : Controller
     {
         private readonly FutureAgroIdentityDbContext _context;
 
-        public ModulosController(FutureAgroIdentityDbContext context)
+        public PlantasController(FutureAgroIdentityDbContext context)
         {
             _context = context;
         }
 
-        // GET: Modulos
+        // GET: Plantas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Modulos.Include(modulo => modulo.Plantas).ToListAsync());
+            var futureAgroIdentityDbContext = _context.Plantas.Include(p => p.Modulo).Include(p => p.Tipo);
+            return View(await futureAgroIdentityDbContext.ToListAsync());
         }
 
-        // GET: Modulos/Details/5
+        // GET: Plantas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,41 +34,45 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
-                .ThenInclude(planta => planta.Tipo)
-                .FirstOrDefaultAsync(m => m.IdModulo == id);
-            if (modulo == null)
+            var planta = await _context.Plantas
+                .Include(p => p.Modulo)
+                .Include(p => p.Tipo)
+                .FirstOrDefaultAsync(m => m.IdPlanta == id);
+            if (planta == null)
             {
                 return NotFound();
             }
 
-            return View(modulo);
+            return View(planta);
         }
 
-        // GET: Modulos/Create
+        // GET: Plantas/Create
         public IActionResult Create()
         {
+            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo");
+            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre");
             return View();
         }
 
-        // POST: Modulos/Create
+        // POST: Plantas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdModulo,Capacidad")] Modulo modulo)
+        public async Task<IActionResult> Create([Bind("IdPlanta,IdTipoPlanta,Viva,Crecimiento,IdModulo")] Planta planta)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(modulo);
+                _context.Add(planta);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(modulo);
+            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
+            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
+            return View(planta);
         }
 
-        // GET: Modulos/Edit/5
+        // GET: Plantas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +80,24 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos.FindAsync(id);
-            if (modulo == null)
+            var planta = await _context.Plantas.FindAsync(id);
+            if (planta == null)
             {
                 return NotFound();
             }
-            return View(modulo);
+            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
+            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
+            return View(planta);
         }
 
-        // POST: Modulos/Edit/5
+        // POST: Plantas/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdModulo,Capacidad")] Modulo modulo)
+        public async Task<IActionResult> Edit(int id, [Bind("IdPlanta,IdTipoPlanta,Viva,Crecimiento,IdModulo")] Planta planta)
         {
-            if (id != modulo.IdModulo)
+            if (id != planta.IdPlanta)
             {
                 return NotFound();
             }
@@ -99,12 +106,12 @@ namespace FutureAgro.Web.Controllers
             {
                 try
                 {
-                    _context.Update(modulo);
+                    _context.Update(planta);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ModuloExists(modulo.IdModulo))
+                    if (!PlantaExists(planta.IdPlanta))
                     {
                         return NotFound();
                     }
@@ -115,10 +122,12 @@ namespace FutureAgro.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(modulo);
+            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
+            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
+            return View(planta);
         }
 
-        // GET: Modulos/Delete/5
+        // GET: Plantas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,31 +135,32 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
-                .FirstOrDefaultAsync(m => m.IdModulo == id);
-            if (modulo == null)
+            var planta = await _context.Plantas
+                .Include(p => p.Modulo)
+                .Include(p => p.Tipo)
+                .FirstOrDefaultAsync(m => m.IdPlanta == id);
+            if (planta == null)
             {
                 return NotFound();
             }
 
-            return View(modulo);
+            return View(planta);
         }
 
-        // POST: Modulos/Delete/5
+        // POST: Plantas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var modulo = await _context.Modulos.FindAsync(id);
-            _context.Modulos.Remove(modulo);
+            var planta = await _context.Plantas.FindAsync(id);
+            _context.Plantas.Remove(planta);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ModuloExists(int id)
+        private bool PlantaExists(int id)
         {
-            return _context.Modulos.Any(e => e.IdModulo == id);
+            return _context.Plantas.Any(e => e.IdPlanta == id);
         }
     }
 }

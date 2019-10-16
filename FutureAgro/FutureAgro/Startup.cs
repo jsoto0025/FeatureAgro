@@ -139,6 +139,10 @@ namespace FutureAgro.Web
 
             services.AddSingleton<ILector, LectorLuminosidad>();
             services.AddTransient<LuminosidadRepository>();
+
+            services.AddSingleton<ILector, LectorCrecimiento>();
+            services.AddSingleton<ILector, LectorPlantasMuertas>();
+            services.AddTransient<PlantasRepository>();
         }
 
 

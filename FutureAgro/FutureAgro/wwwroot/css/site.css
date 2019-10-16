@@ -87,3 +87,8 @@ ul, ol {
     font-family: Fontawesome;
     content: '\f078';
 }
+
+
+img.disabled {
+    opacity: 0.3;
+}

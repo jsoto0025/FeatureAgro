@@ -1,0 +1,42 @@
+﻿@model FutureAgro.DataAccess.Models.Planta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Planta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Viva)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Viva)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Crecimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Crecimiento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo.IdTipoPlanta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Modulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Modulo.IdModulo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPlanta">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

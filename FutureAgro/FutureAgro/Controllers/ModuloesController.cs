@@ -10,22 +10,22 @@ using FutureAgro.DataAccess.Models;
 
 namespace FutureAgro.Web.Controllers
 {
-    public class ModulosController : Controller
+    public class ModuloesController : Controller
     {
         private readonly FutureAgroIdentityDbContext _context;
 
-        public ModulosController(FutureAgroIdentityDbContext context)
+        public ModuloesController(FutureAgroIdentityDbContext context)
         {
             _context = context;
         }
 
-        // GET: Modulos
+        // GET: Moduloes
         public async Task<IActionResult> Index()
         {
             return View(await _context.Modulos.Include(modulo => modulo.Plantas).ToListAsync());
         }
 
-        // GET: Modulos/Details/5
+        // GET: Moduloes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,9 +33,7 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
-                .ThenInclude(planta => planta.Tipo)
+            var modulo = await _context.Modulos.Include(mod => mod.Plantas)
                 .FirstOrDefaultAsync(m => m.IdModulo == id);
             if (modulo == null)
             {
@@ -45,13 +43,13 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        // GET: Modulos/Create
+        // GET: Moduloes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Modulos/Create
+        // POST: Moduloes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +65,7 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        // GET: Modulos/Edit/5
+        // GET: Moduloes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,7 +81,7 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        // POST: Modulos/Edit/5
+        // POST: Moduloes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +116,7 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        // GET: Modulos/Delete/5
+        // GET: Moduloes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,8 +124,7 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
+            var modulo = await _context.Modulos.Include(mod => mod.Plantas)
                 .FirstOrDefaultAsync(m => m.IdModulo == id);
             if (modulo == null)
             {
@@ -137,7 +134,7 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        // POST: Modulos/Delete/5
+        // POST: Moduloes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

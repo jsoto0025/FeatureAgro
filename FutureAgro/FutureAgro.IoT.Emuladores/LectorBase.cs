@@ -10,9 +10,9 @@ namespace FutureAgro.IoT.Emuladores
     {
         protected readonly ConcurrentBag<T> _Listado = new ConcurrentBag<T>();
 
-        protected readonly double _rangePercent = .01;
+        protected double _rangePercent = .01;
 
-        protected readonly TimeSpan _updateInterval = TimeSpan.FromSeconds(5);
+        protected TimeSpan _updateInterval = TimeSpan.FromSeconds(5);
 
         protected readonly object _updateTemperaturaLock = new object();
         protected readonly Random _updateOrNotRandom = new Random();
@@ -20,8 +20,13 @@ namespace FutureAgro.IoT.Emuladores
         protected readonly Timer _timer;
         protected volatile bool _updatingTemperatura = false;
 
-        public LectorBase(List<T> listado)
+        public LectorBase(List<T> listado): this(listado, TimeSpan.FromSeconds(5))
         {
+        }
+
+        public LectorBase(List<T> listado, TimeSpan updateInterval)
+        {
+            _updateInterval = updateInterval;
             _Listado.Clear();
             listado.ForEach(temperatura => _Listado.Add(temperatura));
 
@@ -51,7 +56,7 @@ namespace FutureAgro.IoT.Emuladores
             }
         }
 
-        private (bool exitoso, double NuevaMedicion) TryUpdateTemperatura(T medida)
+        protected virtual (bool exitoso, double NuevaMedicion) TryUpdateTemperatura(T medida)
         {
             // Randomly choose whether to update this Temperatura or not
             var r = _updateOrNotRandom.NextDouble();
