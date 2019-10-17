@@ -10,7 +10,7 @@ namespace FutureAgro.IoT.Emuladores
     {
 
         /*BCP - CustomizationPoint */
-        private const int _updateDailyInterval = 15;
+        private const int _updateDailyInterval = 86400;
         /*ECP - CustomizationPoint */
 
         public LectorDiario(IEnumerable<T> listado) : base(listado, TimeSpan.FromSeconds(_updateDailyInterval))
