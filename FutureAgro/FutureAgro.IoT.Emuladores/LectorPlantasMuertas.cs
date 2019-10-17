@@ -10,7 +10,7 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
-        public LectorPlantasMuertas(PlantasRepository repository): base(repository.Get().ToList())
+        public LectorPlantasMuertas(PlantasRepository repository): base(repository.Get())
         {
         }
 
@@ -21,7 +21,7 @@ namespace FutureAgro.IoT.Emuladores
                 var random = new Random();
                 var change = random.NextDouble();
 
-                if (change < 0.02)
+                if (change < 0.01)
                     return (true, 1);
             }
             

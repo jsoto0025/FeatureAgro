@@ -10,7 +10,7 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
-        public LectorLuminosidad(LuminosidadRepository repository) : base(repository.Get().ToList())
+        public LectorLuminosidad(LuminosidadRepository repository) : base(repository.Get())
         {
         }
 

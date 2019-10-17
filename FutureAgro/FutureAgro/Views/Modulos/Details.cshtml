@@ -2,8 +2,26 @@
 
 @{
     ViewData["Title"] = "Details";
+    
+    double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
+    double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+    int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
+    int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
+    int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
+    int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
+    
 }
 @section scripts{
+
+    <script>
+        var superiorTemp = @superiorTemp;
+        var inferiorTemp = @inferiorTemp;
+        var superiorHum = @superiorHum;
+        var inferiorHum = @inferiorHum;
+        var superiorLuz = @superiorLuz;
+        var inferiorLuz = @inferiorLuz;
+    </script>
+
     <script src="~/lib/signalr/signalr.js"></script>
     <script src="~/js/Hubs/BaseHub.js"></script>
     <script src="~/js/Hubs/Temperatura.js"></script>
@@ -14,114 +32,114 @@
     <script src="~/js/Hubs/ErrorHub.js"></script>
 }
 
-<div class="container-fluid">
-    <h4>Modulo @Html.DisplayFor(model => model.IdModulo)</h4>
-    <hr />
-    <div class="row">
-        <div class="col-7">
-            <div class="card mt-1 border-0">
-                <h5>@Html.DisplayFor(model => model.Plantas.Count) Plantas</h5>
-                <div class="card-body">
+    <div class="container-fluid">
+        <h4>Modulo @Html.DisplayFor(model => model.IdModulo)</h4>
 
-                    @foreach (var item in Model.Plantas)
-                    {
-                        <div class="media m-1 mt-2">
-                            <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3 @(item.Viva?"":"disabled")" alt="Lechugas">
-                            <div class="media-body">
-                                <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger @(item.Viva?"invisible":"")">Planta muerta</span></h5>
-                                Crecimiento
-                                <div class="progress mb-3">
-                                    <div id="progrescrecimiento-@item.IdPlanta" class="progress-bar" role="progressbar" style="width:@(item.Viva?item.Crecimiento:0)%;"></div>
+        <div>
+            <a asp-action="Index">Lista</a> |
+            <a asp-action="Ambiente" asp-route-id="@Model.IdModulo">Ambiente</a>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-7">
+                <div class="card border-0">
+                    <h5>@Html.DisplayFor(model => model.Plantas.Count) Plantas</h5>
+                    <div class="card-body">
+
+                        @foreach (var item in Model.Plantas)
+                        {
+                            <div class="media m-1 mt-2">
+                                <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3 @(item.Viva?"":"disabled")" alt="Lechugas">
+                                <div class="media-body">
+                                    <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger @(item.Viva?"invisible":"")">Planta muerta</span></h5>
+                                    Crecimiento
+                                    <div class="progress mb-3">
+                                        <div id="progrescrecimiento-@item.IdPlanta" class="progress-bar" role="progressbar" style="width:@(item.Viva?item.Crecimiento:0)%;"></div>
+                                    </div>
+                                    <h6 class="mb-3">
+                                        Tiempo para producción
+                                        @{
+                                            var crecimiento = item.Crecimiento;
+                                            var color = item.Crecimiento <= 20 ? "light" : item.Crecimiento <= 40 ? "info" : item.Crecimiento <= 60 ? "success" : item.Crecimiento < 100 ? "warning" : "danger";
+
+                                            var dias = (crecimiento * 0.35);
+                                            var txtDias = "";
+                                            if (dias >= 35)
+                                            {
+                                                txtDias = "Cosechar";
+                                            }
+                                            else
+                                            {
+                                                txtDias = Math.Round(35 - dias, 0).ToString() + " Días";
+                                            }
+                                        }
+                                        <span id="spanTiempoProduccion-@item.IdPlanta" class="badge badge-@color @(item.Viva?"":"invisible")">@txtDias</span>
+                                    </h6>
                                 </div>
-                                <h6 class="mb-3">
-                                    Tiempo para producción
-                                    @{
-                                        var crecimiento = item.Crecimiento;
-                                        var color = item.Crecimiento <= 20 ? "light" : item.Crecimiento <= 40 ? "info" : item.Crecimiento <= 60 ? "success" : item.Crecimiento < 100 ? "warning" : "danger";
-
-                                        var dias = (crecimiento * 0.35);
-                                        var txtDias = "";
-                                        if (dias >= 35)
-                                        {
-                                            txtDias = "Cosechar";
-                                        }
-                                        else
-                                        {
-                                            txtDias = Math.Round(35 - dias, 0).ToString() + " Días";
-                                        }
-                                    }
-                                    <span id="spanTiempoProduccion-@item.IdPlanta" class="badge badge-@color @(item.Viva?"":"invisible")">@txtDias</span>
-                                </h6>
                             </div>
-                        </div>
-                        <hr />
-                    }
+                            <hr />
+                        }
+                    </div>
                 </div>
             </div>
+            @{
+                var colorTemp = Model.Temperatura <= superiorTemp && Model.Temperatura >= inferiorTemp ? "success" : "danger";
+                var colorHum = Model.Humedad <= superiorHum && Model.Humedad >= inferiorHum ? "success" : "danger";
+                var colorLuz = Model.Luminosidad <= superiorLuz && Model.Luminosidad >= inferiorLuz ? "success" : "danger";
+            }
+            <div class="offset-1 col-4">
+                <h5 class="mb-4">Control de ambiente</h5>
+                <div class="row">
+                    <h6 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h6>
+                    <h6 class="col-6 text-right align-text-bottom small">
+                        <span class="mdl-switch__label" style="left:0;">Calefacción</span>
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                            <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+                        </label>
+                    </h6>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><div class="badge badge-@colorTemp" id="divTemp-@Model.IdModulo">@Model.Temperatura°C</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <div class="row">
+                    <h6 class="col-6"><i class="fas fa-tint"></i> Humedad</h6>
+                    <h6 class="col-6 text-right align-text-bottom small">
+                        <span class="mdl-switch__label" style="left:0;">Aspersores</span>
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+                            <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
+                        </label>
+                    </h6>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><div class="badge badge-@colorHum" id="divHumedad-@Model.IdModulo">@Model.Humedad%</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr />
+                <div class="row">
+                    <h6 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h6>
+                    <h6 class="col-6 text-right align-text-bottom small">
+                        <span class="mdl-switch__label" style="left:0;">Luces</span>
+                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+                            <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+                        </label>
+                    </h6>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><div class="badge badge-@colorLuz" id="divLumens-@Model.IdModulo">@Model.Luminosidad Lumens</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="offset-1 col-4">
-            <h5 class="mb-4">Control de ambiente</h5>
-            <div class="row">
-                <h6 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h6>
-                <h6 class="col-6 text-right align-text-bottom small">
-                    <span class="mdl-switch__label" style="left:0;">Calefacción</span>
-                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
-                        <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
-                    </label>
-                </h6>
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><div class="badge badge-danger" id="divTemp-@Model.IdModulo">@Model.Temperatura°C</div></td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr />
-            <div class="row">
-                <h6 class="col-6"><i class="fas fa-tint"></i> Humedad</h6>
-                <h6 class="col-6 text-right align-text-bottom small">
-                    <span class="mdl-switch__label" style="left:0;">Aspersores</span>
-                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
-                        <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
-                    </label>
-                </h6>
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><div class="badge badge-success" id="divHumedad-@Model.IdModulo">@Model.Humedad%</div></td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr />
-            <div class="row">
-                <h6 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h6>
-                <h6 class="col-6 text-right align-text-bottom small">
-                    <span class="mdl-switch__label" style="left:0;">Luces</span>
-                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
-                        <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
-                    </label>
-                </h6>
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><div class="badge badge-success" id="divLumens-@Model.IdModulo">@Model.Luminosidad Lumens</div></td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr />
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Ambiente/Detail">Ver detalle</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-</div>
-<div>
-    @*<a asp-action="Edit" asp-route-id="@Model.IdModulo">Edit</a> |*@
-    <a asp-action="Index">Back to List</a>
-</div>
+    </div>

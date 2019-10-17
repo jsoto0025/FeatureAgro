@@ -23,6 +23,7 @@ namespace FutureAgro.Web.Controllers
         // GET: Modulos
         public async Task<IActionResult> Index()
         {
+            CargarLimites();
             return View(await _context.Modulos.Include(modulo => modulo.Plantas).ToListAsync());
         }
 
@@ -33,6 +34,8 @@ namespace FutureAgro.Web.Controllers
             {
                 return NotFound();
             }
+
+            CargarLimites();
 
             var modulo = await _context.Modulos
                 .Include(mod => mod.Plantas)
@@ -209,6 +212,20 @@ namespace FutureAgro.Web.Controllers
         private bool ModuloExists(int id)
         {
             return _context.Modulos.Any(e => e.IdModulo == id);
+        }
+
+        private void CargarLimites()
+        {
+            /*BCP - CustomizationPoint */
+
+            ViewData["TemperaturaLimiteSuperior"] = (double)22;
+            ViewData["TemperaturaLimiteInferior"] = (double)18;
+            ViewData["HumedadLimiteSuperior"] = 75;
+            ViewData["HumedadLimiteInferior"] = 50;
+            ViewData["LuminosidadLimiteSuperior"] = 700;
+            ViewData["LuminosidadLimiteInferior"] = 450;
+
+            /*ECP - CustomizationPoint */
         }
     }
 }

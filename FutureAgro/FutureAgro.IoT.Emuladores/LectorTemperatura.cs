@@ -14,7 +14,7 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
-        public LectorTemperatura(TemperaturaRepository repository) : base(repository.Get().ToList())
+        public LectorTemperatura(TemperaturaRepository repository) : base(repository.Get())
         {
         }
 

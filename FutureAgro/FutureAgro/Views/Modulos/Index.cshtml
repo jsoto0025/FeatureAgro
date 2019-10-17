@@ -2,8 +2,25 @@
 
 @{
     ViewData["Title"] = "Index";
+
+    double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
+    double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+    int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
+    int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
+    int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
+    int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
 }
 @section scripts{
+
+    <script>
+        var superiorTemp = @superiorTemp;
+        var inferiorTemp = @inferiorTemp;
+        var superiorHum = @superiorHum;
+        var inferiorHum = @inferiorHum;
+        var superiorLuz = @superiorLuz;
+        var inferiorLuz = @inferiorLuz;
+    </script>
+
     <script src="~/lib/signalr/signalr.js"></script>
     <script src="~/js/Hubs/BaseHub.js"></script>
     <script src="~/js/Hubs/Temperatura.js"></script>
@@ -12,9 +29,8 @@
     <script src="~/js/Hubs/ErrorHub.js"></script>
 }
 <h2>Index</h2>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Nuevo</a>
 </p>
 <table class="table">
     <thead>
@@ -48,20 +64,25 @@
                     @Html.DisplayFor(modelItem => item.Plantas.Count)
                 </td>
                 <td>
-                    <div class="badge badge-danger" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
+                    @{
+                        var colorTemp = item.Temperatura <= superiorTemp && item.Temperatura >= inferiorTemp ? "success" : "danger";
+                        var colorHum = item.Humedad <= superiorHum && item.Humedad >= inferiorHum ? "success" : "danger";
+                        var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";
+                    }
+                    <div class="badge badge-@colorTemp" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
                 </td>
                 <td>
-                    <div class="badge badge-danger" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
+                    <div class="badge badge-@colorHum" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
                 </td>
                 <td>
-                    <div class="badge badge-danger" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
+                    <div class="badge badge-@colorLuz" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
                 </td>
                 <td>
                     <a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
                 </td>
             </tr>
         }

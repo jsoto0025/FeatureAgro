@@ -13,7 +13,7 @@ namespace FutureAgro.IoT.Emuladores
         public event LecturaEventHandler Lectura;
 
         private readonly PlantasRepository _repository;
-        public LectorCrecimiento(PlantasRepository repository): base(repository.Get().ToList())
+        public LectorCrecimiento(PlantasRepository repository): base(repository.Get())
         {
             _repository = repository;
         }

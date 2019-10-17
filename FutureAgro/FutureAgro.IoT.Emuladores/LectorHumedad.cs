@@ -13,7 +13,7 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
-        public LectorHumedad(HumedadRepository repository) : base(repository.Get().ToList())
+        public LectorHumedad(HumedadRepository repository) : base(repository.Get())
         {
         }
         

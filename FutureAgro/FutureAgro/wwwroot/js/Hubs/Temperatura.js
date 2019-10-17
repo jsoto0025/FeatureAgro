@@ -1,7 +1,13 @@
 ﻿"use strict";
 
 connection.on("updateTemperatura", function (temperatura) {
-    $("#divTemp-" + temperatura.modulo).text(temperatura.medida + "°C");
+    var divTemp = $("#divTemp-" + temperatura.modulo);
+    divTemp.text(temperatura.medida + "°C");
+    if (superiorTemp && inferiorTemp) {
+        var color = temperatura.medida <= superiorTemp && temperatura.medida >= inferiorTemp ? "success" : "danger";
+        divTemp.removeClass(divTemp.attr("class"));
+        divTemp.addClass("badge badge-" + color);
+    }
 });
 
 //document.getElementById("sendButton").addEventListener("click", function (event) {
