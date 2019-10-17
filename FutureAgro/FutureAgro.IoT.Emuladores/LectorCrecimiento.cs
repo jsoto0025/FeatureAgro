@@ -12,22 +12,26 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
+        private readonly PlantasRepository _repository;
         public LectorCrecimiento(PlantasRepository repository): base(repository.Get().ToList())
         {
+            _repository = repository;
         }
 
         protected override void BroadcastLectura(Planta planta, double nuevaMedicion)
         {
-            if (planta.Viva)
+            Planta p = _repository.Find(planta.IdPlanta);
+
+            if (p.Viva)
             {
                 if (nuevaMedicion > 100)
                     nuevaMedicion = 100;
-                
-                planta.Crecimiento = (int)nuevaMedicion;
+
+                p.Crecimiento = (int)nuevaMedicion;
                 var crecimiento = new Crecimiento
                 {
-                    IdPlanta = planta.IdPlanta,
-                    PorcentajeCrecimiento = planta.Crecimiento,
+                    IdPlanta = p.IdPlanta,
+                    PorcentajeCrecimiento = p.Crecimiento,
                     Fecha = DateTime.Now
                 };
                 Lectura?.Invoke("updateCrecimiento", crecimiento);

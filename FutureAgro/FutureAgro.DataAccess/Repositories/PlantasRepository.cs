@@ -19,5 +19,10 @@ namespace FutureAgro.DataAccess.Repositories
         {
             return plantas;
         }
+
+        public Planta Find(params object[] values)
+        {
+            return plantas.Find(values);
+        }
     }
 }
