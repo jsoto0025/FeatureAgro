@@ -2,54 +2,31 @@
 using FutureAgro.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FutureAgro.DataAccess.Repositories
 {
     public class HumedadRepository
     {
-        private readonly DbContext context;
-        private readonly DbSet<Humedad> humedades;
+        private readonly FutureAgroIdentityDbContext _context;
         public HumedadRepository(FutureAgroIdentityDbContext context)
         {
-            humedades = context.Set<Humedad>();
+            _context = context;
         }
 
         public IEnumerable<Humedad> Get()
         {
-            return MockHumedades();
-
-            //return humedades;
-        }
-
-        private IEnumerable<Humedad> MockHumedades()
-        {
-            return new List<Humedad> {
-                new Humedad
-                {
-                    Modulo = 1,
-                    Medida = 70
-                },
-                new Humedad
-                {
-                    Modulo = 2,
-                    Medida = 40
-                },
-                new Humedad
-                {
-                    Modulo = 3,
-                    Medida = 70
-                },
-                new Humedad
-                {
-                    Modulo = 4,
-                    Medida = 50
-                },
-                new Humedad
-                {
-                    Modulo = 5,
-                    Medida = 70
-                }
-            };
+            return _context.Modulos
+                        .Include(r => r.Medidas)
+                        .Select(r => new Humedad
+                        {
+                            Modulo = r.IdModulo,
+                            Medida = r.Medidas
+                                        .Where(m => m.TipoMedida == TipoMedida.Humedad)
+                                        .OrderByDescending(m => m.Fecha)
+                                        .Select(m => m.Valor)
+                                        .FirstOrDefault()
+                        });
         }
     }
 }

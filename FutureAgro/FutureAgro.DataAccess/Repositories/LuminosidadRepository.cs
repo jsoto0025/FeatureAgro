@@ -2,54 +2,30 @@
 using FutureAgro.DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FutureAgro.DataAccess.Repositories
 {
     public class LuminosidadRepository
     {
-        private readonly DbContext context;
-        private readonly DbSet<Luminosidad> Luminosidads;
+        private readonly FutureAgroIdentityDbContext _context;
         public LuminosidadRepository(FutureAgroIdentityDbContext context)
         {
-            Luminosidads = context.Set<Luminosidad>();
+            _context = context;
         }
 
         public IEnumerable<Luminosidad> Get()
         {
-            return MockLuminosidad();
-
-            //return Luminosidads;
-        }
-
-        private IEnumerable<Luminosidad> MockLuminosidad()
-        {
-            return new List<Luminosidad> {
-                new Luminosidad
-                {
-                    Modulo = 1,
-                    Medida = 500
-                },
-                new Luminosidad
-                {
-                    Modulo = 2,
-                    Medida = 500
-                },
-                new Luminosidad
-                {
-                    Modulo = 3,
-                    Medida = 500
-                },
-                new Luminosidad
-                {
-                    Modulo = 4,
-                    Medida = 500
-                },
-                new Luminosidad
-                {
-                    Modulo = 5,
-                    Medida = 400
-                }
-            };
+            return _context.Modulos
+                        .Include(r => r.Medidas)
+                        .Select(r => new Luminosidad {
+                            Modulo = r.IdModulo,
+                            Medida = r.Medidas
+                                        .Where(m => m.TipoMedida == TipoMedida.Luminosidad)
+                                        .OrderByDescending(m => m.Fecha)
+                                        .Select(m => m.Valor)
+                                        .FirstOrDefault()
+                        });
         }
     }
 }

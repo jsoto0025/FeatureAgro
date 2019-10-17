@@ -1,19 +1,22 @@
 ﻿"use strict";
 
 connection.on("updateCrecimiento", function (planta) {
-    $("#divCrecimiento-" + planta.idPlanta).text(planta.crecimiento + "%");
-    $("#progrescrecimiento-" + planta.idPlanta).attr("style", "width:" + planta.crecimiento + "%;");
 
-    var color = planta.crecimiento <= 20 ? "light" : planta.crecimiento <= 40 ? "info" : planta.crecimiento <= 60 ? "success" : planta.crecimiento <= 80 ? "warning" : "danger";
+    var crecimiento = planta.porcentajeCrecimiento;
+
+    $("#divCrecimiento-" + planta.idPlanta).text(crecimiento + "%");
+    $("#progrescrecimiento-" + planta.idPlanta).attr("style", "width:" + crecimiento + "%;");
+
+    var color = crecimiento <= 20 ? "light" : crecimiento <= 40 ? "info" : crecimiento <= 60 ? "success" : crecimiento < 100 ? "warning" : "danger";
     var spanProduccion = $("#spanTiempoProduccion-" + planta.idPlanta);
     spanProduccion.removeClass(spanProduccion.attr("class"));
     spanProduccion.addClass("badge badge-" + color);
 
-    var semanas = (planta.crecimiento * 0.05);
-    if (semanas >= 5) {
+    var dias = (crecimiento * 0.35);
+    if (dias >= 35) {
         spanProduccion.text("Cosechar");
-        semanas = 5;
+        dias = 35;
     } else {
-        spanProduccion.text(Math.round((5 - semanas) * 10) / 10 + " Semanas");
+        spanProduccion.text(Math.round(35 - dias) + " Días");
     }
 });

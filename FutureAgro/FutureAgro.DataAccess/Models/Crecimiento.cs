@@ -10,6 +10,7 @@ namespace FutureAgro.DataAccess.Models
     public class Crecimiento
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("GrowthId")]
         public int IdCrecimiento { get; set; }
         [Column("PlantId")]

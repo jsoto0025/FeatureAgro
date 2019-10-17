@@ -2,8 +2,7 @@
 using FutureAgro.DataAccess.Repositories;
 using FutureAgro.IoT.Contratos;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace FutureAgro.IoT.Emuladores
 {
@@ -11,7 +10,7 @@ namespace FutureAgro.IoT.Emuladores
     {
         public event LecturaEventHandler Lectura;
 
-        public LectorPlantasMuertas(PlantasRepository repository): base(repository.Get())
+        public LectorPlantasMuertas(PlantasRepository repository): base(repository.Get().ToList())
         {
         }
 

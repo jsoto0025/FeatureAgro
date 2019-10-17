@@ -14,6 +14,8 @@ namespace FutureAgro.DataAccess.Data
 
         public DbSet<Modulo> Modulos { get; set; }
         public DbSet<Planta> Plantas { get; set; }
+        public DbSet<Crecimiento> Crecimientos { get; set; }
+        public DbSet<Medida> Medidas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

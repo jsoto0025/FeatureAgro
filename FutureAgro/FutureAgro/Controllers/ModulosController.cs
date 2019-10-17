@@ -34,9 +34,29 @@ namespace FutureAgro.Web.Controllers
             }
 
             var modulo = await _context.Modulos
+                .Include(mod => mod.Medidas)
                 .Include(mod => mod.Plantas)
                 .ThenInclude(planta => planta.Tipo)
                 .FirstOrDefaultAsync(m => m.IdModulo == id);
+
+            modulo.Temperatura = modulo.Medidas
+                                        .Where(r => r.TipoMedida == TipoMedida.Temperatura)
+                                        .OrderByDescending(r => r.Fecha)
+                                        .Select(r => r.Valor)
+                                        .FirstOrDefault();
+
+            modulo.Humedad = (int)modulo.Medidas
+                                        .Where(r => r.TipoMedida == TipoMedida.Humedad)
+                                        .OrderByDescending(r => r.Fecha)
+                                        .Select(r => r.Valor)
+                                        .FirstOrDefault();
+
+            modulo.Luminosidad = (int)modulo.Medidas
+                                        .Where(r => r.TipoMedida == TipoMedida.Luminosidad)
+                                        .OrderByDescending(r => r.Fecha)
+                                        .Select(r => r.Valor)
+                                        .FirstOrDefault();
+
             if (modulo == null)
             {
                 return NotFound();

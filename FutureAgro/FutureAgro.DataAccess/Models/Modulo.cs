@@ -17,5 +17,13 @@ namespace FutureAgro.DataAccess.Models
         public int Capacidad { get; set; }
         [ForeignKey("IdModulo")]
         public ICollection<Planta> Plantas { get; set; }
+        [ForeignKey("IdModulo")]
+        public ICollection<Medida> Medidas { get; set; }
+        [NotMapped]
+        public double? Temperatura { get; set; }
+        [NotMapped]
+        public int? Luminosidad { get; set; }
+        [NotMapped]
+        public int? Humedad { get; set; }
     }
 }

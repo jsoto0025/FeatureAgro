@@ -10,6 +10,7 @@ namespace FutureAgro.DataAccess.Models
     public class Medida
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("MeasureId")]
         public int IdMedida { get; set; }
         [Column("TrayId")]

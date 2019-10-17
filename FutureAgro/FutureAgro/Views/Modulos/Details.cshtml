@@ -26,19 +26,31 @@
                     @foreach (var item in Model.Plantas)
                     {
                         <div class="media m-1 mt-2">
-                            <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3" alt="Lechugas">
+                            <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3 @(item.Viva?"":"disabled")" alt="Lechugas">
                             <div class="media-body">
-                                <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger invisible">Planta muerta</span></h5>
+                                <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger @(item.Viva?"invisible":"")">Planta muerta</span></h5>
                                 Crecimiento
                                 <div class="progress mb-3">
-                                    <div id="progrescrecimiento-@item.IdPlanta" class="progress-bar" role="progressbar" style="width:@(item.Crecimiento)%;" aria-valuenow="@(item.Crecimiento)" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div id="progrescrecimiento-@item.IdPlanta" class="progress-bar" role="progressbar" style="width:@(item.Viva?item.Crecimiento:0)%;"></div>
                                 </div>
                                 <h6 class="mb-3">
                                     Tiempo para producción
                                     @{
-                                        var color = item.Crecimiento <= 20 ? "light" : item.Crecimiento <= 40 ? "info" : item.Crecimiento <= 60 ? "success" : item.Crecimiento <= 80 ? "warning" : "danger";
+                                        var crecimiento = item.Crecimiento;
+                                        var color = item.Crecimiento <= 20 ? "light" : item.Crecimiento <= 40 ? "info" : item.Crecimiento <= 60 ? "success" : item.Crecimiento < 100 ? "warning" : "danger";
+
+                                        var dias = (crecimiento * 0.35);
+                                        var txtDias = "";
+                                        if (dias >= 35)
+                                        {
+                                            txtDias = "Cosechar";
+                                        }
+                                        else
+                                        {
+                                            txtDias = Math.Round(35 - dias, 0).ToString() + " Días";
+                                        }
                                     }
-                                    <span id="spanTiempoProduccion-@item.IdPlanta" class="badge badge-@color">@Math.Round((5 - (item.Crecimiento * 0.05)), 1) Semanas</span>
+                                    <span id="spanTiempoProduccion-@item.IdPlanta" class="badge badge-@color @(item.Viva?"":"invisible")">@txtDias</span>
                                 </h6>
                             </div>
                         </div>
@@ -58,19 +70,10 @@
                     </label>
                 </h6>
             </div>
-            <table class="table small">
-                <thead>
-                    <tr>
-                        <td>Actual</td>
-                        <td>Promedio</td>
-                        <td>Ideal</td>
-                    </tr>
-                </thead>
+            <table class="table">
                 <tbody>
                     <tr>
-                        <td><div class="badge badge-danger" id="divTemp-2">25°C</div></td>
-                        <td><div class="badge badge-success">20°C</div></td>
-                        <td><div class="badge badge-info">19.5°C</div></td>
+                        <td><div class="badge badge-danger" id="divTemp-@Model.IdModulo">@Model.Temperatura°C</div></td>
                     </tr>
                 </tbody>
             </table>
@@ -84,19 +87,10 @@
                     </label>
                 </h6>
             </div>
-            <table class="table small">
-                <thead>
-                    <tr>
-                        <td>Actual</td>
-                        <td>Promedio</td>
-                        <td>Ideal</td>
-                    </tr>
-                </thead>
+            <table class="table">
                 <tbody>
                     <tr>
-                        <td><div class="badge badge-success" id="divHumedad-2">70%</div></td>
-                        <td><div class="badge badge-success">69%</div></td>
-                        <td><div class="badge badge-info">70%</div></td>
+                        <td><div class="badge badge-success" id="divHumedad-@Model.IdModulo">@Model.Humedad%</div></td>
                     </tr>
                 </tbody>
             </table>
@@ -110,19 +104,10 @@
                     </label>
                 </h6>
             </div>
-            <table class="table small">
-                <thead>
-                    <tr>
-                        <td>Actual</td>
-                        <td>Promedio</td>
-                        <td>Ideal</td>
-                    </tr>
-                </thead>
+            <table class="table">
                 <tbody>
                     <tr>
-                        <td><div class="badge badge-success" id="divLumens-2">500 Lumens</div></td>
-                        <td><div class="badge badge-warning">450 Lumens</div></td>
-                        <td><div class="badge badge-info">490 Lumens</div></td>
+                        <td><div class="badge badge-success" id="divLumens-@Model.IdModulo">@Model.Luminosidad Lumens</div></td>
                     </tr>
                 </tbody>
             </table>

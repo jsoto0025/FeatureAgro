@@ -21,6 +21,7 @@ using FutureAgro.DataAccess.Models;
 using FutureAgro.IoT.Contratos;
 using FutureAgro.IoT.Emuladores;
 using FutureAgro.DataAccess.Repositories;
+using FutureAgro.Web.Services;
 
 namespace FutureAgro.Web
 {
@@ -45,7 +46,7 @@ namespace FutureAgro.Web
             });
             
             services.AddDbContext<FutureAgroIdentityDbContext>(options =>
-                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                   options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
 
             services.AddIdentityCore<IdentityUser>(options =>
             {
@@ -57,8 +58,7 @@ namespace FutureAgro.Web
                 .AddDefaultTokenProviders()
                 .AddSignInManager()
                 .AddEntityFrameworkStores<FutureAgroIdentityDbContext>();
-
-
+            
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
@@ -143,6 +143,11 @@ namespace FutureAgro.Web
             services.AddSingleton<ILector, LectorCrecimiento>();
             services.AddSingleton<ILector, LectorPlantasMuertas>();
             services.AddTransient<PlantasRepository>();
+
+            services.AddSingleton<ServicioCrecimiento>();
+            services.AddSingleton<ServicioTemperatura>();
+            services.AddSingleton<ServicioHumedad>();
+            services.AddSingleton<ServicioLuminosidad>();
         }
 
 
@@ -178,6 +183,10 @@ namespace FutureAgro.Web
             });
             
             FutureAgroHub = app.ApplicationServices.GetService<IHubContext<FutureAgroHub>>();
+            var serviceCrecimiento = app.ApplicationServices.GetService<ServicioCrecimiento>();
+            var serviceTemperatura = app.ApplicationServices.GetService<ServicioTemperatura>();
+            var serviceHumedad = app.ApplicationServices.GetService<ServicioHumedad>();
+            var serviceLuminosidad = app.ApplicationServices.GetService<ServicioLuminosidad>();
         }
     }
 }

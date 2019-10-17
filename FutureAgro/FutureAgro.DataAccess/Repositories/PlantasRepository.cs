@@ -9,16 +9,15 @@ namespace FutureAgro.DataAccess.Repositories
 {
     public class PlantasRepository
     {
-        private readonly DbContext context;
         private readonly DbSet<Planta> plantas;
         public PlantasRepository(FutureAgroIdentityDbContext context)
         {
             plantas = context.Set<Planta>();
         }
 
-        public List<Planta> Get()
+        public DbSet<Planta> Get()
         {
-            return plantas.ToList();
+            return plantas;
         }
     }
 }
