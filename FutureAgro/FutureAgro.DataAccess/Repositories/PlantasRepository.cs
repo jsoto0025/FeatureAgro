@@ -10,9 +10,11 @@ namespace FutureAgro.DataAccess.Repositories
     public class PlantasRepository
     {
         private readonly DbSet<Planta> plantas;
+        private readonly FutureAgroIdentityDbContext _context;
         public PlantasRepository(FutureAgroIdentityDbContext context)
         {
-            plantas = context.Set<Planta>();
+            _context = context;
+            plantas = _context.Set<Planta>();
         }
 
         public DbSet<Planta> Get()
@@ -22,7 +24,9 @@ namespace FutureAgro.DataAccess.Repositories
 
         public Planta Find(params object[] values)
         {
-            return plantas.Find(values);
+            var planta = plantas.Find(values);
+            _context.Entry(planta).Reload();
+            return planta;
         }
     }
 }

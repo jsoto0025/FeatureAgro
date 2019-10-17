@@ -11,19 +11,19 @@ namespace FutureAgro.DataAccess.Models
     public class Modulo
     {
         [Key]
-        [Column(name:"TrayId")]
+        [Column("TrayId")]
         public int IdModulo { get; set; }
-        [Column(name: "Capacity")]
+        [Column("Capacity")]
         public int Capacidad { get; set; }
         [ForeignKey("IdModulo")]
         public ICollection<Planta> Plantas { get; set; }
         [ForeignKey("IdModulo")]
         public ICollection<Medida> Medidas { get; set; }
-        [NotMapped]
+        [Column("Temperature")]
         public double? Temperatura { get; set; }
-        [NotMapped]
+        [Column("Brightness")]
         public int? Luminosidad { get; set; }
-        [NotMapped]
+        [Column("Humidity")]
         public int? Humedad { get; set; }
     }
 }

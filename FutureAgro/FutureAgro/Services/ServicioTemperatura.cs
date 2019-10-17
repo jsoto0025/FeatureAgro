@@ -27,6 +27,8 @@ namespace FutureAgro.Web.Services
                 Valor = temp.Medida,
                 Fecha = DateTime.Now
             };
+            Modulo modulo = _context.Modulos.Find(temp.Modulo);
+            modulo.Temperatura = temp.Medida;
 
             var entity = _context.Medidas.Add(medida);
             _context.SaveChanges();

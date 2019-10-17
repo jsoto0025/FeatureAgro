@@ -21,12 +21,13 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Temperatura temperatura, double nuevaMedicion)
         {
             temperatura.Medida = nuevaMedicion;
+            temperatura.Fecha = DateTime.Now.ToLongTimeString();
             Lectura?.Invoke("updateTemperatura", temperatura);
         }
 
         protected override double ObtenerMedidaActual(Temperatura temperatura)
         {
-            return temperatura.Medida;
+            return temperatura.Medida > 0 ? temperatura.Medida : 19;
         }
     }
 }

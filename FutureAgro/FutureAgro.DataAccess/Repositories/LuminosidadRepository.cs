@@ -20,11 +20,7 @@ namespace FutureAgro.DataAccess.Repositories
                         .Include(r => r.Medidas)
                         .Select(r => new Luminosidad {
                             Modulo = r.IdModulo,
-                            Medida = r.Medidas
-                                        .Where(m => m.TipoMedida == TipoMedida.Luminosidad)
-                                        .OrderByDescending(m => m.Fecha)
-                                        .Select(m => m.Valor)
-                                        .FirstOrDefault()
+                            Medida = r.Luminosidad??0
                         });
         }
     }

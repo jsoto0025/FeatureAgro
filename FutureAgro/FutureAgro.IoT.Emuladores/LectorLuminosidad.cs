@@ -1,6 +1,7 @@
 ﻿using FutureAgro.DataAccess.Models;
 using FutureAgro.DataAccess.Repositories;
 using FutureAgro.IoT.Contratos;
+using System;
 using System.Linq;
 
 namespace FutureAgro.IoT.Emuladores
@@ -16,12 +17,13 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Luminosidad luminosidad, double nuevaMedicion)
         {
             luminosidad.Medida = nuevaMedicion;
+            luminosidad.Fecha = DateTime.Now.ToLongTimeString();
             Lectura?.Invoke("updateLuminosidad", luminosidad);
         }
 
         protected override double ObtenerMedidaActual(Luminosidad luminosidad)
         {
-            return luminosidad.Medida;
+            return luminosidad.Medida > 0 ? luminosidad.Medida : 400;
         }
     }
 }

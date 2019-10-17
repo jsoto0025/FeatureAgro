@@ -67,7 +67,7 @@ namespace FutureAgro.IoT.Emuladores
 
             double nuevaMedicion = ObtenerMedidaActual(medida);
             // Update the Temperature measure by a random factor of the range percent
-            var random = new Random((int)Math.Floor(nuevaMedicion));
+            var random = new Random();
             var percentChange = random.NextDouble() * _rangePercent;
             var pos = random.NextDouble() > .51;
             var change = Math.Round(nuevaMedicion * percentChange, 2);

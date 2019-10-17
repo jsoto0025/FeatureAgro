@@ -21,11 +21,7 @@ namespace FutureAgro.DataAccess.Repositories
                         .Select(r => new Humedad
                         {
                             Modulo = r.IdModulo,
-                            Medida = r.Medidas
-                                        .Where(m => m.TipoMedida == TipoMedida.Humedad)
-                                        .OrderByDescending(m => m.Fecha)
-                                        .Select(m => m.Valor)
-                                        .FirstOrDefault()
+                            Medida = r.Humedad??0
                         });
         }
     }

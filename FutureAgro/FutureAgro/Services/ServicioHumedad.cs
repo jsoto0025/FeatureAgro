@@ -27,6 +27,8 @@ namespace FutureAgro.Web.Services
                 Valor = humedad.Medida,
                 Fecha = DateTime.Now
             };
+            Modulo modulo = _context.Modulos.Find(humedad.Modulo);
+            modulo.Humedad = (int)humedad.Medida;
 
             var entity = _context.Medidas.Add(medida);
             _context.SaveChanges();

@@ -1,9 +1,27 @@
-﻿@{
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
     ViewData["Title"] = "Detail";
 }
 @section Scripts
-{
-    <script src="@Url.Content("~/js/Ambiente/Charts.js")"></script>
+    {
+    <script>
+        var chartDataTemperatura = @Html.Raw(Json.Serialize(ViewData["DatosTemperatura"]));
+        var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
+        var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
+        var chartObjModulo = @Model.IdModulo;
+    </script>
+
+    <script src="~/js/Ambiente/ChartsTemperatura.js"></script>
+    <script src="~/js/Ambiente/ChartsHumedad.js?v=4"></script>
+    <script src="~/js/Ambiente/ChartsLuminosidad.js?v=4"></script>
+
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/Hubs/BaseHub.js"></script>
+    <script src="~/js/Hubs/TemperaturaChart.js?v=4"></script>
+    <script src="~/js/Hubs/HumedadChart.js"></script>
+    <script src="~/js/Hubs/LuminosidadChart.js"></script>
+    <script src="~/js/Hubs/ErrorHub.js"></script>
 }
 
 <div class="container-fluid">
@@ -13,12 +31,12 @@
             <div class="media m-1 mt-2">
                 <div class="media-body">
                     <h5 class="media-title">
-                        Módulo 1
+                        Módulo @Html.DisplayFor(model => model.IdModulo)
                     </h5>
 
                     <ul class="navbar-nav float-right justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Modulos/Detail">Ver Plantas</a>
+                            <a class="nav-link" asp-action="Details" asp-route-id="@Model.IdModulo">Ver Plantas</a>
                         </li>
                     </ul>
 
@@ -48,18 +66,18 @@
                     <div class="row">
                         <div class="col-6">
                             <h5 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h5>
-                            <canvas id="ChartTemperatura" height="80"></canvas>
+                            <canvas id="ChartTemperatura" height="150"></canvas>
                         </div>
                         <div class="col-6">
                             <h5 class="col-6"><i class="fas fa-tint"></i> Humedad</h5>
-                            <canvas id="ChartHumedad" height="80"></canvas>
+                            <canvas id="ChartHumedad" height="150"></canvas>
                         </div>
                     </div>
                     <hr />
                     <div class="row">
                         <div class="col-6">
                             <h5 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h5>
-                            <canvas id="ChartLuz" height="80"></canvas>
+                            <canvas id="ChartLuminosidad" height="150"></canvas>
                         </div>
                     </div>
 

@@ -184,6 +184,7 @@ namespace FutureAgro.Web
             
             FutureAgroHub = app.ApplicationServices.GetService<IHubContext<FutureAgroHub>>();
             var serviceCrecimiento = app.ApplicationServices.GetService<ServicioCrecimiento>();
+            var servicePlantasMuertas = app.ApplicationServices.GetService<ServicioPlantasMuertas>();
             var serviceTemperatura = app.ApplicationServices.GetService<ServicioTemperatura>();
             var serviceHumedad = app.ApplicationServices.GetService<ServicioHumedad>();
             var serviceLuminosidad = app.ApplicationServices.GetService<ServicioLuminosidad>();

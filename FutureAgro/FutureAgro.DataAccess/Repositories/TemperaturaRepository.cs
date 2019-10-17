@@ -23,11 +23,7 @@ namespace FutureAgro.DataAccess.Repositories
                         .Select(r => new Temperatura
                         {
                             Modulo = r.IdModulo,
-                            Medida = r.Medidas
-                                        .Where(m => m.TipoMedida == TipoMedida.Temperatura)
-                                        .OrderByDescending(m => m.Fecha)
-                                        .Select(m => m.Valor)
-                                        .FirstOrDefault()
+                            Medida = r.Temperatura??0
                         });
         }
     }

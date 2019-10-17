@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FutureAgro.DataAccess.Data;
 using FutureAgro.DataAccess.Models;
+using FutureAgro.Web.Models;
 
 namespace FutureAgro.Web.Controllers
 {
@@ -34,28 +35,9 @@ namespace FutureAgro.Web.Controllers
             }
 
             var modulo = await _context.Modulos
-                .Include(mod => mod.Medidas)
                 .Include(mod => mod.Plantas)
                 .ThenInclude(planta => planta.Tipo)
                 .FirstOrDefaultAsync(m => m.IdModulo == id);
-
-            modulo.Temperatura = modulo.Medidas
-                                        .Where(r => r.TipoMedida == TipoMedida.Temperatura)
-                                        .OrderByDescending(r => r.Fecha)
-                                        .Select(r => r.Valor)
-                                        .FirstOrDefault();
-
-            modulo.Humedad = (int)modulo.Medidas
-                                        .Where(r => r.TipoMedida == TipoMedida.Humedad)
-                                        .OrderByDescending(r => r.Fecha)
-                                        .Select(r => r.Valor)
-                                        .FirstOrDefault();
-
-            modulo.Luminosidad = (int)modulo.Medidas
-                                        .Where(r => r.TipoMedida == TipoMedida.Luminosidad)
-                                        .OrderByDescending(r => r.Fecha)
-                                        .Select(r => r.Valor)
-                                        .FirstOrDefault();
 
             if (modulo == null)
             {
@@ -63,6 +45,62 @@ namespace FutureAgro.Web.Controllers
             }
 
             return View(modulo);
+        }
+        
+        // GET: Modulos/Ambiente/5
+        public async Task<IActionResult> Ambiente(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var modulo = await _context.Modulos
+                .FirstOrDefaultAsync(m => m.IdModulo == id);
+
+            var medidasModulo = _context.Medidas
+                                        .Where(r => r.IdModulo == id);
+
+            ChartData datosTemperatura = ObtenerDatosMedida(medidasModulo, TipoMedida.Temperatura, "IndianRed", "AntiqueWhite");
+            ViewData["DatosTemperatura"] = datosTemperatura;
+
+            ChartData datosHumedad = ObtenerDatosMedida(medidasModulo, TipoMedida.Humedad, "#007bff", "LightBlue");
+            ViewData["DatosHumedad"] = datosHumedad;
+
+            ChartData datosLuminosidad = ObtenerDatosMedida(medidasModulo, TipoMedida.Luminosidad, "Yellow", "LightYellow");
+            ViewData["DatosLuminosidad"] = datosLuminosidad;
+
+            if (modulo == null)
+            {
+                return NotFound();
+            }
+
+            return View(modulo);
+        }
+
+        private static ChartData ObtenerDatosMedida(IQueryable<Medida> medidasModulo, TipoMedida tipoMedida, string color, string backgroundColor)
+        {
+            var temperaturas = medidasModulo
+                                            .Where(r => r.TipoMedida == tipoMedida)
+                                            .OrderByDescending(r => r.Fecha)
+                                            .Take(10);
+
+            var datosTemperatura = new ChartData()
+            {
+                Labels = temperaturas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
+                Datasets = new ChartDataSet[] {
+                    new ChartDataSet()
+                    {
+                        Label = tipoMedida.ToString(),
+                        BackgroundColor = backgroundColor,
+                        BorderColor = color,
+                        BorderWidth = 1,
+                        PointBackgroundColor = color,
+                        Data = temperaturas.Select(r => r.Valor).ToArray()
+                    }
+                }
+            };
+            return datosTemperatura;
         }
 
         // GET: Modulos/Create

@@ -18,7 +18,8 @@ namespace FutureAgro.Web.Services
         {
             Crecimiento crecimiento = (Crecimiento)dato;
             Planta planta = _context.Plantas.Find(crecimiento.IdPlanta);
-                    
+            _context.Entry(planta).Reload();
+            
             planta.Crecimiento = crecimiento.PorcentajeCrecimiento;
             var entity = _context.Add(crecimiento);
             _context.SaveChanges();

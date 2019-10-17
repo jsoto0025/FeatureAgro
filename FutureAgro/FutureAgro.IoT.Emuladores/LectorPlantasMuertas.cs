@@ -21,7 +21,7 @@ namespace FutureAgro.IoT.Emuladores
                 var random = new Random();
                 var change = random.NextDouble();
 
-                if (change < 0.01)
+                if (change < 0.02)
                     return (true, 1);
             }
             

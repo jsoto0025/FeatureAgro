@@ -8,7 +8,7 @@ namespace FutureAgro.IoT.Emuladores
 {
     public abstract class LectorDiario<T> : LectorBase<T>
     {
-        public LectorDiario(List<T> listado) : base(listado, TimeSpan.FromSeconds(15))
+        public LectorDiario(List<T> listado) : base(listado, TimeSpan.FromSeconds(5))
         {
             _rangePercent = .05;
         }

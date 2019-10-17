@@ -18,6 +18,7 @@ namespace FutureAgro.Web.Services
         {
             Planta objPlanta = (Planta)dato;
             Planta plantaDb = _context.Plantas.Find(objPlanta.IdPlanta);
+            _context.Entry(plantaDb).Reload();
 
             plantaDb.Viva = objPlanta.Viva;
             _context.SaveChanges();

@@ -20,12 +20,13 @@ namespace FutureAgro.IoT.Emuladores
         protected override void BroadcastLectura(Humedad humedad, double nuevaMedicion)
         {
             humedad.Medida = nuevaMedicion;
+            humedad.Fecha = DateTime.Now.ToLongTimeString();
             Lectura?.Invoke("updateHumedad", humedad);
         }
 
         protected override double ObtenerMedidaActual(Humedad humedad)
         {
-            return humedad.Medida;
+            return humedad.Medida > 0 ? humedad.Medida : 50;
         }
     }
 }

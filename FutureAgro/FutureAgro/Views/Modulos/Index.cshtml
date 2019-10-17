@@ -3,7 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@section scripts{
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/Hubs/BaseHub.js"></script>
+    <script src="~/js/Hubs/Temperatura.js"></script>
+    <script src="~/js/Hubs/Humedad.js"></script>
+    <script src="~/js/Hubs/Luminosidad.js"></script>
+    <script src="~/js/Hubs/ErrorHub.js"></script>
+}
 <h2>Index</h2>
 
 <p>
@@ -16,31 +23,47 @@
                 @Html.DisplayNameFor(model => model.IdModulo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Capacidad)
+                @Html.DisplayNameFor(model => model.Plantas)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Plantas)
+                @Html.DisplayNameFor(model => model.Temperatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Humedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Luminosidad)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Capacidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Plantas.Count)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdModulo">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdModulo">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plantas.Count)
+                </td>
+                <td>
+                    <div class="badge badge-danger" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
+                </td>
+                <td>
+                    <div class="badge badge-danger" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
+                </td>
+                <td>
+                    <div class="badge badge-danger" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
+                </td>
+                <td>
+                    <a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

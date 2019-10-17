@@ -27,6 +27,8 @@ namespace FutureAgro.Web.Services
                 Valor = luminosidad.Medida,
                 Fecha = DateTime.Now
             };
+            Modulo modulo = _context.Modulos.Find(luminosidad.Modulo);
+            modulo.Luminosidad = (int)luminosidad.Medida;
 
             var entity = _context.Medidas.Add(medida);
             _context.SaveChanges();

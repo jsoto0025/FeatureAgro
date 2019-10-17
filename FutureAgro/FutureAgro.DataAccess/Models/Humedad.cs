@@ -8,5 +8,6 @@ namespace FutureAgro.DataAccess.Models
     {
         public int Modulo { get; set; }
         public double Medida { get; set; }
+        public string Fecha { get; set; }
     }
 }
