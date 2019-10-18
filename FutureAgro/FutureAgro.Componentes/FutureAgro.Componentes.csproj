@@ -13,10 +13,19 @@
   <ItemGroup>
     <None Remove="Google\Confirmation.cshtml" />
     <None Remove="Google\ExternalLogin.cshtml" />
+    <None Remove="LecturaHum\ChartHumedadHome.js" />
+    <None Remove="LecturaHum\ChartsHumedad.js" />
+    <None Remove="LecturaHum\Humedad.js" />
+    <None Remove="LecturaHum\HumedadChart.js" />
     <None Remove="LecturaTemp\ChartsTemperatura.js" />
     <None Remove="LecturaTemp\ChartTemperaturaHome.js" />
     <None Remove="LecturaTemp\Temperatura.js" />
     <None Remove="LecturaTemp\TemperaturaChart.js" />
+    <None Remove="OrdenEnsamblaje.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="OrdenEnsamblaje.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +33,18 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Google\ExternalLogin.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaHum\ChartHumedadHome.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaHum\ChartsHumedad.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaHum\Humedad.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaHum\HumedadChart.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="LecturaTemp\ChartsTemperatura.js">
@@ -43,7 +64,6 @@
   <ItemGroup>
     <Folder Include="ControlBase\" />
     <Folder Include="Crecimiento\" />
-    <Folder Include="LecturaHum\" />
     <Folder Include="LecturaLum\" />
     <Folder Include="Modulos\" />
     <Folder Include="Plantas\" />

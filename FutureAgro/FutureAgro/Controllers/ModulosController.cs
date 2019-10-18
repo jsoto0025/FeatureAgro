@@ -64,10 +64,7 @@ namespace FutureAgro.Web.Controllers
             var medidasModulo = _context.Medidas
                                         .Where(r => r.IdModulo == id);
 
-            /*B-ChartsDetalle*/
-
-            ChartData datosHumedad = ObtenerDatosMedida(medidasModulo, TipoMedida.Humedad, "#007bff", "LightBlue");
-            ViewData["DatosHumedad"] = datosHumedad;
+            /*B-ChartsControllerDetalle*/
 
             ChartData datosLuminosidad = ObtenerDatosMedida(medidasModulo, TipoMedida.Luminosidad, "Yellow", "LightYellow");
             ViewData["DatosLuminosidad"] = datosLuminosidad;

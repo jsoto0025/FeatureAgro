@@ -1,0 +1,14 @@
+﻿
+
+
+
+
+
+
+
+
+LecturaTemp
+ActuadorLum
+ActuadorHum
+-ActuadorTemp - Requiere LecturaTemp
+Google

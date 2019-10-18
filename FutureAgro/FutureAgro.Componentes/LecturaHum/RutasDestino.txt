@@ -1,0 +1,9 @@
+﻿Humedad.cs -> DataAccess/Models/Humedad.cs
+HumedadRepository.cs -> DataAccess/Repositories/HumedadRepository.cs
+LectorHumedad.cs -> IoT.Emuladores/LectorHumedad.cs
+ChartsHumedad.js -> FutureAgro/wwwroot/js/Ambiente/ChartsHumedad.js
+ChartHumedadHome.js -> FutureAgro/wwwroot/js/Home/ChartHumedadHome.jss
+
+Humedad.js -> FutureAgro/wwwroot/js/Hubs/Humedad.js
+HumedadChart.js -> FutureAgro/wwwroot/js/Hubs/HumedadChart.js
+ServicioHumedad.cs -> FutureAgro/Services/ServicioHumedad.cs

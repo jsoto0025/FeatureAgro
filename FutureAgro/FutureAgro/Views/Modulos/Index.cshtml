@@ -5,16 +5,12 @@
 
     /*B-LimitesIndex*/
     
-    int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
-    int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
     int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
     int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
 }
 @section scripts{
 
     <script>
-        var superiorHum = @superiorHum;
-        var inferiorHum = @inferiorHum;
         var superiorLuz = @superiorLuz;
         var inferiorLuz = @inferiorLuz;
     </script>
@@ -24,7 +20,6 @@
 
     <!--B-ScriptsModulosIndex-->
     
-    <script src="~/js/Hubs/Humedad.js"></script>
     <script src="~/js/Hubs/Luminosidad.js"></script>
     <script src="~/js/Hubs/ErrorHub.js"></script>
 }
@@ -43,9 +38,6 @@
             </th>
             <!--B-TitulosColumnasModulosIndex-->
             <th>
-                @Html.DisplayNameFor(model => model.Humedad)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Luminosidad)
             </th>
             <th></th>
@@ -62,12 +54,6 @@
                 @Html.DisplayFor(modelItem => item.Plantas.Count)
             </td>
             <!--B-ColumnasModulosIndex-->
-            <td>
-                @{
-                    var colorHum = item.Humedad <= superiorHum && item.Humedad >= inferiorHum ? "success" : "danger";
-                }
-                <div class="badge badge-@colorHum" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
-            </td>
             <td>
                 @{
                     var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";

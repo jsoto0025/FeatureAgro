@@ -5,13 +5,11 @@
 @section Scripts
     {
     <script>
-        var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
         var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
     </script>
     <script src="~/js/Home/Charts.js"></script>
 
     <!--B-ScriptsHome-->
-    <script src="~/js/Home/ChartHumedadHome.js"></script>
     <script src="~/js/Home/ChartLuminosidadHome.js"></script>
 }
 
@@ -40,9 +38,6 @@
     </div>
     <div class="row pt-3">
         <!--B-ChartsHome-->
-        <div class="col-6 border-bottom">
-            <canvas id="ChartHumedad" height="120"></canvas>
-        </div>
         <div class="col-6 border-right">
             <canvas id="ChartLuz" height="120"></canvas>
         </div>

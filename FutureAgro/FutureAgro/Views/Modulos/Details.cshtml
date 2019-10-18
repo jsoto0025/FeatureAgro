@@ -5,8 +5,6 @@
 
     /*B-LimitesDetalle*/
     
-    int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
-    int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
     int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
     int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
 
@@ -14,8 +12,6 @@
 @section scripts{
 
     <script>
-        var superiorHum = @superiorHum;
-        var inferiorHum = @inferiorHum;
         var superiorLuz = @superiorLuz;
         var inferiorLuz = @inferiorLuz;
     </script>
@@ -25,7 +21,6 @@
 
     <!--B-ScriptsModulosDetale-->
 
-    <script src="~/js/Hubs/Humedad.js"></script>
     <script src="~/js/Hubs/Luminosidad.js"></script>
     <script src="~/js/Hubs/Crecimiento.js"></script>
     <script src="~/js/Hubs/PlantasMuertas.js"></script>
@@ -85,20 +80,6 @@
         <div class="offset-1 col-4">
             <h5 class="mb-4">Control de ambiente</h5>
             <!--B-ControlAmbienteDetalle-->
-            @{
-                var colorHum = Model.Humedad <= superiorHum && Model.Humedad >= inferiorHum ? "success" : "danger";
-            }
-            <div class="row">
-                <h6 class="col-6"><i class="fas fa-tint"></i> Humedad</h6>
-                <!--B-ActuadorHumedad-->
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><div class="badge badge-@colorHum" id="divHumedad-@Model.IdModulo">@Model.Humedad%</div></td>
-                    </tr>
-                </tbody>
-            </table>
             @{
                 var colorLuz = Model.Luminosidad <= superiorLuz && Model.Luminosidad >= inferiorLuz ? "success" : "danger";
             }
