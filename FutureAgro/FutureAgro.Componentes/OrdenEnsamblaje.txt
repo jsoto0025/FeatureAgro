@@ -5,6 +5,7 @@
 
 
 
+ControlAmbienteBase
 LecturaLuz
 LecturaHum
 LecturaTemp
