@@ -26,16 +26,13 @@ namespace FutureAgro.Web.Controllers
 
         public IActionResult Index()
         {
-            var temperatures = _dbContext.Medidas.Where(x => x.TipoMedida == TipoMedida.Temperatura);
+            /*B-HomeCharts*/
+            
             var humidity = _dbContext.Medidas.Where(x => x.TipoMedida == TipoMedida.Humedad);
-            var brightness = _dbContext.Medidas.Where(x => x.TipoMedida == TipoMedida.Luminosidad);
-
-            ChartData datosTemperatura = ObtenerDatosMedida(temperatures, TipoMedida.Temperatura, "IndianRed", "AntiqueWhite");
-            ViewData["DatosTemperatura"] = datosTemperatura;
-
             ChartData datosHumedad = ObtenerDatosMedida(humidity, TipoMedida.Humedad, "#007bff", "LightBlue");
             ViewData["DatosHumedad"] = datosHumedad;
 
+            var brightness = _dbContext.Medidas.Where(x => x.TipoMedida == TipoMedida.Luminosidad);
             ChartData datosLuminosidad = ObtenerDatosMedida(brightness, TipoMedida.Luminosidad, "Yellow", "LightYellow");
             ViewData["DatosLuminosidad"] = datosLuminosidad;
 
@@ -70,14 +67,14 @@ namespace FutureAgro.Web.Controllers
 
         private static ChartData ObtenerDatosMedida(IQueryable<Medida> medidasModulo, TipoMedida tipoMedida, string color, string backgroundColor)
         {
-            var temperaturas = medidasModulo
+            var medidas = medidasModulo
                                             .Where(r => r.TipoMedida == tipoMedida)
                                             .OrderByDescending(r => r.Fecha)
                                             .Take(10);
 
-            var datosTemperatura = new ChartData()
+            var datosMedida = new ChartData()
             {
-                Labels = temperaturas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
+                Labels = medidas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
                 Datasets = new ChartDataSet[] {
                     new ChartDataSet()
                     {
@@ -86,11 +83,11 @@ namespace FutureAgro.Web.Controllers
                         BorderColor = color,
                         BorderWidth = 1,
                         PointBackgroundColor = color,
-                        Data = temperaturas.Select(r => r.Valor).ToArray()
+                        Data = medidas.Select(r => r.Valor).ToArray()
                     }
                 }
             };
-            return datosTemperatura;
+            return datosMedida;
         }
     }
 }

@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 
-    double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
-    double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+    /*B-LimitesIndex*/
+    
     int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
     int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
     int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
@@ -13,8 +13,6 @@
 @section scripts{
 
     <script>
-        var superiorTemp = @superiorTemp;
-        var inferiorTemp = @inferiorTemp;
         var superiorHum = @superiorHum;
         var inferiorHum = @inferiorHum;
         var superiorLuz = @superiorLuz;
@@ -23,7 +21,9 @@
 
     <script src="~/lib/signalr/signalr.js"></script>
     <script src="~/js/Hubs/BaseHub.js"></script>
-    <script src="~/js/Hubs/Temperatura.js"></script>
+
+    <!--B-ScriptsModulosIndex-->
+    
     <script src="~/js/Hubs/Humedad.js"></script>
     <script src="~/js/Hubs/Luminosidad.js"></script>
     <script src="~/js/Hubs/ErrorHub.js"></script>
@@ -41,9 +41,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Plantas)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Temperatura)
-            </th>
+            <!--B-TitulosColumnasModulosIndex-->
             <th>
                 @Html.DisplayNameFor(model => model.Humedad)
             </th>
@@ -56,35 +54,34 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Plantas.Count)
-                </td>
-                <td>
-                    @{
-                        var colorTemp = item.Temperatura <= superiorTemp && item.Temperatura >= inferiorTemp ? "success" : "danger";
-                        var colorHum = item.Humedad <= superiorHum && item.Humedad >= inferiorHum ? "success" : "danger";
-                        var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";
-                    }
-                    <div class="badge badge-@colorTemp" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
-                </td>
-                <td>
-                    <div class="badge badge-@colorHum" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
-                </td>
-                <td>
-                    <div class="badge badge-@colorLuz" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
-                </td>
-                <td>
-                    <a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plantas.Count)
+            </td>
+            <!--B-ColumnasModulosIndex-->
+            <td>
+                @{
+                    var colorHum = item.Humedad <= superiorHum && item.Humedad >= inferiorHum ? "success" : "danger";
+                }
+                <div class="badge badge-@colorHum" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
+            </td>
+            <td>
+                @{
+                    var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";
+                }
+                <div class="badge badge-@colorLuz" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
+            </td>
+            <td>
+                <a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

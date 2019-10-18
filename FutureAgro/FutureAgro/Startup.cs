@@ -71,37 +71,9 @@ namespace FutureAgro.Web
                 cookieOptions.LoginPath = "/Account/Login";
                 cookieOptions.LogoutPath = "/Account/Login";
             })
-            .AddGoogle(options =>
-            {
-                // Provide the Google Client ID
-                options.ClientId = "84213285064-3bu6c7f6iuov5e2nj71j8kp09ldsgg8p.apps.googleusercontent.com";
-                // Register with User Secrets using:
-                // dotnet user-secrets set "Authentication:Google:ClientId" "{Client ID}"
 
-                // Provide the Google Client Secret
-                options.ClientSecret = "USukES39oKelSIhWjI5Nj2W6";
-                // Register with User Secrets using:
-                // dotnet user-secrets set "Authentication:Google:ClientSecret" "{Client Secret}"
+            /*B-AddsAutenticar*/
 
-                options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
-                options.ClaimActions.MapJsonKey("urn:google:locale", "locale", "string");
-                options.SaveTokens = true;
-
-                options.Events.OnCreatingTicket = ctx =>
-                {
-                    List<AuthenticationToken> tokens = ctx.Properties.GetTokens().ToList();
-
-                    tokens.Add(new AuthenticationToken()
-                    {
-                        Name = "TicketCreated",
-                        Value = DateTime.UtcNow.ToString()
-                    });
-
-                    ctx.Properties.StoreTokens(tokens);
-
-                    return Task.CompletedTask;
-                };
-            })
             .AddIdentityCookies();
 
             services.AddMvc()
@@ -131,8 +103,7 @@ namespace FutureAgro.Web
                 s.WithDefaultConventions();
             });
 
-            services.AddSingleton<ILector, LectorTemperatura>();
-            services.AddTransient<TemperaturaRepository>();
+            /*B-InyeccionServicios*/
             
             services.AddSingleton<ILector, LectorHumedad>();
             services.AddTransient<HumedadRepository>();
@@ -145,7 +116,6 @@ namespace FutureAgro.Web
             services.AddTransient<PlantasRepository>();
 
             services.AddSingleton<ServicioCrecimiento>();
-            services.AddSingleton<ServicioTemperatura>();
             services.AddSingleton<ServicioHumedad>();
             services.AddSingleton<ServicioLuminosidad>();
         }
@@ -182,10 +152,14 @@ namespace FutureAgro.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             
+
             FutureAgroHub = app.ApplicationServices.GetService<IHubContext<FutureAgroHub>>();
+
+
+            /*B-InicializarServicios*/
+
             var serviceCrecimiento = app.ApplicationServices.GetService<ServicioCrecimiento>();
             var servicePlantasMuertas = app.ApplicationServices.GetService<ServicioPlantasMuertas>();
-            var serviceTemperatura = app.ApplicationServices.GetService<ServicioTemperatura>();
             var serviceHumedad = app.ApplicationServices.GetService<ServicioHumedad>();
             var serviceLuminosidad = app.ApplicationServices.GetService<ServicioLuminosidad>();
         }

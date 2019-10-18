@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Google\Confirmation.cshtml" />
+    <None Remove="Google\ExternalLogin.cshtml" />
+    <None Remove="LecturaTemp\ChartsTemperatura.js" />
+    <None Remove="LecturaTemp\ChartTemperaturaHome.js" />
+    <None Remove="LecturaTemp\Temperatura.js" />
+    <None Remove="LecturaTemp\TemperaturaChart.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Google\Confirmation.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Google\ExternalLogin.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaTemp\ChartsTemperatura.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaTemp\ChartTemperaturaHome.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaTemp\Temperatura.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaTemp\TemperaturaChart.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ControlBase\" />
+    <Folder Include="Crecimiento\" />
+    <Folder Include="LecturaHum\" />
+    <Folder Include="LecturaLum\" />
+    <Folder Include="Modulos\" />
+    <Folder Include="Plantas\" />
+    <Folder Include="Produccion\" />
+    <Folder Include="UsuarioContrasena\" />
+    <Folder Include="VistasBasicas\" />
+  </ItemGroup>
+
+</Project>

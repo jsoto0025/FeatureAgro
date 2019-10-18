@@ -6,8 +6,8 @@ namespace FutureAgro.DataAccess.Models
 {
     public enum TipoMedida
     {
-        Temperatura = 1,
+        /*B-EnumTiposDeMedidas*/
         Humedad = 2,
-        Luminosidad = 3
+        Luminosidad = 3,
     }
 }

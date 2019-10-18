@@ -28,30 +28,14 @@
                         }
                         <input type="submit" class="mt-2 btn btn-primary" value="Iniciar sesión" />
                         <ul class="nav justify-content-sm-end small mt-2">
-                            @*<li class="nav-item">
-                                    <a class="nav-link active" href="#">Olvidé mi usuario/contraseña</a>
-                                </li>*@
                             <li class="nav-item">
                                 <a class="nav-link active" href="Register?returnUrl=@Model.ReturnUrl">Registrarme</a>
                             </li>
                         </ul>
                     </form>
 
-                    @{
-                        if ((Model.ExternalLogins?.Count ?? 0) > 0)
-                        {
-                            <form id="external-account" action="BeginExternalLogin?returnUrl=@Model.ReturnUrl" method="post" class="form-horizontal">
-                                <div>
-                                    <p>
-                                        @foreach (var provider in Model.ExternalLogins)
-                                        {
-                                            <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                        }
-                                    </p>
-                                </div>
-                            </form>
-                        }
-                    }
+                    <!--B-BotonesRedesSociales-->
+
                 </div>
             </div>
         </div>

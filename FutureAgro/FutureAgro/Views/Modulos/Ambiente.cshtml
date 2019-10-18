@@ -5,79 +5,56 @@
 }
 @section Scripts
     {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/Hubs/BaseHub.js"></script>
+
+    <!--B-ScriptsAmbiente-->
     <script>
-        var chartDataTemperatura = @Html.Raw(Json.Serialize(ViewData["DatosTemperatura"]));
         var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
         var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
         var chartObjModulo = @Model.IdModulo;
     </script>
-
-    <script src="~/js/Ambiente/ChartsTemperatura.js"></script>
     <script src="~/js/Ambiente/ChartsHumedad.js?v=4"></script>
     <script src="~/js/Ambiente/ChartsLuminosidad.js?v=4"></script>
-
-    <script src="~/lib/signalr/signalr.js"></script>
-    <script src="~/js/Hubs/BaseHub.js"></script>
-    <script src="~/js/Hubs/TemperaturaChart.js?v=4"></script>
     <script src="~/js/Hubs/HumedadChart.js"></script>
     <script src="~/js/Hubs/LuminosidadChart.js"></script>
+
+
     <script src="~/js/Hubs/ErrorHub.js"></script>
 }
 
-    <div class="container-fluid">
-        <h3>Control de ambiente</h3>
-        <div>
-            <a asp-action="Index">Lista</a> |
-            <a asp-action="Details" asp-route-id="@Model.IdModulo">Detalle</a>
-        </div>
-        <hr />
-        <div class="media">
-            <div class="media-body">
-                <h5 class="media-title">
-                    Módulo @Html.DisplayFor(model => model.IdModulo)
-                </h5>
-                <div class="row mt-4 mb-1">
-                    <div class="col-4">
-                        <span class="mdl-switch__label" style="left:0;">Calefacción</span>
-                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
-                            <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
-                        </label>
-                    </div>
+<div class="container-fluid">
+    <h3>Control de ambiente</h3>
+    <div>
+        <a asp-action="Index">Lista</a> |
+        <a asp-action="Details" asp-route-id="@Model.IdModulo">Detalle</a>
+    </div>
+    <hr />
+    <div class="media">
+        <div class="media-body">
+            <h5 class="media-title">
+                Módulo @Html.DisplayFor(model => model.IdModulo)
+            </h5>
+            <div class="row mt-4 mb-1">
 
-                    <div class="col-4">
-                        <span class="mdl-switch__label" style="left:0;">Aspersores</span>
-                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
-                            <input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
-                        </label>
-                    </div>
-
-                    <div class="col-4">
-                        <span class="mdl-switch__label" style="left:0;">Luces</span>
-                        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
-                            <input type="checkbox" id="switch-Luces" class="mdl-switch__input">
-                        </label>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h5>
-                        <canvas id="ChartTemperatura" height="150"></canvas>
-                    </div>
-                    <div class="col-6">
-                        <h5 class="col-6"><i class="fas fa-tint"></i> Humedad</h5>
-                        <canvas id="ChartHumedad" height="150"></canvas>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h5>
-                        <canvas id="ChartLuminosidad" height="150"></canvas>
-                    </div>
-                </div>
+                <!--B-ActuadoresAmbiente-->
 
             </div>
+            <hr />
+            <div class="row">
+                <!--B-ChartsAmbiente-->
+                
+                <div class="col-6">
+                    <h5 class="col-6"><i class="fas fa-tint"></i> Humedad</h5>
+                    <canvas id="ChartHumedad" height="150"></canvas>
+                </div>
+                <div class="col-6">
+                    <h5 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h5>
+                    <canvas id="ChartLuminosidad" height="150"></canvas>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 

@@ -64,8 +64,7 @@ namespace FutureAgro.Web.Controllers
             var medidasModulo = _context.Medidas
                                         .Where(r => r.IdModulo == id);
 
-            ChartData datosTemperatura = ObtenerDatosMedida(medidasModulo, TipoMedida.Temperatura, "IndianRed", "AntiqueWhite");
-            ViewData["DatosTemperatura"] = datosTemperatura;
+            /*B-ChartsDetalle*/
 
             ChartData datosHumedad = ObtenerDatosMedida(medidasModulo, TipoMedida.Humedad, "#007bff", "LightBlue");
             ViewData["DatosHumedad"] = datosHumedad;
@@ -83,14 +82,14 @@ namespace FutureAgro.Web.Controllers
 
         private static ChartData ObtenerDatosMedida(IQueryable<Medida> medidasModulo, TipoMedida tipoMedida, string color, string backgroundColor)
         {
-            var temperaturas = medidasModulo
+            var medidas = medidasModulo
                                             .Where(r => r.TipoMedida == tipoMedida)
                                             .OrderByDescending(r => r.Fecha)
                                             .Take(10);
 
-            var datosTemperatura = new ChartData()
+            var datosmedida = new ChartData()
             {
-                Labels = temperaturas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
+                Labels = medidas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
                 Datasets = new ChartDataSet[] {
                     new ChartDataSet()
                     {
@@ -99,11 +98,11 @@ namespace FutureAgro.Web.Controllers
                         BorderColor = color,
                         BorderWidth = 1,
                         PointBackgroundColor = color,
-                        Data = temperaturas.Select(r => r.Valor).ToArray()
+                        Data = medidas.Select(r => r.Valor).ToArray()
                     }
                 }
             };
-            return datosTemperatura;
+            return datosmedida;
         }
 
         // GET: Modulos/Create
