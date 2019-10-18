@@ -66,9 +66,6 @@ namespace FutureAgro.Web.Controllers
 
             /*B-ChartsControllerDetalle*/
 
-            ChartData datosLuminosidad = ObtenerDatosMedida(medidasModulo, TipoMedida.Luminosidad, "Yellow", "LightYellow");
-            ViewData["DatosLuminosidad"] = datosLuminosidad;
-
             if (modulo == null)
             {
                 return NotFound();

@@ -7,6 +7,5 @@ namespace FutureAgro.DataAccess.Models
     public enum TipoMedida
     {
         /*B-EnumTiposDeMedidas*/
-        Luminosidad = 3,
     }
 }

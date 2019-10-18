@@ -17,6 +17,10 @@
     <None Remove="LecturaHum\ChartsHumedad.js" />
     <None Remove="LecturaHum\Humedad.js" />
     <None Remove="LecturaHum\HumedadChart.js" />
+    <None Remove="LecturaLum\ChartLuminosidadHome.js" />
+    <None Remove="LecturaLum\ChartsLuminosidad.js" />
+    <None Remove="LecturaLum\Luminosidad.js" />
+    <None Remove="LecturaLum\LuminosidadChart.js" />
     <None Remove="LecturaTemp\ChartsTemperatura.js" />
     <None Remove="LecturaTemp\ChartTemperaturaHome.js" />
     <None Remove="LecturaTemp\Temperatura.js" />
@@ -47,6 +51,18 @@
     <Content Include="LecturaHum\HumedadChart.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="LecturaLum\ChartLuminosidadHome.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaLum\ChartsLuminosidad.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaLum\Luminosidad.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="LecturaLum\LuminosidadChart.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="LecturaTemp\ChartsTemperatura.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -64,7 +80,6 @@
   <ItemGroup>
     <Folder Include="ControlBase\" />
     <Folder Include="Crecimiento\" />
-    <Folder Include="LecturaLum\" />
     <Folder Include="Modulos\" />
     <Folder Include="Plantas\" />
     <Folder Include="Produccion\" />

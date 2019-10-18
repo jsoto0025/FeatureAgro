@@ -105,15 +105,11 @@ namespace FutureAgro.Web
 
             /*B-InyeccionServicios*/
             
-            services.AddSingleton<ILector, LectorLuminosidad>();
-            services.AddTransient<LuminosidadRepository>();
 
             services.AddSingleton<ILector, LectorCrecimiento>();
             services.AddSingleton<ILector, LectorPlantasMuertas>();
             services.AddTransient<PlantasRepository>();
-
             services.AddSingleton<ServicioCrecimiento>();
-            services.AddSingleton<ServicioLuminosidad>();
         }
 
 
@@ -156,7 +152,6 @@ namespace FutureAgro.Web
 
             var serviceCrecimiento = app.ApplicationServices.GetService<ServicioCrecimiento>();
             var servicePlantasMuertas = app.ApplicationServices.GetService<ServicioPlantasMuertas>();
-            var serviceLuminosidad = app.ApplicationServices.GetService<ServicioLuminosidad>();
         }
     }
 }

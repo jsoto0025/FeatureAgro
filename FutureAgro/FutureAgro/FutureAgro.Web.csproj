@@ -20,4 +20,8 @@
     <ProjectReference Include="..\FutureAgro.IoT.Emuladores\FutureAgro.IoT.Emuladores.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\Ambiente\" />
+  </ItemGroup>
+
 </Project>

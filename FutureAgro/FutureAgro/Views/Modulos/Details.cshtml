@@ -4,24 +4,14 @@
     ViewData["Title"] = "Details";
 
     /*B-LimitesDetalle*/
-    
-    int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
-    int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
-
 }
 @section scripts{
-
-    <script>
-        var superiorLuz = @superiorLuz;
-        var inferiorLuz = @inferiorLuz;
-    </script>
 
     <script src="~/lib/signalr/signalr.js"></script>
     <script src="~/js/Hubs/BaseHub.js"></script>
 
     <!--B-ScriptsModulosDetale-->
 
-    <script src="~/js/Hubs/Luminosidad.js"></script>
     <script src="~/js/Hubs/Crecimiento.js"></script>
     <script src="~/js/Hubs/PlantasMuertas.js"></script>
     <script src="~/js/Hubs/ErrorHub.js"></script>
@@ -80,20 +70,6 @@
         <div class="offset-1 col-4">
             <h5 class="mb-4">Control de ambiente</h5>
             <!--B-ControlAmbienteDetalle-->
-            @{
-                var colorLuz = Model.Luminosidad <= superiorLuz && Model.Luminosidad >= inferiorLuz ? "success" : "danger";
-            }
-            <div class="row">
-                <h6 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h6>
-                <!--B-ActuadorLuminosidad-->
-            </div>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td><div class="badge badge-@colorLuz" id="divLumens-@Model.IdModulo">@Model.Luminosidad Lumens</div></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 

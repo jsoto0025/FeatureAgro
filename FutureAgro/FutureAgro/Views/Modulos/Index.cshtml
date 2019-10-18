@@ -4,23 +4,14 @@
     ViewData["Title"] = "Index";
 
     /*B-LimitesIndex*/
-    
-    int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
-    int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
 }
 @section scripts{
-
-    <script>
-        var superiorLuz = @superiorLuz;
-        var inferiorLuz = @inferiorLuz;
-    </script>
 
     <script src="~/lib/signalr/signalr.js"></script>
     <script src="~/js/Hubs/BaseHub.js"></script>
 
     <!--B-ScriptsModulosIndex-->
     
-    <script src="~/js/Hubs/Luminosidad.js"></script>
     <script src="~/js/Hubs/ErrorHub.js"></script>
 }
 <h2>Index</h2>
@@ -37,9 +28,6 @@
                 @Html.DisplayNameFor(model => model.Plantas)
             </th>
             <!--B-TitulosColumnasModulosIndex-->
-            <th>
-                @Html.DisplayNameFor(model => model.Luminosidad)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -54,12 +42,6 @@
                 @Html.DisplayFor(modelItem => item.Plantas.Count)
             </td>
             <!--B-ColumnasModulosIndex-->
-            <td>
-                @{
-                    var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";
-                }
-                <div class="badge badge-@colorLuz" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
-            </td>
             <td>
                 <a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
             </td>
