@@ -19,7 +19,7 @@
     <None Remove="ControlAmbienteBase\Ambiente.cshtml" />
     <None Remove="ControlBase\BaseHub.js" />
     <None Remove="ControlBase\ErrorHub.js" />
-    <None Remove="Crecimiento\Crecimiento.js" />
+    <None Remove="Crecimiento\CrecimientoJS.js" />
     <None Remove="Google\Confirmation.cshtml" />
     <None Remove="Google\ExternalLogin.cshtml" />
     <None Remove="LecturaHum\ChartHumedadHome.js" />
@@ -71,7 +71,7 @@
     <Content Include="ControlBase\signalr.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="Crecimiento\Crecimiento.js">
+    <Content Include="Crecimiento\CrecimientoJS.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Google\Confirmation.cshtml">
@@ -122,12 +122,6 @@
     <Content Include="Produccion\Charts.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Modulos\" />
-    <Folder Include="Plantas\" />
-    <Folder Include="UsuarioContrasena\" />
   </ItemGroup>
 
   <ItemGroup>

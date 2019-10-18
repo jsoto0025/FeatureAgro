@@ -1,7 +1,11 @@
-﻿/*B-ControladorLogin*/
-Controllers/AccountController.cs
-
-        public IActionResult BeginExternalLogin(string provider, string returnUrl = null)
+﻿Fragment Google_ControladorLogin {
+	Action: add
+	Priority: low
+	PointBracketsLan: java
+	FragmentationPoints: ControladorLogin
+	Destinations: ArchivosBasicos_AccountController
+	SourceCode: [ALTERCODE-FRAG]				
+		public IActionResult BeginExternalLogin(string provider, string returnUrl = null)
         {
             var redirectUrl = Url.Action("ExternalLogin", "Account", new { returnUrl });
             var properties = signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
@@ -150,3 +154,5 @@ Controllers/AccountController.cs
             model.ReturnUrl = returnUrl;
             return View(model);
         }
+	[/ALTERCODE-FRAG]
+}

@@ -1,7 +1,13 @@
-﻿<!--B-ScriptsHome-->
-FutureAgro\Views\Home\Index.cshtml
-
-<script>        
-    var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
-</script>
-<script src="~/js/Home/ChartHumedadHome.js"></script>
+﻿Fragment LecturaHum_ScriptsHome {
+	Action: add
+	Priority: Medium
+	PointBracketsLan: html
+	FragmentationPoints: ScriptsHome
+	Destinations: ArchivosBasicos_Index
+	SourceCode: [ALTERCODE-FRAG]
+		<script>        
+			var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
+		</script>
+		<script src="~/js/Home/ChartHumedadHome.js"></script>
+	[/ALTERCODE-FRAG]
+}
