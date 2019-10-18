@@ -5,8 +5,8 @@
 
 
 
-
-
+LecturaLuz
+LecturaHum
 LecturaTemp
 ActuadorLum
 ActuadorHum

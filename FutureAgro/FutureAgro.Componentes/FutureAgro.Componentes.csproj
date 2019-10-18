@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ControlAmbienteBase\Ambiente.cshtml" />
     <None Remove="Google\Confirmation.cshtml" />
     <None Remove="Google\ExternalLogin.cshtml" />
     <None Remove="LecturaHum\ChartHumedadHome.js" />
@@ -33,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="ControlAmbienteBase\Ambiente.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="Google\Confirmation.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -85,6 +89,12 @@
     <Folder Include="Produccion\" />
     <Folder Include="UsuarioContrasena\" />
     <Folder Include="VistasBasicas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
