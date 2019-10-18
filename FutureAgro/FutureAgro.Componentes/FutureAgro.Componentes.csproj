@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ArchivosBasicos\Index.cshtml" />
+    <None Remove="ArchivosBasicos\Login.cshtml" />
+    <None Remove="ArchivosBasicos\ModulosDetails.cshtml" />
+    <None Remove="ArchivosBasicos\ModulosIndex.cshtml" />
+    <None Remove="ArchivosBasicos\_Layout.cshtml" />
     <None Remove="ControlAmbienteBase\Ambiente.cshtml" />
     <None Remove="ControlBase\BaseHub.js" />
     <None Remove="ControlBase\ErrorHub.js" />
@@ -39,6 +44,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="ArchivosBasicos\ModulosDetails.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ArchivosBasicos\Index.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ArchivosBasicos\Login.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ArchivosBasicos\ModulosIndex.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ArchivosBasicos\_Layout.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="ControlAmbienteBase\Ambiente.cshtml">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -108,7 +128,6 @@
     <Folder Include="Modulos\" />
     <Folder Include="Plantas\" />
     <Folder Include="UsuarioContrasena\" />
-    <Folder Include="VistasBasicas\" />
   </ItemGroup>
 
   <ItemGroup>

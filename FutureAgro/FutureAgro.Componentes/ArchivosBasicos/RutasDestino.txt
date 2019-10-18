@@ -1,0 +1,11 @@
+﻿FutureAgroIdentityDbContext.cs -> DataAccess/Data/FutureAgroIdentityDbContext.cs
+Modulo.cs -> DataAccess/Models/Modulo.cs
+AccountController.cs -> FutureAgro/Controllers/AccountController.cs
+HomeController.cs -> FutureAgro/Controllers/HomeController.cs
+ModulosController.cs -> FutureAgro/Controllers/ModulosController.cs
+Login.cshtml -> FutureAgro/Views/Account/Login.cshtml
+Index.cshtml -> FutureAgro/Views/Home/Index.cshtml
+ModulosDetails.cshtml -> FutureAgro/Views/Modulos/Details.cshtml
+ModulosIndex.cshtml -> FutureAgro/Views/Modulos/Index.cshtml
+_Layout.cshtml -> FutureAgro/Views/Shared/_Layout.cshtml
+Startup.cs -> FutureAgro/Startup.cs
