@@ -7,12 +7,7 @@
 }
 @section scripts{
 
-    <script src="~/lib/signalr/signalr.js"></script>
-    <script src="~/js/Hubs/BaseHub.js"></script>
-
-    <!--B-ScriptsModulosIndex-->
-    
-    <script src="~/js/Hubs/ErrorHub.js"></script>
+    <!--B-ScriptsModulosHubIndex-->
 }
 <h2>Index</h2>
 <p>
@@ -34,19 +29,19 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Plantas.Count)
-            </td>
-            <!--B-ColumnasModulosIndex-->
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plantas.Count)
+                </td>
+                <!--B-ColumnasModulosIndex-->
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

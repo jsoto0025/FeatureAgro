@@ -21,7 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Hubs\" />
+    <Folder Include="Services\" />
     <Folder Include="wwwroot\js\Ambiente\" />
+    <Folder Include="wwwroot\js\Home\" />
+    <Folder Include="wwwroot\js\Hubs\" />
+    <Folder Include="wwwroot\lib\signalr\" />
   </ItemGroup>
 
 </Project>

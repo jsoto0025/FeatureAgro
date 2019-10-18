@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using FutureAgro.DataAccess.Data;
 using FutureAgro.DataAccess.Services;
-using FutureAgro.Web.Hubs;
 using Lamar;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -19,9 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.SignalR;
 using FutureAgro.DataAccess.Models;
 using FutureAgro.IoT.Contratos;
-using FutureAgro.IoT.Emuladores;
-using FutureAgro.DataAccess.Repositories;
-using FutureAgro.Web.Services;
+/*B-UsingsStartup*/
 
 namespace FutureAgro.Web
 {
@@ -33,7 +30,8 @@ namespace FutureAgro.Web
         }
 
         public IConfiguration Configuration { get; }
-        public static IHubContext<FutureAgroHub> FutureAgroHub { get; set; }
+
+        /*B-PropiedadesStartup*/
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureContainer(ServiceRegistry services)
@@ -104,12 +102,6 @@ namespace FutureAgro.Web
             });
 
             /*B-InyeccionServicios*/
-            
-
-            services.AddSingleton<ILector, LectorCrecimiento>();
-            services.AddSingleton<ILector, LectorPlantasMuertas>();
-            services.AddTransient<PlantasRepository>();
-            services.AddSingleton<ServicioCrecimiento>();
         }
 
 
@@ -132,11 +124,6 @@ namespace FutureAgro.Web
 
             app.UseAuthentication();
             
-            app.UseSignalR(config =>
-            {
-                config.MapHub<FutureAgroHub>("/futureagrohub");
-            });
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -144,14 +131,8 @@ namespace FutureAgro.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
             
-
-            FutureAgroHub = app.ApplicationServices.GetService<IHubContext<FutureAgroHub>>();
-
-
             /*B-InicializarServicios*/
-
-            var serviceCrecimiento = app.ApplicationServices.GetService<ServicioCrecimiento>();
-            var servicePlantasMuertas = app.ApplicationServices.GetService<ServicioPlantasMuertas>();
+            
         }
     }
 }

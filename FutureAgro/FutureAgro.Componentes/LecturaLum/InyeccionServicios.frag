@@ -3,4 +3,4 @@ Startup.cs
 
 services.AddSingleton<ILector, LectorLuminosidad>();
 services.AddTransient<LuminosidadRepository>();
-services.AddSingleton<ServicioLuminosidad>();
+services.AddSingleton<Services.ServicioLuminosidad>();

@@ -1,10 +1,10 @@
 ﻿
 
 
-
-
-
-
+ControlBase
+Crecimiento
+PlantasMuertas
+Produccion
 ControlAmbienteBase
 LecturaLuz
 LecturaHum

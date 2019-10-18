@@ -14,15 +14,15 @@ namespace FutureAgro.DataAccess.Models
         public int IdPlanta { get; set; }
         [Column(name: "PlantTypeId")]
         public int IdTipoPlanta { get; set; }
-        [Column(name: "IsAlive")]
-        public bool Viva { get; set; }
-        [Column(name: "Growth")]
-        public int Crecimiento { get; set; }
         [Column(name: "TrayId")]
         public int IdModulo { get; set; }
         [ForeignKey("IdTipoPlanta")]
         public TipoPlanta Tipo { get; set; }
         [ForeignKey("IdModulo")]
         public Modulo Modulo { get; set; }
+        [Column(name: "IsAlive")]
+        public bool Viva { get; set; }
+        [Column(name: "Growth")]
+        public int Crecimiento { get; set; }
     }
 }

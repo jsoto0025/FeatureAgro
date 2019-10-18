@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <None Remove="ControlAmbienteBase\Ambiente.cshtml" />
+    <None Remove="ControlBase\BaseHub.js" />
+    <None Remove="ControlBase\ErrorHub.js" />
+    <None Remove="Crecimiento\Crecimiento.js" />
     <None Remove="Google\Confirmation.cshtml" />
     <None Remove="Google\ExternalLogin.cshtml" />
     <None Remove="LecturaHum\ChartHumedadHome.js" />
@@ -27,6 +30,8 @@
     <None Remove="LecturaTemp\Temperatura.js" />
     <None Remove="LecturaTemp\TemperaturaChart.js" />
     <None Remove="OrdenEnsamblaje.txt" />
+    <None Remove="PlantasMuertas\PlantasMuertas.js" />
+    <None Remove="Produccion\Charts.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +40,18 @@
 
   <ItemGroup>
     <Content Include="ControlAmbienteBase\Ambiente.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ControlBase\BaseHub.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ControlBase\ErrorHub.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ControlBase\signalr.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Crecimiento\Crecimiento.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="Google\Confirmation.cshtml">
@@ -79,14 +96,17 @@
     <Content Include="LecturaTemp\TemperaturaChart.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="PlantasMuertas\PlantasMuertas.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Produccion\Charts.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ControlBase\" />
-    <Folder Include="Crecimiento\" />
     <Folder Include="Modulos\" />
     <Folder Include="Plantas\" />
-    <Folder Include="Produccion\" />
     <Folder Include="UsuarioContrasena\" />
     <Folder Include="VistasBasicas\" />
   </ItemGroup>
