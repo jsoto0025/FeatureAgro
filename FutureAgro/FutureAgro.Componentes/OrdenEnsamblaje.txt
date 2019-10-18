@@ -1,15 +1,13 @@
-﻿
-
-
+﻿ArchivosBasicos		- Mandatory
 ControlBase
 Crecimiento
 PlantasMuertas
-Produccion
+Produccion			- Requiere Crecimiento
 ControlAmbienteBase
 LecturaLuz
 LecturaHum
 LecturaTemp
-ActuadorLum
-ActuadorHum
--ActuadorTemp - Requiere LecturaTemp
+ActuadorLum			 - Requiere LecturaLum
+ActuadorHum			 - Requiere LecturaHum
+ActuadorTemp		 - Requiere LecturaTemp
 Google
