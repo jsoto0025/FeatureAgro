@@ -1,0 +1,1 @@
+BaseFramework: en caso de que utilizará un framework, o estructura de proyecto base para la elaboración de los componentes reutilizables, entonces inclúyala aquí.
