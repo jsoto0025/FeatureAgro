@@ -1,7 +1,7 @@
 <mxGraphModel>
   <root>
     <mxCell id="0"/>
-    <mxCell id="feature" parent="0"/>
+    <mxCell id="feature" parent="0" visible="0"/>
     <root label="FutureAgro" type="root" id="1">
       <mxCell style="strokeWidth=3" parent="feature" vertex="1">
         <mxGeometry x="830" width="100" height="35" as="geometry"/>
@@ -77,7 +77,7 @@
         <mxGeometry x="30" y="260" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="modulos" type="concrete" selected="false" id="44">
+    <concrete label="Modulos" type="concrete" selected="false" id="44">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="160" y="260" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -122,28 +122,8 @@
         <mxGeometry x="1890" y="430" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="C. Nutrientes" type="concrete" selected="false" id="53">
-      <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1780" y="430" width="100" height="35" as="geometry"/>
-      </mxCell>
-    </concrete>
-    <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="54">
-      <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1630" y="430" width="140" height="35" as="geometry"/>
-      </mxCell>
-    </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="55">
       <mxCell parent="feature" source="52" target="51" edge="1">
-        <mxGeometry relative="1" as="geometry"/>
-      </mxCell>
-    </rel_concrete_abstract>
-    <rel_concrete_abstract type="relation" relType="optional" id="56">
-      <mxCell parent="feature" source="53" target="51" edge="1">
-        <mxGeometry relative="1" as="geometry"/>
-      </mxCell>
-    </rel_concrete_abstract>
-    <rel_concrete_abstract type="relation" relType="mandatory" id="57">
-      <mxCell parent="feature" source="54" target="51" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
@@ -237,78 +217,348 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
+    <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="133">
+      <mxCell style="" vertex="1" parent="feature">
+        <mxGeometry x="1630" y="430" width="130" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="134">
+      <mxCell edge="1" parent="feature" source="133" target="51">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_abstract>
+    <concrete label="C. Nutrientes" type="concrete" selected="false" id="136">
+      <mxCell style="" vertex="1" parent="feature">
+        <mxGeometry x="1780" y="430" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_abstract type="relation" relType="optional" id="137">
+      <mxCell edge="1" parent="feature" source="136" target="51">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_abstract>
     <mxCell id="component" parent="0" visible="0"/>
-    <mxCell id="binding_feature_component" parent="0" visible="0"/>
+    <component label="Usuario/Contraseña" type="component" id="103">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="233.5" y="153.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Redes Sociales" type="component" id="104">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="230" y="86.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Plantas" type="component" id="105">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="50" y="70" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Modulos" type="component" id="106">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="53.5" y="136.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Herramientas" type="component" id="107">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="50" y="230" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Vistas Basicas" type="component" id="108">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="390" y="116.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Desarrollo" type="component" id="109">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="583.5" y="60" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Temperatura" type="component" id="110">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="583.5" y="123.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Humedad" type="component" id="111">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="580" y="190" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Luminosidad" type="component" id="112">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="583.5" y="256.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="G. Productividad" type="component" id="113">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="770" y="63.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Tasas DyC" type="component" id="114">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="776.5" y="120" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="G. Desperdicios" type="component" id="115">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="773.5" y="186.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Tiempo de produccion" type="component" id="116">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="940" y="63.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Nutrientes" type="component" id="117">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="943.5" y="126.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label=" C. Ph" type="component" id="118">
+      <mxCell style="shape=component" parent="component" vertex="1">
+        <mxGeometry x="960" y="190" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <mxCell id="binding_feature_component" parent="0"/>
     <concrete label="Redes Sociales" type="concrete" selected="false" id="clon8">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="390" y="250" width="100" height="35" as="geometry"/>
+        <mxGeometry x="213.5" y="294" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Usuario/Contraseña" type="concrete" selected="false" id="clon27">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="680" y="230" width="100" height="35" as="geometry"/>
+        <mxGeometry x="212.5" y="230" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="C. Temperatura" type="concrete" selected="false" id="clon35">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="680" y="200" width="100" height="35" as="geometry"/>
+        <mxGeometry x="540" y="160" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="C. Humedad" type="concrete" selected="false" id="clon37">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="800" y="190" width="100" height="35" as="geometry"/>
+        <mxGeometry x="540" y="220" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Plantas" type="concrete" selected="false" id="clon43">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="80" y="180" width="100" height="35" as="geometry"/>
+        <mxGeometry x="210" y="40" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="modulos" type="concrete" selected="false" id="clon44">
+    <concrete label="Modulos" type="concrete" selected="false" id="clon44">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="210" y="190" width="100" height="35" as="geometry"/>
+        <mxGeometry x="210" y="104.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Herramientas" type="concrete" selected="false" id="clon45">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="250" y="250" width="100" height="35" as="geometry"/>
+        <mxGeometry x="212.5" y="170" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="C. Luminosidad" type="concrete" selected="false" id="clon46">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="740" y="240" width="100" height="35" as="geometry"/>
+        <mxGeometry x="540" y="280" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label=" C. Ph" type="concrete" selected="false" id="clon52">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="710" y="430" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1180" y="170" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Vistas Basicas" type="concrete" selected="false" id="clon61">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="890" y="380" width="100" height="35" as="geometry"/>
+        <mxGeometry x="540" y="40" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="C. Desarrollo" type="concrete" selected="false" id="clon93">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="830" y="470" width="100" height="35" as="geometry"/>
+        <mxGeometry x="540" y="100" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Tasas DyC" type="concrete" selected="false" id="clon94">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="870" y="510" width="100" height="35" as="geometry"/>
+        <mxGeometry x="860" y="100" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="G. Productividad" type="concrete" selected="false" id="clon99">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="1440" y="500" width="100" height="35" as="geometry"/>
+        <mxGeometry x="860" y="40" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="G. Desperdicios" type="concrete" selected="false" id="clon101">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="1570" y="500" width="100" height="35" as="geometry"/>
+        <mxGeometry x="860" y="170" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
+    <component label="Usuario/Contraseña" type="component" id="clon103">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="60" y="230" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Redes Sociales" type="component" id="clon104">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="60" y="290" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Plantas" type="component" id="clon105">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="60" y="40" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Modulos" type="component" id="clon106">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="60" y="100" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Herramientas" type="component" id="clon107">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="60" y="163.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Vistas Basicas" type="component" id="clon108">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="370" y="40" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Desarrollo" type="component" id="clon109">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="370" y="100" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Temperatura" type="component" id="clon110">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="370" y="160" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Humedad" type="component" id="clon111">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="370" y="220" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Luminosidad" type="component" id="clon112">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="370" y="280" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="G. Productividad" type="component" id="clon113">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="700" y="40" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="Tasas DyC" type="component" id="clon114">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="700" y="100" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="G. Desperdicios" type="component" id="clon115">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="700" y="170" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Tiempo de produccion" type="component" id="clon116">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="1030" y="30" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label="C. Nutrientes" type="component" id="clon117">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="1030" y="90" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <component label=" C. Ph" type="component" id="clon118">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="1030" y="170" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <rel_concrete_component type="relation" id="119">
+      <mxCell parent="binding_feature_component" source="clon8" target="clon104" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="120">
+      <mxCell parent="binding_feature_component" source="clon27" target="clon103" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="121">
+      <mxCell parent="binding_feature_component" source="clon45" target="clon107" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="122">
+      <mxCell parent="binding_feature_component" source="clon44" target="clon106" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="123">
+      <mxCell edge="1" parent="binding_feature_component" source="clon43" target="clon105">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="124">
+      <mxCell edge="1" parent="binding_feature_component" source="clon46" target="clon112">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="125">
+      <mxCell edge="1" parent="binding_feature_component" source="clon35" target="clon110">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="126">
+      <mxCell edge="1" parent="binding_feature_component" source="clon37" target="clon111">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="127">
+      <mxCell edge="1" parent="binding_feature_component" source="clon93" target="clon109">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="128">
+      <mxCell edge="1" parent="binding_feature_component" source="clon61" target="clon108">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="129">
+      <mxCell edge="1" parent="binding_feature_component" source="clon94" target="clon114">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="130">
+      <mxCell edge="1" parent="binding_feature_component" source="clon99" target="clon113">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="131">
+      <mxCell edge="1" parent="binding_feature_component" source="clon101" target="clon115">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="132">
+      <mxCell edge="1" parent="binding_feature_component" source="clon52" target="clon118">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="clon133">
+      <mxCell style="fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+        <mxGeometry x="1180" y="30" width="130" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_component type="relation" id="135">
+      <mxCell edge="1" parent="binding_feature_component" source="clon133" target="clon116">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <concrete label="C. Nutrientes" type="concrete" selected="false" id="clon136">
+      <mxCell style="fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+        <mxGeometry x="1180" y="90" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_component type="relation" id="138">
+      <mxCell edge="1" parent="binding_feature_component" source="clon136" target="clon117">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
     <mxCell id="istar" parent="0" visible="0"/>
     <mxCell id="adaptation_state" parent="0" visible="0"/>
     <mxCell id="adaptation_hardware" parent="0" visible="0"/>
