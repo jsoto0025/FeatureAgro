@@ -16,11 +16,11 @@ namespace FutureAgro.Web.Services
         
         private void LectorPlantasMuertas_Lectura(string method, object dato)
         {
-            Planta objPlanta = (Planta)dato;
-            Planta plantaDb = _context.Plantas.Find(objPlanta.IdPlanta);
+            Plant objPlanta = (Plant)dato;
+            Plant plantaDb = _context.Plant.Find(objPlanta.PlantId);
             _context.Entry(plantaDb).Reload();
 
-            plantaDb.Viva = objPlanta.Viva;
+            plantaDb.IsAlive = objPlanta.IsAlive;
             _context.SaveChanges();
         }
     }

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FutureAgro.IoT.Emuladores
 {
-    public class LectorPlantasMuertas : LectorDiario<Planta>, ILector
+    public class LectorPlantasMuertas : LectorDiario<Plant>, ILector
     {
         public event LecturaEventHandler Lectura;
 
@@ -14,9 +14,9 @@ namespace FutureAgro.IoT.Emuladores
         {
         }
 
-        protected override (bool exitoso, double NuevaMedicion) TryUpdateTemperatura(Planta planta)
+        protected override (bool exitoso, double NuevaMedicion) TryUpdateTemperatura(Plant planta)
         {
-            if (planta.Viva)
+            if (planta.IsAlive==true)
             {
                 var random = new Random();
                 var change = random.NextDouble();
@@ -28,13 +28,13 @@ namespace FutureAgro.IoT.Emuladores
             return (false, 0);
         }
 
-        protected override void BroadcastLectura(Planta planta, double nuevaMedicion)
+        protected override void BroadcastLectura(Plant planta, double nuevaMedicion)
         {
-            planta.Viva = false;
+            planta.IsAlive = false;
             Lectura?.Invoke("updatePlantaMuerta", planta);
         }
         
-        protected override double ObtenerMedidaActual(Planta planta)
+        protected override double ObtenerMedidaActual(Plant planta)
         {
             return 0;
         }

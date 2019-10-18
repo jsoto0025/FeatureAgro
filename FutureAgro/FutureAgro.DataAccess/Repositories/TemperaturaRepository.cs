@@ -18,12 +18,12 @@ namespace FutureAgro.DataAccess.Repositories
 
         public IEnumerable<Temperatura> Get()
         {
-            return _context.Modulos
-                        .Include(r => r.Medidas)
+            return _context.Tray
+                        .Include(r => r.Measure)
                         .Select(r => new Temperatura
                         {
-                            Modulo = r.IdModulo,
-                            Medida = r.Temperatura??0
+                            Modulo = r.TrayId,
+                            Medida = r.Brightness??0
                         });
         }
     }

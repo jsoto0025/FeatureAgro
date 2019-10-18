@@ -8,7 +8,7 @@ using System.Text;
 
 namespace FutureAgro.IoT.Emuladores
 {
-    public class LectorCrecimiento : LectorDiario<Planta>, ILector
+    public class LectorCrecimiento : LectorDiario<Plant>, ILector
     {
         public event LecturaEventHandler Lectura;
 
@@ -18,29 +18,29 @@ namespace FutureAgro.IoT.Emuladores
             _repository = repository;
         }
 
-        protected override void BroadcastLectura(Planta planta, double nuevaMedicion)
+        protected override void BroadcastLectura(Plant planta, double nuevaMedicion)
         {
-            Planta p = _repository.Find(planta.IdPlanta);
+            Plant p = _repository.Find(planta.PlantId);
 
-            if (p.Viva)
+            if (p.IsAlive==true)
             {
                 if (nuevaMedicion > 100)
                     nuevaMedicion = 100;
 
-                p.Crecimiento = (int)nuevaMedicion;
+                p.Growth = (int)nuevaMedicion;
                 var crecimiento = new Crecimiento
                 {
-                    IdPlanta = p.IdPlanta,
-                    PorcentajeCrecimiento = p.Crecimiento,
+                    IdPlanta = p.PlantId,
+                    PorcentajeCrecimiento = p.Growth,
                     Fecha = DateTime.Now
                 };
                 Lectura?.Invoke("updateCrecimiento", crecimiento);
             }
         }
         
-        protected override double ObtenerMedidaActual(Planta planta)
+        protected override double ObtenerMedidaActual(Plant planta)
         {
-            return planta.Crecimiento;
+            return planta.Growth;
         }
     }
 }

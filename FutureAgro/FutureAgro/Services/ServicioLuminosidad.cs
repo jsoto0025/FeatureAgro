@@ -20,17 +20,17 @@ namespace FutureAgro.Web.Services
         private void LectorLuminosidad_Lectura(string method, object dato)
         {
             Luminosidad luminosidad = (Luminosidad)dato;
-            var medida = new Medida
+            var medida = new Measure
             {
-                IdModulo = luminosidad.Modulo,
-                TipoMedida = TipoMedida.Luminosidad,
-                Valor = luminosidad.Medida,
-                Fecha = DateTime.Now
+                TrayId = luminosidad.Modulo,
+                MeasureTypeId = (int)TipoMedida.Luminosidad,
+                Value = luminosidad.Medida,
+                Date = DateTime.Now
             };
-            Modulo modulo = _context.Modulos.Find(luminosidad.Modulo);
-            modulo.Luminosidad = (int)luminosidad.Medida;
+            Tray modulo = _context.Tray.Find(luminosidad.Modulo);
+            modulo.Brightness = (int)luminosidad.Medida;
 
-            var entity = _context.Medidas.Add(medida);
+            var entity = _context.Measure.Add(medida);
             _context.SaveChanges();
             entity.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
         }

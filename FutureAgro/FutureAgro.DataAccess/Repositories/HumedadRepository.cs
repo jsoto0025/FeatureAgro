@@ -16,12 +16,12 @@ namespace FutureAgro.DataAccess.Repositories
 
         public IEnumerable<Humedad> Get()
         {
-            return _context.Modulos
-                        .Include(r => r.Medidas)
+            return _context.Tray
+                        .Include(r => r.Measure)
                         .Select(r => new Humedad
                         {
-                            Modulo = r.IdModulo,
-                            Medida = r.Humedad??0
+                            Modulo = r.TrayId,
+                            Medida = r.Brightness??0
                         });
         }
     }

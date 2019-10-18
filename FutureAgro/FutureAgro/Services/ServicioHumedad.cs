@@ -20,17 +20,17 @@ namespace FutureAgro.Web.Services
         private void LectorHumedad_Lectura(string method, object dato)
         {
             Humedad humedad = (Humedad)dato;
-            var medida = new Medida
+            var medida = new Measure
             {
-                IdModulo = humedad.Modulo,
-                TipoMedida = TipoMedida.Humedad,
-                Valor = humedad.Medida,
-                Fecha = DateTime.Now
+                TrayId = humedad.Modulo,
+                MeasureTypeId = (int)TipoMedida.Humedad,
+                Value = humedad.Medida,
+                Date = DateTime.Now
             };
-            Modulo modulo = _context.Modulos.Find(humedad.Modulo);
-            modulo.Humedad = (int)humedad.Medida;
+            Tray modulo = _context.Tray.Find(humedad.Modulo);
+            modulo.Humidity = (int)humedad.Medida;
 
-            var entity = _context.Medidas.Add(medida);
+            var entity = _context.Measure.Add(medida);
             _context.SaveChanges();
             entity.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
         }

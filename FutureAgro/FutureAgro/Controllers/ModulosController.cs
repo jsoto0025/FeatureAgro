@@ -24,7 +24,7 @@ namespace FutureAgro.Web.Controllers
         public async Task<IActionResult> Index()
         {
             CargarLimites();
-            return View(await _context.Modulos.Include(modulo => modulo.Plantas).ToListAsync());
+            return View(await _context.Tray.Include(modulo => modulo.Plant).ToListAsync());
         }
 
         // GET: Modulos/Details/5
@@ -37,10 +37,10 @@ namespace FutureAgro.Web.Controllers
 
             CargarLimites();
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
-                .ThenInclude(planta => planta.Tipo)
-                .FirstOrDefaultAsync(m => m.IdModulo == id);
+            var modulo = await _context.Tray
+                .Include(mod => mod.Plant)
+                .ThenInclude(planta => planta)
+                .FirstOrDefaultAsync(m => m.TrayId == id);
 
             if (modulo == null)
             {
@@ -58,11 +58,11 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .FirstOrDefaultAsync(m => m.IdModulo == id);
+            var modulo = await _context.Tray
+                .FirstOrDefaultAsync(m => m.TrayId == id);
 
-            var medidasModulo = _context.Medidas
-                                        .Where(r => r.IdModulo == id);
+            var medidasModulo = _context.Measure
+                                        .Where(r => r.TrayId == id);
 
             ChartData datosTemperatura = ObtenerDatosMedida(medidasModulo, TipoMedida.Temperatura, "IndianRed", "AntiqueWhite");
             ViewData["DatosTemperatura"] = datosTemperatura;
@@ -81,16 +81,16 @@ namespace FutureAgro.Web.Controllers
             return View(modulo);
         }
 
-        private static ChartData ObtenerDatosMedida(IQueryable<Medida> medidasModulo, TipoMedida tipoMedida, string color, string backgroundColor)
+        private static ChartData ObtenerDatosMedida(IQueryable<Measure> medidasModulo, TipoMedida tipoMedida, string color, string backgroundColor)
         {
             var temperaturas = medidasModulo
-                                            .Where(r => r.TipoMedida == tipoMedida)
-                                            .OrderByDescending(r => r.Fecha)
+                                            .Where(r => r.MeasureTypeId == (int)tipoMedida)
+                                            .OrderByDescending(r => r.Date)
                                             .Take(10);
 
             var datosTemperatura = new ChartData()
             {
-                Labels = temperaturas.Select(r => r.Fecha.ToLongTimeString()).ToArray(),
+                Labels = temperaturas.Select(r => r.Date.ToLongTimeString()).ToArray(),
                 Datasets = new ChartDataSet[] {
                     new ChartDataSet()
                     {
@@ -99,7 +99,7 @@ namespace FutureAgro.Web.Controllers
                         BorderColor = color,
                         BorderWidth = 1,
                         PointBackgroundColor = color,
-                        Data = temperaturas.Select(r => r.Valor).ToArray()
+                        Data = temperaturas.Select(r => r.Value).ToArray()
                     }
                 }
             };
@@ -136,7 +136,7 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos.FindAsync(id);
+            var modulo = await _context.Tray.FindAsync(id);
             if (modulo == null)
             {
                 return NotFound();
@@ -187,9 +187,9 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var modulo = await _context.Modulos
-                .Include(mod => mod.Plantas)
-                .FirstOrDefaultAsync(m => m.IdModulo == id);
+            var modulo = await _context.Tray
+                .Include(mod => mod.Plant)
+                .FirstOrDefaultAsync(m => m.TrayId == id);
             if (modulo == null)
             {
                 return NotFound();
@@ -203,15 +203,15 @@ namespace FutureAgro.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var modulo = await _context.Modulos.FindAsync(id);
-            _context.Modulos.Remove(modulo);
+            var modulo = await _context.Tray.FindAsync(id);
+            _context.Tray.Remove(modulo);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ModuloExists(int id)
         {
-            return _context.Modulos.Any(e => e.IdModulo == id);
+            return _context.Tray.Any(e => e.TrayId == id);
         }
 
         private void CargarLimites()

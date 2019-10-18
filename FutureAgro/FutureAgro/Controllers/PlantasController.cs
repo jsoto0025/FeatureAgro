@@ -22,7 +22,7 @@ namespace FutureAgro.Web.Controllers
         // GET: Plantas
         public async Task<IActionResult> Index()
         {
-            var futureAgroIdentityDbContext = _context.Plantas.Include(p => p.Modulo).Include(p => p.Tipo);
+            var futureAgroIdentityDbContext = _context.Plant.Include(p => p.Tray).Include(p => p.PlantType);
             return View(await futureAgroIdentityDbContext.ToListAsync());
         }
 
@@ -34,10 +34,10 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var planta = await _context.Plantas
-                .Include(p => p.Modulo)
-                .Include(p => p.Tipo)
-                .FirstOrDefaultAsync(m => m.IdPlanta == id);
+            var planta = await _context.Plant
+                .Include(p => p.TrayId)
+                .Include(p => p.PlantType)
+                .FirstOrDefaultAsync(m => m.PlantTypeId == id);
             if (planta == null)
             {
                 return NotFound();
@@ -49,7 +49,7 @@ namespace FutureAgro.Web.Controllers
         // GET: Plantas/Create
         public IActionResult Create()
         {
-            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo");
+            ViewData["IdModulo"] = new SelectList(_context.Tray, "IdModulo", "IdModulo");
             ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre");
             return View();
         }
@@ -67,7 +67,7 @@ namespace FutureAgro.Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
+            ViewData["IdModulo"] = new SelectList(_context.Tray, "IdModulo", "IdModulo", planta.IdModulo);
             ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
             return View(planta);
         }
@@ -80,13 +80,13 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var planta = await _context.Plantas.FindAsync(id);
+            var planta = await _context.Plant.FindAsync(id);
             if (planta == null)
             {
                 return NotFound();
             }
-            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
-            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
+            ViewData["IdModulo"] = new SelectList(_context.Tray, "IdModulo", "IdModulo", planta.TrayId);
+            ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.PlantTypeId);
             return View(planta);
         }
 
@@ -122,7 +122,7 @@ namespace FutureAgro.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdModulo"] = new SelectList(_context.Modulos, "IdModulo", "IdModulo", planta.IdModulo);
+            ViewData["IdModulo"] = new SelectList(_context.Tray, "IdModulo", "IdModulo", planta.IdModulo);
             ViewData["IdTipoPlanta"] = new SelectList(_context.Set<TipoPlanta>(), "IdTipoPlanta", "Nombre", planta.IdTipoPlanta);
             return View(planta);
         }
@@ -135,10 +135,10 @@ namespace FutureAgro.Web.Controllers
                 return NotFound();
             }
 
-            var planta = await _context.Plantas
-                .Include(p => p.Modulo)
-                .Include(p => p.Tipo)
-                .FirstOrDefaultAsync(m => m.IdPlanta == id);
+            var planta = await _context.Plant
+                .Include(p => p.Tray)
+                .Include(p => p.PlantType)
+                .FirstOrDefaultAsync(m => m.PlantTypeId == id);
             if (planta == null)
             {
                 return NotFound();
@@ -152,15 +152,15 @@ namespace FutureAgro.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var planta = await _context.Plantas.FindAsync(id);
-            _context.Plantas.Remove(planta);
+            var planta = await _context.Plant.FindAsync(id);
+            _context.Plant.Remove(planta);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PlantaExists(int id)
         {
-            return _context.Plantas.Any(e => e.IdPlanta == id);
+            return _context.Plant.Any(e => e.PlantTypeId == id);
         }
     }
 }

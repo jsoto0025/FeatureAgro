@@ -16,11 +16,11 @@ namespace FutureAgro.DataAccess.Repositories
 
         public IEnumerable<Luminosidad> Get()
         {
-            return _context.Modulos
-                        .Include(r => r.Medidas)
+            return _context.Tray
+                        .Include(r => r.Measure)
                         .Select(r => new Luminosidad {
-                            Modulo = r.IdModulo,
-                            Medida = r.Luminosidad??0
+                            Modulo = r.TrayId,
+                            Medida = r.Brightness??0
                         });
         }
     }

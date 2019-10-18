@@ -17,10 +17,10 @@ namespace FutureAgro.Web.Services
         private void LectorCrecimiento_Lectura(string method, object dato)
         {
             Crecimiento crecimiento = (Crecimiento)dato;
-            Planta planta = _context.Plantas.Find(crecimiento.IdPlanta);
+            Plant planta = _context.Plant.Find(crecimiento.IdPlanta);
             _context.Entry(planta).Reload();
             
-            planta.Crecimiento = crecimiento.PorcentajeCrecimiento;
+            planta.Growth = crecimiento.PorcentajeCrecimiento;
             var entity = _context.Add(crecimiento);
             _context.SaveChanges();
             entity.State = Microsoft.EntityFrameworkCore.EntityState.Detached;

@@ -20,17 +20,17 @@ namespace FutureAgro.Web.Services
         private void LectorTemperatura_Lectura(string method, object dato)
         {
             Temperatura temp = (Temperatura)dato;
-            var medida = new Medida
+            var medida = new Measure
             {
-                IdModulo = temp.Modulo,
-                TipoMedida = TipoMedida.Temperatura,
-                Valor = temp.Medida,
-                Fecha = DateTime.Now
+                TrayId = temp.Modulo,
+                MeasureId = (int)TipoMedida.Humedad,
+                Value = temp.Medida,
+                Date = DateTime.Now
             };
-            Modulo modulo = _context.Modulos.Find(temp.Modulo);
-            modulo.Temperatura = temp.Medida;
+            Tray modulo = _context.Tray.Find(temp.Modulo);
+            modulo.Temperature = temp.Medida;
 
-            var entity = _context.Medidas.Add(medida);
+            var entity = _context.Measure.Add(medida);
             _context.SaveChanges();
             entity.State = Microsoft.EntityFrameworkCore.EntityState.Detached;
         }
