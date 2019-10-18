@@ -3,7 +3,12 @@
 }
 
 @section Scripts
-{
+    {
+    <script>
+        var chartDataTemperatura = @Html.Raw(Json.Serialize(ViewData["DatosTemperatura"]));
+        var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
+        var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
+    </script>
     <script src="@Url.Content("~/js/Home/Charts.js")"></script>
 }
 
