@@ -1,0 +1,9 @@
+﻿Luminosidad.cs -> DataAccess/Models/Luminosidad.cs
+LuminosidadRepository.cs -> DataAccess/Repositories/LuminosidadRepository.cs
+LectorLuminosidad.cs -> IoT.Emuladores/LectorLuminosidad.cs
+ChartsLuminosidad.js -> FutureAgro/wwwroot/js/Ambiente/ChartsLuminosidad.js
+ChartLuminosidadHome.js -> FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.jss
+
+Luminosidad.js -> FutureAgro/wwwroot/js/Hubs/Luminosidad.js
+LuminosidadChart.js -> FutureAgro/wwwroot/js/Hubs/LuminosidadChart.js
+ServicioLuminosidad.cs -> FutureAgro/Services/ServicioLuminosidad.cs

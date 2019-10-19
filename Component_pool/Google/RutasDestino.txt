@@ -1,0 +1,3 @@
+﻿ExternalLogin.cshtml -> FutureAgro/Views/Account/ExternalLogin.cshtml
+Confirmation.cshtml -> FutureAgro/Views/Account/Confirmation.cshtml
+ExternalLoginModel.cs -> FutureAgro/Models/ExternalLoginModel.cs

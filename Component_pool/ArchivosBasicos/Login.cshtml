@@ -1,0 +1,44 @@
+﻿@model LoginModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="container-fluid justify-content-center">
+    <div class="row">
+        <div class="offset-lg-4 col-lg-4 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+            <div class="card text-center align-items-center">
+                <img class="rounded-circle mt-2" src="~/Images/FutureAgro.jpg" height="200" width="200" />
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            @Html.TextBoxFor(r => r.UserName, new { @class = "mdl-textfield__input" })
+                            @Html.LabelFor(r => r.UserName, new { @class = "mdl-textfield__label" })
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            @Html.PasswordFor(r => r.Password, new { @class = "mdl-textfield__input" })
+                            @Html.LabelFor(r => r.Password, new { @class = "mdl-textfield__label" })
+                            @Html.HiddenFor(r => r.ReturnUrl)
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(Model.Message))
+                        {
+                            <div class="text-danger small text-right mb-1">
+                                <span>@Model.Message</span>
+                            </div>
+                        }
+                        <input type="submit" class="mt-2 btn btn-primary" value="Iniciar sesión" />
+                        <ul class="nav justify-content-sm-end small mt-2">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="Register?returnUrl=@Model.ReturnUrl">Registrarme</a>
+                            </li>
+                        </ul>
+                    </form>
+
+                    <!--B-BotonesRedesSociales-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

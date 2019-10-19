@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FutureAgro.DataAccess.Models.Modulo>
+
+@{
+    ViewData["Title"] = "Index";
+
+    /*B-LimitesIndex*/
+}
+@section scripts{
+
+    <!--B-ScriptsModulosHubIndex-->
+}
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdModulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plantas)
+            </th>
+            <!--B-TitulosColumnasModulosIndex-->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plantas.Count)
+                </td>
+                <!--B-ColumnasModulosIndex-->
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

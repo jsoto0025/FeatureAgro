@@ -1,0 +1,44 @@
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
+    ViewData["Title"] = "Detail";
+}
+@section Scripts
+    {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/Hubs/BaseHub.js"></script>
+
+    <!--B-ScriptsAmbiente-->
+    <script>
+        var chartObjModulo = @Model.IdModulo;
+    </script>
+
+    <script src="~/js/Hubs/ErrorHub.js"></script>
+}
+
+<div class="container-fluid">
+    <h3>Control de ambiente</h3>
+    <div>
+        <a asp-action="Index">Lista</a> |
+        <a asp-action="Details" asp-route-id="@Model.IdModulo">Detalle</a>
+    </div>
+    <hr />
+    <div class="media">
+        <div class="media-body">
+            <h5 class="media-title">
+                Módulo @Html.DisplayFor(model => model.IdModulo)
+            </h5>
+            <div class="row mt-4 mb-1">
+
+                <!--B-ActuadoresAmbiente-->
+
+            </div>
+            <hr />
+            <div class="row">
+                <!--B-ChartsAmbiente-->
+            </div>
+
+        </div>
+    </div>
+</div>
+

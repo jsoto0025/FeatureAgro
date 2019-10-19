@@ -1,0 +1,3 @@
+﻿Medidas.cs -> DataAccess/Models/Medida.cs
+TipoMedida.cs -> DataAccess/Models/TipoMedida.cs
+Ambiente.cshtml -> FutureAgro/Views/Modulos/Ambiente.cshtml

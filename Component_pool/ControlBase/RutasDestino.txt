@@ -1,0 +1,10 @@
+﻿PlantasRepository.cs -> DataAccess/Repositories/PlantasRepository.cs
+LectorBase.cs -> Emuladores/LectorBase.cs
+LectorDiario.cs -> Emuladores/LectorDiario.cs
+TipoAccion.cs -> Emuladores/TipoAccion.cs
+BaseHub.js -> FutureAgro/wwwroot/js/Hubs/BaseHub.js
+ErrorHub.js -> FutureAgro/wwwroot/js/Hubs/ErrorHub.js
+signalr.js -> FutureAgro/wwwroot/lib/signalr/signalr.js
+FutureAgroHub.cs -> FutureAgro/Hubs/FutureAgroHub.cs
+ChartData.cs -> FutureAgro/Models/ChartData.cs
+ChartDataSet.cs -> FutureAgro/Models/ChartDataSet.cs

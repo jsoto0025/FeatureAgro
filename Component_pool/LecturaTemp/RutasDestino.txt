@@ -1,0 +1,9 @@
+﻿Temperatura.cs -> DataAccess/Models/Temperatura.cs
+TemperaturaRepository.cs -> DataAccess/Repositories/TemperaturaRepository.cs
+LectorTemperatura.cs -> IoT.Emuladores/LectorTemperatura.cs
+ChartsTemperatura.js -> FutureAgro/wwwroot/js/Ambiente/ChartsTemperatura.js
+ChartTemperaturaHome.js -> FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss
+
+Temperatura.js -> FutureAgro/wwwroot/js/Hubs/Temperatura.js
+TemperaturaChart.js -> FutureAgro/wwwroot/js/Hubs/TemperaturaChart.js
+ServicioTemperatura.cs -> FutureAgro/Services/ServicioTemperatura.cs

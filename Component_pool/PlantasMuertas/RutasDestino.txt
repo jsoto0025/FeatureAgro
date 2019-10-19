@@ -1,0 +1,3 @@
+﻿LectorPlantasMuertas.cs -> IoT.Emuladores/LectorPlantasMuertas.cs
+PlantasMuertas.js -> FutureAgro/wwwroot/js/Hubs/PlantasMuertas.js
+ServicioPlantasMuertas.cs -> FutureAgro/Services/ServicioPlantasMuertas.cs

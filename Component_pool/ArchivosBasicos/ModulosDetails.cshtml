@@ -1,0 +1,43 @@
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
+    ViewData["Title"] = "Details";
+
+    /*B-LimitesDetalle*/
+}
+@section scripts{
+
+    <!--B-ScriptsModulosHubDetalle-->
+}
+<div class="container-fluid">
+    <h4>Modulo @Html.DisplayFor(model => model.IdModulo)</h4>
+
+    <div>
+        <a asp-action="Index">Lista</a>
+        <!--B-BotonesModulosDetalle-->
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-7">
+            <div class="card border-0">
+                <h5>@Html.DisplayFor(model => model.Plantas.Count) Plantas</h5>
+                <div class="card-body">
+
+                    @foreach (var item in Model.Plantas)
+                    {
+                        <div class="media m-1 mt-2">
+                            <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3 @(item.Viva?"":"disabled")" alt="Lechugas">
+                            <div class="media-body">
+                                <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger @(item.Viva?"invisible":"")">Planta muerta</span></h5>
+                                <!--B-DetallePlanta-->
+                            </div>
+                        </div>
+                        <hr />
+                    }
+                </div>
+            </div>
+        </div>
+        <!--B-PanelModulosDetalle-->
+    </div>
+
+</div>
