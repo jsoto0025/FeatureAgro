@@ -1,3 +1,3 @@
 # Modelos Gráficos
 
-[Binding Model](/Binding.png)
+![Binding Model](./Binding.png)
