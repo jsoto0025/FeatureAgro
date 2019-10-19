@@ -1,16 +1,14 @@
-# 1. Modelos Gráficos
+# Modelos Gráficos
 
-<!-- TOC -->autoauto- [Modelos Gráficos](#modelos-gráficos)auto    - [Modelo de características](#modelo-de-características)auto    - [Modelo de binding](#modelo-de-binding)auto    - [Modelo de componentes](#modelo-de-componentes)autoauto<!-- /TOC -->
+## Modelo de características
 
-## 1.1. Modelo de características
+![Modelo de características](./Feature.png)
 
-![Binding Model](./Feature.png)
+## Modelo de binding
 
-## 1.2. Modelo de binding
+![Modelo de binding](./Binding.png)
 
-![Binding Model](./Binding.png)
+## Modelo de componentes
 
-## 1.3. Modelo de componentes
-
-![Binding Model](./Component.png)
+![Modelo de componentes](./Component.png)
 
