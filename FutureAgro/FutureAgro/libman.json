@@ -15,10 +15,6 @@
     },
     {
       "library": "jquery-validate@1.17.0",
-      "destination": "wwwroot/lib/jquery-validation/dist/"
-    },
-    {
-      "library": "jquery-validate@1.17.0",
       "destination": "wwwroot/lib/jquery-validation/",
       "files": [
         "additional-methods.min.js",
