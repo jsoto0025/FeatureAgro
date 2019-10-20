@@ -35,6 +35,10 @@ Proveedor de ASP.NET Core Identity que usa Entity Framework Core.
 
 Componente para la actualización en tiempo real, para habilitar la capacidad de hacer que su código del lado del servidor envíe contenido a los clientes conectados como sucede, en tiempo real.
 
+### Lamar 3.2.0
+
+Herramienta IoC compatible con ASP.Net Core rápida, sucesora de StructureMap
+
 ## Frameworks base
 
 ### Asp .Net Core MVC
