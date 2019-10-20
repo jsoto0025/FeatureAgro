@@ -39,6 +39,10 @@ Componente para la actualización en tiempo real, para habilitar la capacidad de
 
 Herramienta IoC compatible con ASP.Net Core rápida, sucesora de StructureMap
 
+### Microsoft.AspNetCore.Razor.Design 2.2.0
+
+Razor Pages puede hacer que la codificación de escenarios centrados en páginas sea más fácil y más productiva que el uso de controladores y vistas.
+
 ## Frameworks base
 
 ### Asp .Net Core MVC
