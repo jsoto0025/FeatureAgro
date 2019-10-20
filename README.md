@@ -21,23 +21,25 @@ Para el desarrollo de los componentes de backend de la aplicación se utilizaron
 - JavaScript
 - CSS
 
-## Si utilizó componentes desarrollados por terceros menciónelos aquí. 
+## Componentes desarrollados por terceros. 
 
 ### jQuery JavaScript Library v3.3.1
+
+Biblioteca de JavaScript rápida, pequeña y rica en funciones. Hace que cosas como el desplazamiento y la manipulación de documentos HTML, el manejo de eventos, la animación y Ajax sean mucho más simples con una API fácil de usar que funciona en una multitud de navegadores.
 
 ### Microsoft.AspNetCore.Identity.EntityFrameworkCore 2.1.6
 
 Proveedor de ASP.NET Core Identity que usa Entity Framework Core.
 
-### Microsoft.NETCore.App 2.1.0
+## ASP.NET Core SignalR
+
+Componente para la actualización en tiempo real, para habilitar la capacidad de hacer que su código del lado del servidor envíe contenido a los clientes conectados como sucede, en tiempo real.
 
 ## Si utilizo uno o varios frameworks base para la construcción del proyecto.
 
 ### Asp .Net Core MVC
 
 Framework de código abierto multiplataforma de alto rendimiento para crear aplicaciones modernas, basadas en la nube y conectadas a Internet
-
-
 
 ## Enlace repositorio
 
