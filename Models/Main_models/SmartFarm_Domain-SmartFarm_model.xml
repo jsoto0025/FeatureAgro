@@ -570,7 +570,7 @@
     </rel_file_component>
     <file label="Crecimiento_Crecimiento" type="file" filename="Crecimiento.cs" destination="DataAccess/Models/Crecimiento.cs" id="229">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1360" y="20" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1320" y="30" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="230">
