@@ -1,7 +1,7 @@
 <mxGraphModel>
   <root>
     <mxCell id="0"/>
-    <mxCell id="feature" parent="0" visible="0"/>
+    <mxCell id="feature" parent="0"/>
     <root label="FutureAgro" type="root" id="1">
       <mxCell style="strokeWidth=3" parent="feature" vertex="1">
         <mxGeometry x="830" width="100" height="35" as="geometry"/>
@@ -94,7 +94,7 @@
     </rel_concrete_abstract>
     <abstract label="Control" type="abstract" id="83">
       <mxCell style="strokeWidth=2" parent="feature" vertex="1">
-        <mxGeometry x="1380" y="140" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1314.5" y="140" width="100" height="35" as="geometry"/>
       </mxCell>
     </abstract>
     <rel_abstract_abstract type="relation" relType="optional" id="84">
@@ -109,12 +109,12 @@
     </rel_abstract_root>
     <concrete label="Tasas DyC" type="concrete" selected="false" id="94">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1370" y="353" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1317.5" y="362.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="133">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1520" y="350" width="130" height="35" as="geometry"/>
+        <mxGeometry x="1470" y="362.5" width="130" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="138">
@@ -129,7 +129,7 @@
     </rel_concrete_abstract>
     <concrete label="Control Base" type="concrete" selected="false" id="140">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="790" y="360" width="100" height="35" as="geometry"/>
+        <mxGeometry x="710" y="357.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="mandatory" id="141">
@@ -149,7 +149,7 @@
     </rel_abstract_abstract>
     <concrete label="Lectura Temp" type="concrete" selected="false" id="145">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="819" y="546" width="100" height="35" as="geometry"/>
+        <mxGeometry x="862.5" y="550" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="mandatory" id="146">
@@ -239,7 +239,7 @@
     </rel_concrete_abstract>
     <concrete label="Plantas Muertas" type="concrete" selected="false" id="573">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1670" y="350" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1644.5" y="362.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="574">
@@ -247,7 +247,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
-    <mxCell id="component" parent="0"/>
+    <mxCell id="component" parent="0" visible="0"/>
     <component label="Google" type="component" id="104">
       <mxCell style="shape=component" parent="component" vertex="1">
         <mxGeometry x="2884" y="150" width="100" height="40" as="geometry"/>
@@ -448,7 +448,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Medidas" type="file" filename="Medidas.cs" destination="DataAccess/Models/Medida.cs" id="207">
+    <file label="ControlAmbienteBase_Medidas" type="file" filename="Medida.cs" destination="DataAccess/Models/Medida.cs" id="207">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="184" y="144" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -458,7 +458,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="PlantasRepository" type="file" filename="PlantasRepository.cs" destination="DataAccess/Repositories/PlantasRepository.cs" id="209">
+    <file label="ControlBase_PlantasRepository" type="file" filename="PlantasRepository.cs" destination="DataAccess/Repositories/PlantasRepository.cs" id="209">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="54" y="1134.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -468,7 +468,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorBase" type="file" filename="LectorBase.cs" destination="Emuladores/LectorBase.cs" id="211">
+    <file label="ControlBase_LectorBase" type="file" filename="LectorBase.cs" destination="Emuladores/LectorBase.cs" id="211">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="76" y="1194.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -478,7 +478,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorDiario" type="file" filename="LectorDiario.cs" destination="Emuladores/LectorDiario.cs" id="213">
+    <file label="ControlBase_LectorDiario" type="file" filename="LectorDiario.cs" destination="Emuladores/LectorDiario.cs" id="213">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="200" y="1215.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -488,7 +488,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="TipoAccion" type="file" filename="TipoAccion.cs" destination="Emuladores/TipoAccion.cs" id="215">
+    <file label="ControlBase_TipoAccion" type="file" filename="TipoAccion.cs" destination="Emuladores/TipoAccion.cs" id="215">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="343.5" y="1215.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -498,7 +498,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="BaseHub" type="file" filename="BaseHub.js" destination="FutureAgro/wwwroot/js/Hubs/BaseHub.js" id="217">
+    <file label="ControlBase_BaseHub" type="file" filename="BaseHub.js" destination="FutureAgro/wwwroot/js/Hubs/BaseHub.js" id="217">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="453.5" y="1225.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -508,7 +508,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ErrorHub" type="file" filename="ErrorHub.js" destination="FutureAgro/wwwroot/js/Hubs/ErrorHub.js" id="219">
+    <file label="ControlBase_ErrorHub" type="file" filename="ErrorHub.js" destination="FutureAgro/wwwroot/js/Hubs/ErrorHub.js" id="219">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="553.5" y="1275.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -518,7 +518,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="signalr" type="file" filename="signalr.js" destination="FutureAgro/wwwroot/lib/signalr/signalr.js" id="221">
+    <file label="ControlBase_signalr" type="file" filename="signalr.js" destination="FutureAgro/wwwroot/lib/signalr/signalr.js" id="221">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="673.5" y="1115.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -528,7 +528,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="FutureAgroHub" type="file" filename="FutureAgroHub.cs" destination="FutureAgro/Hubs/FutureAgroHub.cs" id="223">
+    <file label="ControlBase_FutureAgroHub" type="file" filename="FutureAgroHub.cs" destination="FutureAgro/Hubs/FutureAgroHub.cs" id="223">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="663.5" y="1055.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -538,7 +538,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartData" type="file" filename="ChartData.cs" destination="FutureAgro/Models/ChartData.cs" id="225">
+    <file label="ControlBase_ChartData" type="file" filename="ChartData.cs" destination="FutureAgro/Models/ChartData.cs" id="225">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="653.5" y="1185.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -548,7 +548,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartDataSet" type="file" filename="ChartDataSet.cs" destination="FutureAgro/Models/ChartDataSet.cs" id="227">
+    <file label="ControlBase_ChartDataSet" type="file" filename="ChartDataSet.cs" destination="FutureAgro/Models/ChartDataSet.cs" id="227">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="663.5" y="1255.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -558,7 +558,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Crecimiento" type="file" filename="Crecimiento.cs" destination="DataAccess/Models/Crecimiento.js" id="229">
+    <file label="Crecimiento_Crecimiento" type="file" filename="Crecimiento.cs" destination="DataAccess/Models/Crecimiento.js" id="229">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1360" y="20" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -568,7 +568,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorCrecimiento" type="file" filename="LectorCrecimiento.cs" destination="IoT.Emuladores/LectorCrecimiento.cs" id="231">
+    <file label="Crecimiento_LectorCrecimiento" type="file" filename="LectorCrecimiento.cs" destination="IoT.Emuladores/LectorCrecimiento.cs" id="231">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1490" y="10" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -588,7 +588,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ServicioCrecimiento" type="file" filename="ServicioCrecimiento.cs" destination="FutureAgro/Services/ServicioCrecimiento.cs" id="235">
+    <file label="Crecimiento_ServicioCrecimiento" type="file" filename="ServicioCrecimiento.cs" destination="FutureAgro/Services/ServicioCrecimiento.cs" id="235">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1611.5" y="192" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -623,9 +623,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Humedad" type="file" filename="Humedad.cs" destination="DataAccess/Models/Humedad.cs" id="243">
+    <file label="LecturaHum_Humedad" type="file" filename="Humedad.cs" destination="DataAccess/Models/Humedad.cs" id="243">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1866" y="1869.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1756" y="1806.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="244">
@@ -633,9 +633,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="HumedadRepository" type="file" filename="HumedadRepository.cs" destination="DataAccess/Repositories/HumedadRepository.cs" id="245">
+    <file label="LecturaHum_HumedadRepository" type="file" filename="HumedadRepository.cs" destination="DataAccess/Repositories/HumedadRepository.cs" id="245">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2093.5" y="1879.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2014" y="1867.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="246">
@@ -643,9 +643,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorHumedad" type="file" filename="LectorHumedad.cs" destination="IoT.Emuladores/LectorHumedad.cs" id="247">
+    <file label="LecturaHum_LectorHumedad" type="file" filename="LectorHumedad.cs" destination="IoT.Emuladores/LectorHumedad.cs" id="247">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1963.5" y="1879.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1846" y="1880" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="248">
@@ -653,9 +653,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartsHumedad" type="file" filename="ChartsHumedad.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsHumedad.js" id="249">
+    <file label="LecturaHum_ChartsHumedad" type="file" filename="ChartsHumedad.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsHumedad.js" id="249">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2213.5" y="1869.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2134" y="1832" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="250">
@@ -663,9 +663,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="HumedadJS" type="file" filename="Humedad.js" destination="FutureAgro/wwwroot/js/Hubs/Humedad.js" id="251">
+    <file label="LecturaHum_HumedadJS" type="file" filename="Humedad.js" destination="FutureAgro/wwwroot/js/Hubs/Humedad.js" id="251">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2323.5" y="1879.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2282" y="1880" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="252">
@@ -673,9 +673,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="HumedadChart" type="file" filename="HumedadChart.js" destination="FutureAgro/wwwroot/js/Hubs/HumedadChart.js" id="253">
+    <file label="LecturaHum_HumedadChart" type="file" filename="HumedadChart.js" destination="FutureAgro/wwwroot/js/Hubs/HumedadChart.js" id="253">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2433.5" y="1879.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2354" y="1829.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="254">
@@ -683,9 +683,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ServicioHumedad" type="file" filename="ServicioHumedad.cs" destination="FutureAgro/Services/ServicioHumedad.cs" id="255">
+    <file label="LecturaHum_ServicioHumedad" type="file" filename="ServicioHumedad.cs" destination="FutureAgro/Services/ServicioHumedad.cs" id="255">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2543.5" y="1869.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2540" y="1832" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="256">
@@ -693,14 +693,14 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Luminosidad" type="file" filename="Luminosidad.cs" destination="DataAccess/Models/Luminosidad.cs" id="257">
+    <file label="LecturaLum_Luminosidad" type="file" filename="Luminosidad.cs" destination="DataAccess/Models/Luminosidad.cs" id="257">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="767.5" y="1710" width="100" height="40" as="geometry"/>
+        <mxGeometry x="722.5" y="1705.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
-    <file label="LuminosidadRepository" type="file" filename="LuminosidadRepository.cs" destination="DataAccess/Repositories/LuminosidadRepository.cs" id="258">
+    <file label="LecturaLum_LuminosidadRepository" type="file" filename="LuminosidadRepository.cs" destination="DataAccess/Repositories/LuminosidadRepository.cs" id="258">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="836.5" y="1764.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="878" y="1798" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="259">
@@ -713,9 +713,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorLuminosidad" type="file" filename="LectorLuminosidad.cs" destination="IoT.Emuladores/LectorLuminosidad.cs" id="261">
+    <file label="LecturaLum_LectorLuminosidad" type="file" filename="LectorLuminosidad.cs" destination="IoT.Emuladores/LectorLuminosidad.cs" id="261">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="658" y="1770" width="100" height="40" as="geometry"/>
+        <mxGeometry x="710.5" y="1770" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="262">
@@ -723,9 +723,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartsLuminosidad" type="file" filename="ChartsLuminosidad.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsLuminosidad.js" id="263">
+    <file label="LecturaLum_ChartsLuminosidad" type="file" filename="ChartsLuminosidad.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsLuminosidad.js" id="263">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="962.5" y="1691.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="616" y="1652.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="264">
@@ -733,7 +733,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartLuminosidadHome" type="file" filename="ChartLuminosidadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.jss" id="265">
+    <file label="LecturaLum_ChartLuminosidadHome" type="file" filename="ChartLuminosidadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.jss" id="265">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1033.5" y="1780" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -743,7 +743,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LuminosidadJS" type="file" filename="Luminosidad.js" destination="FutureAgro/wwwroot/js/Hubs/Luminosidad.js" id="267">
+    <file label="LecturaLum_LuminosidadJS" type="file" filename="Luminosidad.js" destination="FutureAgro/wwwroot/js/Hubs/Luminosidad.js" id="267">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1125.5" y="1720" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -753,9 +753,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LuminosidadChart" type="file" filename="LuminosidadChart.js" destination="FutureAgro/wwwroot/js/Hubs/LuminosidadChart.js" id="269">
+    <file label="LecturaLum_LuminosidadChart" type="file" filename="LuminosidadChart.js" destination="FutureAgro/wwwroot/js/Hubs/LuminosidadChart.js" id="269">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1307.5" y="1708.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1242.5" y="1757.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="270">
@@ -763,9 +763,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ServicioLuminosidad" type="file" filename="ServicioLuminosidad.cs" destination="FutureAgro/Services/ServicioLuminosidad.cs" id="271">
+    <file label="LecturaLum_ServicioLuminosidad" type="file" filename="ServicioLuminosidad.cs" destination="FutureAgro/Services/ServicioLuminosidad.cs" id="271">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1426.5" y="1708" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1291" y="1684.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="272">
@@ -773,9 +773,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Temperatura" type="file" filename="Temperatura.cs" destination="DataAccess/Models/Temperatura.cs" id="273">
+    <file label="LecturaTemp_Temperatura" type="file" filename="Temperatura.cs" destination="DataAccess/Models/Temperatura.cs" id="273">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1596" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3480" y="1577.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="274">
@@ -783,9 +783,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="TemperaturaRepository" type="file" filename="TemperaturaRepository.cs" destination="DataAccess/Repositories/TemperaturaRepository.cs" id="275">
+    <file label="LecturaTemp_TemperaturaRepository" type="file" filename="TemperaturaRepository.cs" destination="DataAccess/Repositories/TemperaturaRepository.cs" id="275">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1595.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3617" y="1612.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="276">
@@ -793,9 +793,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LectorTemperatura" type="file" filename="LectorTemperatura.cs" destination="IoT.Emuladores/LectorTemperatura.cs" id="277">
+    <file label="LecturaTemp_LectorTemperatura" type="file" filename="LectorTemperatura.cs" destination="IoT.Emuladores/LectorTemperatura.cs" id="277">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1595.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3622.5" y="1560" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="278">
@@ -803,9 +803,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartsTemperatura" type="file" filename="ChartsTemperatura.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsTemperatura.js" id="279">
+    <file label="LecturaTemp_ChartsTemperatura" type="file" filename="ChartsTemperatura.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsTemperatura.js" id="279">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1595.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3635.5" y="1510" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="280">
@@ -813,9 +813,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ChartTemperaturaHome" type="file" filename="ChartTemperaturaHome.js" destination="FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss" id="281">
+    <file label="LecturaTemp_ChartTemperaturaHome" type="file" filename="ChartTemperaturaHome.js" destination="FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss" id="281">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1595" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3648" y="1460" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="282">
@@ -823,9 +823,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="TemperaturaJS" type="file" filename="Temperatura.js" destination="FutureAgro/wwwroot/js/Hubs/Temperatura.js" id="283">
+    <file label="LecturaTemp_TemperaturaJS" type="file" filename="Temperatura.js" destination="FutureAgro/wwwroot/js/Hubs/Temperatura.js" id="283">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1491.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3648" y="1410" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="284">
@@ -833,9 +833,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="TemperaturaChart" type="file" filename="TemperaturaChart.js" destination="FutureAgro/wwwroot/js/Hubs/TemperaturaChart.js" id="285">
+    <file label="LecturaTemp_TemperaturaChart" type="file" filename="TemperaturaChart.js" destination="FutureAgro/wwwroot/js/Hubs/TemperaturaChart.js" id="285">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1453" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3648" y="1360" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="286">
@@ -843,9 +843,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ServicioTemperatura" type="file" filename="ServicioTemperatura.cs" destination="FutureAgro/Services/ServicioTemperatura.cs" id="287">
+    <file label="LecturaTemp_ServicioTemperatura" type="file" filename="ServicioTemperatura.cs" destination="FutureAgro/Services/ServicioTemperatura.cs" id="287">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1349.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3606" y="1312" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="288">
@@ -900,7 +900,7 @@
     </rel_file_component>
     <fragment label="ActuadorLum_ActuadoresAmbiente" type="fragment" filename="ActuadoresAmbiente.frag" id="298">
       <mxCell style="shape=fragment" parent="component" vertex="1">
-        <mxGeometry x="2140" y="568.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2140" y="582.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="299">
@@ -1785,7 +1785,7 @@
     </rel_fragment_file>
     <fragment label="LecturaTemp_ChartsAmbiente" type="fragment" filename="ChartsAmbiente.frag" id="495">
       <mxCell style="shape=fragment" parent="component" vertex="1">
-        <mxGeometry x="3439.5" y="1299.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3452.5" y="1287.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="496">
@@ -1815,7 +1815,7 @@
     </rel_fragment_file>
     <fragment label="LecturaTemp_ChartsHome" type="fragment" filename="ChartsHome.frag" id="501">
       <mxCell style="shape=fragment" parent="component" vertex="1">
-        <mxGeometry x="3425" y="1251.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3430" y="1212" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="502">
@@ -2187,7 +2187,7 @@
       </mxCell>
     </file>
     <rel_fragment_file type="relation" id="576">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="510" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="510" target="195" edge="1">
         <mxGeometry relative="1" as="geometry">
           <mxPoint x="3557.5" y="1392.477071732722" as="sourcePoint"/>
           <mxPoint x="2131" y="1106.522928267278" as="targetPoint"/>
@@ -2200,7 +2200,7 @@
       </mxCell>
     </file>
     <rel_fragment_component type="relation" id="578">
-      <mxCell edge="1" parent="component" source="370" target="104">
+      <mxCell parent="component" source="370" target="104" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
@@ -2210,7 +2210,7 @@
       </mxCell>
     </file>
     <rel_fragment_file type="relation" id="579">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="348" target="187">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="348" target="187" edge="1">
         <mxGeometry relative="1" as="geometry">
           <mxPoint x="100" y="1017.9888839973587" as="sourcePoint"/>
           <mxPoint x="2271.5" y="1169.5111160026415" as="targetPoint"/>
@@ -2223,7 +2223,7 @@
       </mxCell>
     </file>
     <rel_fragment_file type="relation" id="580">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="516" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="516" target="191" edge="1">
         <mxGeometry relative="1" as="geometry">
           <mxPoint x="3565.5" y="1472.4636785162288" as="sourcePoint"/>
           <mxPoint x="2371.5" y="1185.0363214837714" as="targetPoint"/>
