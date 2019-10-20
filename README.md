@@ -1,7 +1,5 @@
 # FutureAgro
 
-![Logo](./LogoFutureAgro.png | width=250)
-
 Aplicación para control de cultivos hidrofónicos.
 
 ## Integrantes del Equipo
