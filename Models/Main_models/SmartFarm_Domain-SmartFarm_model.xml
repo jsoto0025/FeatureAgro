@@ -239,7 +239,7 @@
     </rel_concrete_abstract>
     <concrete label="Plantas Muertas" type="concrete" selected="false" id="573">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1644.5" y="362.5" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1670" y="360" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="574">
@@ -249,6 +249,11 @@
     </rel_concrete_abstract>
     <rel_concrete_concrete type="relation" relType="requires" id="581">
       <mxCell edge="1" parent="feature" source="133" target="94">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_concrete>
+    <rel_concrete_concrete type="relation" relType="requires" id="582">
+      <mxCell edge="1" parent="feature" source="133" target="573">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_concrete>
@@ -565,7 +570,7 @@
     </rel_file_component>
     <file label="Crecimiento_Crecimiento" type="file" filename="Crecimiento.cs" destination="DataAccess/Models/Crecimiento.cs" id="229">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1360" y="20" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1320" y="30" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="230">
