@@ -31,11 +31,11 @@ Biblioteca de JavaScript rápida, pequeña y rica en funciones. Hace que cosas c
 
 Proveedor de ASP.NET Core Identity que usa Entity Framework Core.
 
-## ASP.NET Core SignalR
+### ASP.NET Core SignalR
 
 Componente para la actualización en tiempo real, para habilitar la capacidad de hacer que su código del lado del servidor envíe contenido a los clientes conectados como sucede, en tiempo real.
 
-## Si utilizo uno o varios frameworks base para la construcción del proyecto.
+## Frameworks base
 
 ### Asp .Net Core MVC
 
