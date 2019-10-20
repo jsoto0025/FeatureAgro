@@ -1,7 +1,7 @@
 <mxGraphModel>
   <root>
     <mxCell id="0"/>
-    <mxCell id="feature" parent="0" visible="0"/>
+    <mxCell id="feature" parent="0"/>
     <root label="FutureAgro" type="root" id="1">
       <mxCell style="strokeWidth=3" parent="feature" vertex="1">
         <mxGeometry x="830" width="100" height="35" as="geometry"/>
@@ -114,7 +114,7 @@
     </concrete>
     <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="133">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1565.5" y="364" width="130" height="35" as="geometry"/>
+        <mxGeometry x="1520" y="350" width="130" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="138">
@@ -237,7 +237,17 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
-    <mxCell id="component" parent="0"/>
+    <concrete label="Plantas Muertas" type="concrete" selected="false" id="573">
+      <mxCell style="" vertex="1" parent="feature">
+        <mxGeometry x="1670" y="350" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_abstract type="relation" relType="optional" id="574">
+      <mxCell edge="1" parent="feature" source="573" target="83">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_abstract>
+    <mxCell id="component" parent="0" visible="0"/>
     <component label="Google" type="component" id="104">
       <mxCell style="shape=component" parent="component" vertex="1">
         <mxGeometry x="2388.5" y="489.5" width="100" height="40" as="geometry"/>
@@ -255,7 +265,7 @@
     </component>
     <component label="LecturaTemp" type="component" id="110">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="2687.5" y="1170.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2735.5" y="1152" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
     <component label="Actuador Temp" type="component" id="111">
@@ -265,7 +275,7 @@
     </component>
     <component label="LecturaLum" type="component" id="112">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="1158" y="1631" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1023.5" y="1566.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
     <component label="ActuadorLum" type="component" id="113">
@@ -285,7 +295,7 @@
     </component>
     <component label="Produccion" type="component" id="116">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="2816.5" y="854.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3374.5" y="769" width="144" height="77" as="geometry"/>
       </mxCell>
     </component>
     <component label="ActuadorHum" type="component" id="117">
@@ -360,7 +370,7 @@
     </rel_file_component>
     <file label="ArchivosBasicos_Index" type="file" filename="Index.cshtml" destination="FutureAgro/Views/Home/Index.cshtml" id="187">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1164.5" y="604.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1110" y="564" width="150" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="188">
@@ -368,11 +378,6 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ArchivosBasicos_ModulosDetails" type="file" filename="ModulosDetails.cshtml" destination="FutureAgro/Views/Modulos/Details.cshtml" id="189">
-      <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1438" y="644.5" width="100" height="40" as="geometry"/>
-      </mxCell>
-    </file>
     <rel_file_component type="relation" id="190">
       <mxCell parent="component" source="189" target="105" edge="1">
         <mxGeometry relative="1" as="geometry"/>
@@ -380,7 +385,7 @@
     </rel_file_component>
     <file label="ArchivosBasicos_ModulosIndex" type="file" filename="ModulosIndex.cshtml" destination="FutureAgro/Views/Modulos/Index.cshtml" id="191">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1779" y="636" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1762" y="649" width="171" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="192">
@@ -435,7 +440,7 @@
     </rel_fragment_file>
     <file label="ControlAmbienteBase_Ambiente" type="file" filename="Ambiente.cshtml" destination="FutureAgro/Views/Modulos/Ambiente.cshtml" id="202">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1475.5" y="1004.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1452.5" y="979" width="135" height="75" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="203">
@@ -588,7 +593,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="CrecimientoJS" type="file" filename="CrecimientoJS.js" destination="FutureAgro/wwwroot/js/Hubs/Crecimiento.js" id="233">
+    <file label="Crecimiento_CrecimientoJS" type="file" filename="CrecimientoJS.js" destination="FutureAgro/wwwroot/js/Hubs/Crecimiento.js" id="233">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1240" y="60" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -608,7 +613,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ExternalLogin" type="file" filename="ExternalLogin.cshtml" destination="FutureAgro/Views/Account/ExternalLogin.cshtml" id="237">
+    <file label="Google_ExternalLogin" type="file" filename="ExternalLogin.cshtml" destination="FutureAgro/Views/Account/ExternalLogin.cshtml" id="237">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="2322.5" y="638" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -618,7 +623,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Confirmation" type="file" filename="Confirmation.cshtml" destination="FutureAgro/Views/Account/Confirmation.cshtml" id="239">
+    <file label="Google_Confirmation" type="file" filename="Confirmation.cshtml" destination="FutureAgro/Views/Account/Confirmation.cshtml" id="239">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="2398.5" y="559.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -628,7 +633,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ExternalLoginModel" type="file" filename="ExternalLoginModel.cs" destination="FutureAgro/Models/ExternalLoginModel.cs" id="241">
+    <file label="Google_ExternalLoginModel" type="file" filename="ExternalLoginModel.cs" destination="FutureAgro/Models/ExternalLoginModel.cs" id="241">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="2518.5" y="539.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -678,7 +683,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Humedad" type="file" filename="Humedad.js" destination="FutureAgro/wwwroot/js/Hubs/Humedad.js" id="251">
+    <file label="HumedadJS" type="file" filename="Humedad.js" destination="FutureAgro/wwwroot/js/Hubs/Humedad.js" id="251">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="2142" y="1648" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -710,12 +715,12 @@
     </rel_file_component>
     <file label="Luminosidad" type="file" filename="Luminosidad.cs" destination="DataAccess/Models/Luminosidad.cs" id="257">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="641.5" y="1709" width="100" height="40" as="geometry"/>
+        <mxGeometry x="767.5" y="1710" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <file label="LuminosidadRepository" type="file" filename="LuminosidadRepository.cs" destination="DataAccess/Repositories/LuminosidadRepository.cs" id="258">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="804" y="1705.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="836.5" y="1764.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="259">
@@ -730,7 +735,7 @@
     </rel_file_component>
     <file label="LectorLuminosidad" type="file" filename="LectorLuminosidad.cs" destination="IoT.Emuladores/LectorLuminosidad.cs" id="261">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="542.5" y="1674.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="658" y="1770" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="262">
@@ -750,7 +755,7 @@
     </rel_file_component>
     <file label="ChartLuminosidadHome" type="file" filename="ChartLuminosidadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.jss" id="265">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1073" y="1681.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1033.5" y="1780" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="266">
@@ -758,9 +763,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Luminosidad" type="file" filename="Luminosidad.js" destination="FutureAgro/wwwroot/js/Hubs/Luminosidad.js" id="267">
+    <file label="LuminosidadJS" type="file" filename="Luminosidad.js" destination="FutureAgro/wwwroot/js/Hubs/Luminosidad.js" id="267">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1204" y="1671.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1125.5" y="1720" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="268">
@@ -790,7 +795,7 @@
     </rel_file_component>
     <file label="Temperatura" type="file" filename="Temperatura.cs" destination="DataAccess/Models/Temperatura.cs" id="273">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2962.5" y="1212.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2987.5" y="1374.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="274">
@@ -800,7 +805,7 @@
     </rel_file_component>
     <file label="TemperaturaRepository" type="file" filename="TemperaturaRepository.cs" destination="DataAccess/Repositories/TemperaturaRepository.cs" id="275">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3072.5" y="1212" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3097.5" y="1374" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="276">
@@ -810,7 +815,7 @@
     </rel_file_component>
     <file label="LectorTemperatura" type="file" filename="LectorTemperatura.cs" destination="IoT.Emuladores/LectorTemperatura.cs" id="277">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3183" y="1212" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3208" y="1374" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="278">
@@ -820,7 +825,7 @@
     </rel_file_component>
     <file label="ChartsTemperatura" type="file" filename="ChartsTemperatura.js" destination="FutureAgro/wwwroot/js/Ambiente/ChartsTemperatura.js" id="279">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3292" y="1212" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3317" y="1374" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="280">
@@ -830,7 +835,7 @@
     </rel_file_component>
     <file label="ChartTemperaturaHome" type="file" filename="ChartTemperaturaHome.js" destination="FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss" id="281">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3402.5" y="1211.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3427.5" y="1373.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="282">
@@ -838,9 +843,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Temperatura" type="file" filename="Temperatura.js" destination="FutureAgro/wwwroot/js/Hubs/Temperatura.js" id="283">
+    <file label="TemperaturaJS" type="file" filename="Temperatura.js" destination="FutureAgro/wwwroot/js/Hubs/Temperatura.js" id="283">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3512.5" y="1211.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3240" y="1270" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="284">
@@ -850,7 +855,7 @@
     </rel_file_component>
     <file label="TemperaturaChart" type="file" filename="TemperaturaChart.js" destination="FutureAgro/wwwroot/js/Hubs/TemperaturaChart.js" id="285">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3622.5" y="1212" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3347.5" y="1231.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="286">
@@ -860,7 +865,7 @@
     </rel_file_component>
     <file label="ServicioTemperatura" type="file" filename="ServicioTemperatura.cs" destination="FutureAgro/Services/ServicioTemperatura.cs" id="287">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="3560.5" y="1108.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3285.5" y="1128" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="288">
@@ -870,12 +875,12 @@
     </rel_file_component>
     <component label="PlantasMuertas" type="component" id="289">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="2562.5" y="840" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2772.5" y="643.5" width="128" height="82" as="geometry"/>
       </mxCell>
     </component>
-    <file label="LectorPlantasMuertas" type="file" filename="LectorPlantasMuertas.cs" destination="IoT.Emuladores/LectorPlantasMuertas.cs" id="290">
+    <file label="PlantasMuertas_LectorPlantasMuertas" type="file" filename="LectorPlantasMuertas.cs" destination="IoT.Emuladores/LectorPlantasMuertas.cs" id="290">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2407" y="934.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2707.5" y="812.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="291">
@@ -883,9 +888,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="PlantasMuertas" type="file" filename="PlantasMuertas.js" destination="FutureAgro/wwwroot/js/Hubs/PlantasMuertas.js" id="292">
+    <file label="PlantasMuertas_PlantasMuertas" type="file" filename="PlantasMuertas.js" destination="FutureAgro/wwwroot/js/Hubs/PlantasMuertas.js" id="292">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2525.5" y="947.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2820" y="880" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="293">
@@ -893,9 +898,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ServicioPlantasMuertas" type="file" filename="ServicioPlantasMuertas.cs" destination="FutureAgro/Services/ServicioPlantasMuertas.cs" id="294">
+    <file label="PlantasMuertas_ServicioPlantasMuertas" type="file" filename="ServicioPlantasMuertas.cs" destination="FutureAgro/Services/ServicioPlantasMuertas.cs" id="294">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2637" y="957.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2937.5" y="835.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="295">
@@ -903,9 +908,9 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="Charts" type="file" filename="Charts.js" destination="FutureAgro/wwwroot/js/Home/Charts.js" id="296">
+    <file label="Produccion_Charts" type="file" filename="Charts.js" destination="FutureAgro/wwwroot/js/Home/Charts.js" id="296">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2816.5" y="934.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="3407" y="922" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="297">
@@ -1089,480 +1094,1113 @@
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="333">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="363.5" y="935.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="334">
-      <mxCell edge="1" parent="component" source="333" target="109">
+      <mxCell parent="component" source="333" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="335">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="333" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="333" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="336">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="597" y="894.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="337">
-      <mxCell edge="1" parent="component" source="336" target="109">
+      <mxCell parent="component" source="336" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="338">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="336" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="336" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_PropiedadesStartup" type="fragment" filename="PropiedadesStartup.frag" id="339">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="467" y="874.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="340">
-      <mxCell edge="1" parent="component" source="339" target="109">
+      <mxCell parent="component" source="339" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="341">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="339" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="339" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_ScriptsModulosHubDetalle" type="fragment" filename="ScriptsModulosHubDetalle.frag" id="342">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="763" y="918.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="343">
-      <mxCell edge="1" parent="component" source="342" target="109">
+      <mxCell parent="component" source="342" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="344">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="342" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="342" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_ScriptsModulosHubIndex" type="fragment" filename="ScriptsModulosHubIndex.frag" id="345">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="918" y="966" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="346">
-      <mxCell edge="1" parent="component" source="345" target="109">
+      <mxCell parent="component" source="345" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="347">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="345" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="345" target="191" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="ControlBase_UsingsStartup" type="fragment" filename="UsingsStartup.frag" id="348">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="228" y="989" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="349">
-      <mxCell edge="1" parent="component" source="348" target="109">
+      <mxCell parent="component" source="348" target="109" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="350">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="348" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="348" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_ContextoDbSets" type="fragment" filename="ContextoDbSets.frag" id="351">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1623" y="76.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="352">
-      <mxCell edge="1" parent="component" source="351" target="114">
+      <mxCell parent="component" source="351" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="353">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="351" target="175">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="351" target="175" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_DetallePlanta" type="fragment" filename="DetallePlanta.frag" id="354">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1490" y="320" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="355">
-      <mxCell edge="1" parent="component" source="354" target="114">
+      <mxCell parent="component" source="354" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="357">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="354" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="354" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_IndicadoresHome" type="fragment" filename="IndicadoresHome.frag" id="358">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1370" y="330" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="359">
-      <mxCell edge="1" parent="component" source="358" target="114">
+      <mxCell parent="component" source="358" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="360">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="358" target="187">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="358" target="187" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="361">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1119" y="155.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="362">
-      <mxCell edge="1" parent="component" source="361" target="114">
+      <mxCell parent="component" source="361" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="363">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="361" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="361" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="364">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1230" y="260" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="365">
-      <mxCell edge="1" parent="component" source="364" target="114">
+      <mxCell parent="component" source="364" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="366">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="364" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="364" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Crecimiento_ScriptsModulosDetalle" type="fragment" filename="ScriptsModulosDetalle.frag" id="367">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1640" y="300" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="368">
-      <mxCell edge="1" parent="component" source="367" target="114">
+      <mxCell parent="component" source="367" target="114" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="369">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="367" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="367" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Google_AddsAutenticar" type="fragment" filename="AddAutenticar.frag" id="370">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2460" y="390" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="371">
-      <mxCell edge="1" parent="component" source="370" target="104">
+      <mxCell parent="component" source="370" target="104" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="372">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="370" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="370" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Google_BotonesRedesSociales" type="fragment" filename="BotonesRedesSociales.frag" id="373">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2600" y="440" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="374">
-      <mxCell edge="1" parent="component" source="373" target="104">
+      <mxCell parent="component" source="373" target="104" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="375">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="373" target="185">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="373" target="185" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Google_ControladorLogin" type="fragment" filename="ControladorLogin.frag" id="376">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2290" y="330" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="377">
-      <mxCell edge="1" parent="component" source="376" target="104">
+      <mxCell parent="component" source="376" target="104" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="378">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="376" target="179">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="376" target="179" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="Google_FotoUsuario" type="fragment" filename="FotoUsuario.frag" id="379">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2227" y="550" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="380">
-      <mxCell edge="1" parent="component" source="379" target="104">
+      <mxCell parent="component" source="379" target="104" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_file type="relation" id="381">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="379" target="193">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="379" target="193" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ChartsAmbiente" type="fragment" filename="ChartsAmbiente.frag" id="382">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1726.5" y="1199" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="384">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="382" target="202">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="382" target="202" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ChartsControllerDetalle" type="fragment" filename="ChartsControllerDetalle.frag" id="385">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1690" y="1273.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="387">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="385" target="183">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="385" target="183" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ChartsHome" type="fragment" filename="ChartsHome.frag" id="388">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1369.5" y="1188" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="390">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="388" target="187">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="388" target="187" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ColumnasModulosIndex" type="fragment" filename="ColumnasModulosIndex.frag" id="391">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1888" y="1330" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="393">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="391" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="391" target="191" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ControlAmbienteDetalle" type="fragment" filename="ControlAmbienteDetalle.frag" id="394">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1823.5" y="1259" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="396">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="394" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="394" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_EnumTiposDeMedidas" type="fragment" filename="EnumTiposDeMedidas.frag" id="397">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1937.5" y="1208" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="399">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="397" target="205">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="397" target="205" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_HomeCharts" type="fragment" filename="HomeCharts.frag" id="400">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2070" y="1260" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="402">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="400" target="181">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="400" target="181" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="403">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2120" y="1310" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="405">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="403" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="403" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="406">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2129.5" y="1361" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="408">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="406" target="195">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="406" target="195" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_LimitesIndex" type="fragment" filename="LimitesIndex.frag" id="409">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="2107" y="1411.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="411">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="409" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="409" target="191" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <rel_fragment_file type="relation" id="412">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="409" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="409" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_PropiedadesModulo" type="fragment" filename="PropiedadesModulo.frag" id="413">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1312" y="1312.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="415">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="413" target="177">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="413" target="177" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ScriptsAmbiente" type="fragment" filename="ScriptsAmbiente.frag" id="416">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1589" y="1429" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="418">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="416" target="202">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="416" target="202" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ScriptsHome" type="fragment" filename="ScriptsHome.frag" id="419">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1512" y="1242" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="421">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="419" target="187">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="419" target="187" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_ScriptsModulosIndex" type="fragment" filename="ScriptsModulosIndex.frag" id="422">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1575.5" y="1326.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="424">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="422" target="189">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="422" target="189" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <fragment label="LecturaHum_TitulosColumnasModulosIndex" type="fragment" filename="TitulosColumnasModulosIndex.frag" id="425">
-      <mxCell style="shape=fragment" vertex="1" parent="component">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
         <mxGeometry x="1417" y="1380.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="427">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="422" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="422" target="191" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <rel_fragment_file type="relation" id="428">
-      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" edge="1" parent="component" source="425" target="191">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="425" target="191" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_file>
     <rel_fragment_component type="relation" id="433">
-      <mxCell edge="1" parent="component" source="409" target="115">
+      <mxCell parent="component" source="409" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="434">
-      <mxCell edge="1" parent="component" source="406" target="115">
+      <mxCell parent="component" source="406" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="435">
-      <mxCell edge="1" parent="component" source="403" target="115">
+      <mxCell parent="component" source="403" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="436">
-      <mxCell edge="1" parent="component" source="400" target="115">
+      <mxCell parent="component" source="400" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="437">
-      <mxCell edge="1" parent="component" source="397" target="115">
+      <mxCell parent="component" source="397" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="438">
-      <mxCell edge="1" parent="component" source="391" target="115">
+      <mxCell parent="component" source="391" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="439">
-      <mxCell edge="1" parent="component" source="394" target="115">
+      <mxCell parent="component" source="394" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="440">
-      <mxCell edge="1" parent="component" source="385" target="115">
+      <mxCell parent="component" source="385" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="441">
-      <mxCell edge="1" parent="component" source="382" target="115">
+      <mxCell parent="component" source="382" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="442">
-      <mxCell edge="1" parent="component" source="416" target="115">
+      <mxCell parent="component" source="416" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="443">
-      <mxCell edge="1" parent="component" source="388" target="115">
+      <mxCell parent="component" source="388" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="444">
-      <mxCell edge="1" parent="component" source="419" target="115">
+      <mxCell parent="component" source="419" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="445">
-      <mxCell edge="1" parent="component" source="413" target="115">
+      <mxCell parent="component" source="413" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="446">
-      <mxCell edge="1" parent="component" source="422" target="115">
+      <mxCell parent="component" source="422" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <rel_fragment_component type="relation" id="447">
-      <mxCell edge="1" parent="component" source="425" target="115">
+      <mxCell parent="component" source="425" target="115" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
+    <fragment label="LecturaLum_ChartsAmbiente" type="fragment" filename="ChartsAmbiente.frag" id="448">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="771" y="1432.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="449">
+      <mxCell parent="component" source="448" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="450">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="448" target="202" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ChartsControllerDetalle" type="fragment" filename="ChartsControllerDetalle.frag" id="451">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="776.5" y="1517.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="452">
+      <mxCell parent="component" source="451" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="453">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="451" target="183" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ChartsHome" type="fragment" filename="ChartsHome.frag" id="454">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="940" y="1490" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="455">
+      <mxCell parent="component" source="454" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="456">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="454" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ColumnasModulosIndex" type="fragment" filename="ColumnasModulosIndex.frag" id="457">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1080" y="1480" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="458">
+      <mxCell parent="component" source="457" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="459">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="457" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ControlAmbienteDetalle" type="fragment" filename="ControlAmbienteDetalle.frag" id="460">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1209" y="1456.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="461">
+      <mxCell parent="component" source="460" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="462">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="460" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_EnumTiposDeMedidas" type="fragment" filename="EnumTiposDeMedidas.frag" id="463">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1217.5" y="1543.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="464">
+      <mxCell parent="component" source="463" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="465">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="463" target="205" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_HomeCharts" type="fragment" filename="HomeCharts.frag" id="466">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="740" y="1580" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="467">
+      <mxCell parent="component" source="466" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="468">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="466" target="181" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="469">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1012" y="1410" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="470">
+      <mxCell parent="component" source="469" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="471">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="469" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="472">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="620" y="1470" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="473">
+      <mxCell parent="component" source="472" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="474">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="472" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_LimitesIndex" type="fragment" filename="LimitesIndex.frag" id="475">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1360" y="1490" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="476">
+      <mxCell parent="component" source="475" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="477">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="475" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <rel_fragment_file type="relation" id="478">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="475" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_PropiedadesModulo" type="fragment" filename="PropiedadesModulo.frag" id="479">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1381" y="1548" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="480">
+      <mxCell parent="component" source="479" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="481">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="479" target="177" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ScriptsAmbiente" type="fragment" filename="ScriptsAmbiente.frag" id="482">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="910" y="1420" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="483">
+      <mxCell parent="component" source="482" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="484">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="482" target="202" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ScriptsHome" type="fragment" filename="ScriptsHome.frag" id="485">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1230" y="1580" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="486">
+      <mxCell parent="component" source="485" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="487">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="485" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_ScriptsModulosIndex" type="fragment" filename="ScriptsModulosIndex.frag" id="488">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1091" y="1342.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="489">
+      <mxCell parent="component" source="488" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="490">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="488" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <rel_fragment_file type="relation" id="491">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="488" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaLum_TitulosColumnasModulosIndex" type="fragment" filename="TitulosColumnasModulosIndex.frag" id="492">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="1540" y="1540" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="493">
+      <mxCell parent="component" source="492" target="112" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="494">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="492" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ChartsAmbiente" type="fragment" filename="ChartsAmbiente.frag" id="495">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2985.5" y="1078" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="496">
+      <mxCell parent="component" source="495" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="497">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="495" target="202" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ChartsControllerDetalle" type="fragment" filename="ChartsControllerDetalle.frag" id="498">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2682" y="1035.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="499">
+      <mxCell parent="component" source="498" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="500">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="498" target="183" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ChartsHome" type="fragment" filename="ChartsHome.frag" id="501">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2850" y="1030" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="502">
+      <mxCell parent="component" source="501" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="503">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="189" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ColumnasModulosIndex" type="fragment" filename="ColumnasModulosIndex.frag" id="504">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2612" y="1093.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="505">
+      <mxCell parent="component" source="504" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="506">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="504" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ControlAmbienteDetalle" type="fragment" filename="ControlAmbienteDetalle.frag" id="507">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2490" y="1110" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="508">
+      <mxCell parent="component" source="507" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="509">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="507" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_EnumTiposDeMedidas" type="fragment" filename="EnumTiposDeMedidas.frag" id="510">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2522" y="1168" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="511">
+      <mxCell parent="component" source="510" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="512">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="510" target="205" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_HomeCharts" type="fragment" filename="HomeCharts.frag" id="513">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2640" y="1230" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="514">
+      <mxCell parent="component" source="513" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="515">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="513" target="181" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="516">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2530" y="1250" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="517">
+      <mxCell parent="component" source="516" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="518">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="516" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="519">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2760" y="1280" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="520">
+      <mxCell parent="component" source="519" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="521">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="519" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_LimitesIndex" type="fragment" filename="LimitesIndex.frag" id="522">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2550" y="1300" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="523">
+      <mxCell parent="component" source="522" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="524">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="522" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <rel_fragment_file type="relation" id="525">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="522" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_PropiedadesModulo" type="fragment" filename="PropiedadesModulo.frag" id="526">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2720" y="1340" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="527">
+      <mxCell parent="component" source="526" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="528">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="526" target="177" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ScriptsAmbiente" type="fragment" filename="ScriptsAmbiente.frag" id="529">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2420" y="1320" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="530">
+      <mxCell parent="component" source="529" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="531">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="529" target="202" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ScriptsHome" type="fragment" filename="ScriptsHome.frag" id="532">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2600" y="1380" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="533">
+      <mxCell parent="component" source="532" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="534">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="532" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_ScriptsModulosIndex" type="fragment" filename="ScriptsModulosIndex.frag" id="535">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2750" y="1390" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="536">
+      <mxCell parent="component" source="535" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="537">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="535" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <rel_fragment_file type="relation" id="538">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="535" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="LecturaTemp_TitulosColumnasModulosIndex" type="fragment" filename="TitulosColumnasModulosIndex.frag" id="539">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2470" y="1420" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="540">
+      <mxCell parent="component" source="539" target="110" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="541">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="539" target="191" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="PlantasMuertas_IndicadoresHome" type="fragment" filename="IndicadoresHome.frag" id="542">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2759" y="560" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="543">
+      <mxCell parent="component" source="542" target="289" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="544">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="542" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="PlantasMuertas_InicializarServicios" type="fragment" filename="InicializarServicios.frag" id="545">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2920" y="580" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="546">
+      <mxCell parent="component" source="545" target="289" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="547">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="545" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="PlantasMuertas_InyeccionServicios" type="fragment" filename="InyeccionServicios.frag" id="548">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2634.5" y="630" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="549">
+      <mxCell parent="component" source="548" target="289" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="550">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="548" target="195" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="PlantasMuertas_ScriptsModulosDetalle" type="fragment" filename="ScriptsModulosDetalle.frag" id="551">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="2600" y="710" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="552">
+      <mxCell parent="component" source="551" target="289" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="553">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="551" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_ChartsHome" type="fragment" filename="ChartsHome.frag" id="554">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3336.5" y="594.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="555">
+      <mxCell parent="component" source="554" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="556">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="554" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_DetallePlanta" type="fragment" filename="DetallePlanta.frag" id="557">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3460" y="640" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="558">
+      <mxCell parent="component" source="557" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="559">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="557" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_IndicadoresHome" type="fragment" filename="IndicadoresHome.frag" id="560">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3230" y="670" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="561">
+      <mxCell parent="component" source="560" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="562">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="560" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <file label="ArchivosBasicos_ModulosDetails" type="file" filename="ModulosDetails.cshtml" destination="FutureAgro/Views/Modulos/Details.cshtml" id="189">
+      <mxCell style="shape=file" parent="component" vertex="1">
+        <mxGeometry x="1398" y="674.5" width="190" height="40" as="geometry"/>
+      </mxCell>
+    </file>
+    <rel_fragment_file type="relation" id="563">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="501" target="189" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="2850" y="1036.413994169096" as="sourcePoint"/>
+          <mxPoint x="1258.6051502145922" y="604" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_ScriptsHome" type="fragment" filename="ScriptsHome.frag" id="564">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3172" y="754.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="565">
+      <mxCell parent="component" source="564" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="566">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="564" target="187" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_ScriptUpdateCrecimiento" type="fragment" filename="ScriptUpdateCrecimiento.frag" id="567">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3200" y="830" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="568">
+      <mxCell parent="component" source="567" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="569">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="567" target="233" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
+    <fragment label="Produccion_ScriptUpdatePlantaMuerta" type="fragment" filename="ScriptUpdatePlantaMuerta.frag" id="570">
+      <mxCell style="shape=fragment" parent="component" vertex="1">
+        <mxGeometry x="3187.5" y="900" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </fragment>
+    <rel_fragment_component type="relation" id="571">
+      <mxCell parent="component" source="570" target="116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <rel_fragment_file type="relation" id="572">
+      <mxCell style="dashed=1;endArrow=open;strokeColor=red;" parent="component" source="570" target="292" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_file>
     <mxCell id="binding_feature_component" parent="0" visible="0"/>
     <concrete label="Google" type="concrete" selected="false" id="clon8">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
@@ -1776,9 +2414,19 @@
     </rel_concrete_component>
     <component label="PlantasMuertas" type="component" id="clon289">
       <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="2170" y="450" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1040" y="170" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
+    <concrete label="Plantas Muertas" type="concrete" selected="false" id="clon573">
+      <mxCell style="fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+        <mxGeometry x="1190" y="170" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_component type="relation" id="575">
+      <mxCell edge="1" parent="binding_feature_component" source="clon573" target="clon289">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
     <mxCell id="istar" parent="0" visible="0"/>
     <mxCell id="adaptation_state" parent="0" visible="0"/>
     <mxCell id="adaptation_hardware" parent="0" visible="0"/>
