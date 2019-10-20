@@ -1,4 +1,4 @@
-![Logo](./LogoFutureAgro.png=250x)
+![Logo](./LogoFutureAgro.png =250x)
 
 # FutureAgro
 
