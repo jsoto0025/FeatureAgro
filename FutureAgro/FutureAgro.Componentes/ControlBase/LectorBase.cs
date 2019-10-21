@@ -10,9 +10,9 @@ namespace FutureAgro.IoT.Emuladores
     public abstract class LectorBase<T>
     {
 
-        /*BCP - CustomizationPoint */
+        /*BCP-CustomizationPoint */
         private const int _defaultUpdateInterval = 3600;
-        /*ECP - CustomizationPoint */
+        /*ECP-CustomizationPoint */
 
         private TimeSpan _updateInterval;
 
