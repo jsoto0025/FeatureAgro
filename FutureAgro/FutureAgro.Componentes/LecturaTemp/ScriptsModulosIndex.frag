@@ -1,6 +1,6 @@
 ﻿Fragment LecturaTemp_ScriptsModulosIndex {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: ScriptsModulosDetalle, ScriptsModulosIndex
 	Destinations: ArchivosBasicos_ModulosDetails, ArchivosBasicos_ModulosIndex

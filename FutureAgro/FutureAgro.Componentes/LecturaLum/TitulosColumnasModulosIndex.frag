@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_TitulosColumnasModulosIndex {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: TitulosColumnasModulosIndex
 	Destinations: ArchivosBasicos_ModulosIndex

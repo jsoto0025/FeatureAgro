@@ -1,6 +1,6 @@
 ﻿Fragment LecturaHum_EnumTiposDeMedidas {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: EnumTiposDeMedidas
 	Destinations: ControlAmbienteBase_TipoMedida

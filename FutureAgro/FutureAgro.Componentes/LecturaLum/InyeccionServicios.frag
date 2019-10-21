@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_InyeccionServicios {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: InyeccionServicios
 	Destinations: ArchivosBasicos_Startup

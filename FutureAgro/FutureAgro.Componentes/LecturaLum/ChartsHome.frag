@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_ChartsHome {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: ChartsHome
 	Destinations: ArchivosBasicos_Index
