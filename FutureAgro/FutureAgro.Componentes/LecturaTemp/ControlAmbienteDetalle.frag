@@ -2,7 +2,7 @@
 	Action: add
 	Priority: Medium
 	PointBracketsLan: html
-	FragmentationPoints: ControlAmbienteDetalle
+	FragmentationPoints: ControlAmbienteDetalleTemp
 	Destinations: ArchivosBasicos_ModulosDetails
 	SourceCode: [ALTERCODE-FRAG]					
 		@{
