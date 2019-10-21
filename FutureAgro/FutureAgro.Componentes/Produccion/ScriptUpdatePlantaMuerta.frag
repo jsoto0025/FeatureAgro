@@ -1,7 +1,7 @@
 ﻿Fragment Produccion_ScriptUpdatePlantaMuerta {
 	Action: add
 	Priority: high
-	PointBracketsLan: html
+	PointBracketsLan: java
 	FragmentationPoints: ScriptUpdatePlantaMuerta
 	Destinations: PlantasMuertas_PlantasMuertas
 	SourceCode: [ALTERCODE-FRAG]				
