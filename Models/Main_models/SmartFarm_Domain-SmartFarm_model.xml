@@ -1,7 +1,7 @@
 <mxGraphModel>
   <root>
     <mxCell id="0"/>
-    <mxCell id="feature" parent="0"/>
+    <mxCell id="feature" parent="0" visible="0"/>
     <root label="FutureAgro" type="root" id="1">
       <mxCell style="strokeWidth=3" parent="feature" vertex="1">
         <mxGeometry x="830" width="100" height="35" as="geometry"/>
@@ -107,14 +107,14 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_abstract_root>
-    <concrete label="Tasas DyC" type="concrete" selected="false" id="94">
+    <concrete label="Tasas DyC" type="concrete" selected="true" id="94">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="1300" y="360" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="133">
+    <concrete label="C. Tiempo de produccion" type="concrete" selected="true" id="133">
       <mxCell style="" parent="feature" vertex="1">
-        <mxGeometry x="1470" y="362.5" width="130" height="35" as="geometry"/>
+        <mxGeometry x="1470" y="360" width="130" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_abstract type="relation" relType="optional" id="138">
@@ -157,7 +157,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
-    <concrete label="Actuador Temp" type="concrete" selected="false" id="147">
+    <concrete label="Actuador Temp" type="concrete" selected="true" id="147">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="970" y="550" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -187,7 +187,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
-    <concrete label="Actuador Hum" type="concrete" selected="false" id="153">
+    <concrete label="Actuador Hum" type="concrete" selected="true" id="153">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="1190" y="551" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -202,7 +202,7 @@
         <mxGeometry x="1300" y="550" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="Actuador Lum" type="concrete" selected="false" id="156">
+    <concrete label="Actuador Lum" type="concrete" selected="true" id="156">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="1420" y="555.5" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -237,7 +237,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_abstract>
-    <concrete label="Plantas Muertas" type="concrete" selected="false" id="573">
+    <concrete label="Plantas Muertas" type="concrete" selected="true" id="573">
       <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="1670" y="360" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -248,16 +248,26 @@
       </mxCell>
     </rel_concrete_abstract>
     <rel_concrete_concrete type="relation" relType="requires" id="581">
-      <mxCell edge="1" parent="feature" source="133" target="94">
+      <mxCell parent="feature" source="133" target="94" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_concrete>
     <rel_concrete_concrete type="relation" relType="requires" id="582">
-      <mxCell edge="1" parent="feature" source="133" target="573">
+      <mxCell parent="feature" source="133" target="573" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_concrete>
-    <mxCell id="component" parent="0" visible="0"/>
+    <concrete label="FrameworkBase" type="concrete" selected="true" id="586">
+      <mxCell style="" vertex="1" parent="feature">
+        <mxGeometry x="10" y="82.5" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_root type="relation" relType="mandatory" id="587">
+      <mxCell edge="1" parent="feature" source="586" target="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_root>
+    <mxCell id="component" parent="0"/>
     <component label="Google" type="component" id="104">
       <mxCell style="shape=component" parent="component" vertex="1">
         <mxGeometry x="2884" y="150" width="100" height="40" as="geometry"/>
@@ -265,7 +275,7 @@
     </component>
     <component label="ArchivosBasicos" type="component" id="105">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="1167" y="464.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1167" y="465" width="123" height="66" as="geometry"/>
       </mxCell>
     </component>
     <component label="ControlBase" type="component" id="109">
@@ -278,9 +288,9 @@
         <mxGeometry x="3310.5" y="1373.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
-    <component label="Actuador Temp" type="component" id="111">
+    <component label="ActuadorTemp" type="component" id="111">
       <mxCell style="shape=component" parent="component" vertex="1">
-        <mxGeometry x="1945.5" y="142.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1987.5" y="149.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
     <component label="LecturaLum" type="component" id="112">
@@ -955,7 +965,7 @@
     </rel_fragment_file>
     <fragment label=" ActuadorTemp_ActuadorTemperatura" type="fragment" filename="ActuadorTemperatura.frag" id="307">
       <mxCell style="shape=fragment" parent="component" vertex="1">
-        <mxGeometry x="1567.5" y="754.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2049" y="241" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_file type="relation" id="308">
@@ -2240,6 +2250,26 @@
         </mxGeometry>
       </mxCell>
     </rel_fragment_file>
+    <rel_fragment_component type="relation" id="585">
+      <mxCell edge="1" parent="component" source="307" target="111">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_fragment_component>
+    <component label="FrameworkBase" type="component" id="588">
+      <mxCell style="shape=component" vertex="1" parent="component">
+        <mxGeometry x="423.5" y="50.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <file label="FrameworkBase" type="file" filename="FrameworkBase.zip" destination="FrameworkBase.zip" id="589">
+      <mxCell style="shape=file" vertex="1" parent="component">
+        <mxGeometry x="590" y="81.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </file>
+    <rel_file_component type="relation" id="590">
+      <mxCell edge="1" parent="component" source="589" target="588">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_file_component>
     <mxCell id="binding_feature_component" parent="0" visible="0"/>
     <concrete label="Google" type="concrete" selected="true" id="clon8">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
@@ -2266,7 +2296,7 @@
         <mxGeometry x="250" y="180" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="Tasas DyC" type="concrete" selected="false" id="clon94">
+    <concrete label="Tasas DyC" type="concrete" selected="true" id="clon94">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="860" y="100" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -2291,7 +2321,7 @@
         <mxGeometry x="370" y="160" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
-    <component label="Actuador Temp" type="component" id="clon111">
+    <component label="ActuadorTemp" type="component" id="clon111">
       <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="370" y="220" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -2341,7 +2371,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
-    <concrete label="C. Tiempo de produccion" type="concrete" selected="false" id="clon133">
+    <concrete label="C. Tiempo de produccion" type="concrete" selected="true" id="clon133">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="1180" y="30" width="130" height="35" as="geometry"/>
       </mxCell>
@@ -2361,7 +2391,7 @@
         <mxGeometry x="542.5" y="161.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="Actuador Temp" type="concrete" selected="false" id="clon147">
+    <concrete label="Actuador Temp" type="concrete" selected="true" id="clon147">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="544" y="227.5" width="100" height="35" as="geometry"/>
       </mxCell>
@@ -2371,9 +2401,9 @@
         <mxGeometry x="864.5" y="166" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="Actuador Hum" type="concrete" selected="false" id="clon153">
+    <concrete label="Actuador Hum" type="concrete" selected="true" id="clon153">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="867" y="47.5" width="100" height="35" as="geometry"/>
+        <mxGeometry x="1180.5" y="93" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <concrete label="Lectura Lum" type="concrete" selected="true" id="clon155">
@@ -2381,9 +2411,9 @@
         <mxGeometry x="546" y="289" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
-    <concrete label="Actuador Lum" type="concrete" selected="false" id="clon156">
+    <concrete label="Actuador Lum" type="concrete" selected="true" id="clon156">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
-        <mxGeometry x="1180" y="90" width="100" height="35" as="geometry"/>
+        <mxGeometry x="859" y="43" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_component type="relation" id="161">
@@ -2406,18 +2436,8 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
-    <rel_concrete_component type="relation" id="165">
-      <mxCell parent="binding_feature_component" source="clon153" target="clon113" edge="1">
-        <mxGeometry relative="1" as="geometry"/>
-      </mxCell>
-    </rel_concrete_component>
     <rel_concrete_component type="relation" id="166">
       <mxCell parent="binding_feature_component" source="clon155" target="clon112" edge="1">
-        <mxGeometry relative="1" as="geometry"/>
-      </mxCell>
-    </rel_concrete_component>
-    <rel_concrete_component type="relation" id="167">
-      <mxCell parent="binding_feature_component" source="clon156" target="clon117" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
@@ -2456,13 +2476,38 @@
         <mxGeometry x="1040" y="170" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
-    <concrete label="Plantas Muertas" type="concrete" selected="false" id="clon573">
+    <concrete label="Plantas Muertas" type="concrete" selected="true" id="clon573">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="1190" y="170" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_component type="relation" id="575">
       <mxCell parent="binding_feature_component" source="clon573" target="clon289" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="583">
+      <mxCell edge="1" parent="binding_feature_component" source="clon156" target="clon113">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <rel_concrete_component type="relation" id="584">
+      <mxCell edge="1" parent="binding_feature_component" source="clon153" target="clon117">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_concrete_component>
+    <concrete label="FrameworkBase" type="concrete" selected="true" id="clon586">
+      <mxCell style="fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+        <mxGeometry x="538.5" y="35" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <component label="FrameworkBase" type="component" id="clon588">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+        <mxGeometry x="376" y="31.5" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </component>
+    <rel_concrete_component type="relation" id="591">
+      <mxCell edge="1" parent="binding_feature_component" source="clon586" target="clon588">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
