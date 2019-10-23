@@ -1,6 +1,6 @@
 ﻿Fragment LecturaTemp_InicializarServicios {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: InicializarServicios
 	Destinations: ArchivosBasicos_Startup

@@ -1,6 +1,6 @@
 ﻿Fragment LecturaTemp_ChartsAmbiente {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: ChartsAmbiente
 	Destinations: ControlAmbienteBase_Ambiente

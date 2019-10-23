@@ -1,8 +1,8 @@
 ﻿Fragment LecturaTemp_ControlAmbienteDetalle {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
-	FragmentationPoints: ControlAmbienteDetalle
+	FragmentationPoints: ControlAmbienteDetalleTemp
 	Destinations: ArchivosBasicos_ModulosDetails
 	SourceCode: [ALTERCODE-FRAG]					
 		@{

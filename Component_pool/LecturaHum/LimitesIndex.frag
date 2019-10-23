@@ -1,6 +1,6 @@
 ﻿Fragment LecturaHum_LimitesIndex {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: LimitesIndex, LimitesDetalle
 	Destinations: ArchivosBasicos_ModulosIndex, ArchivosBasicos_ModulosDetails
