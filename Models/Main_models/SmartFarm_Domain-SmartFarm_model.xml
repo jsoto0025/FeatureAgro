@@ -1,7 +1,7 @@
 <mxGraphModel>
   <root>
     <mxCell id="0"/>
-    <mxCell id="feature" parent="0" visible="0"/>
+    <mxCell id="feature" parent="0"/>
     <root label="FutureAgro" type="root" id="1">
       <mxCell style="strokeWidth=3" parent="feature" vertex="1">
         <mxGeometry x="830" width="100" height="35" as="geometry"/>
@@ -258,16 +258,16 @@
       </mxCell>
     </rel_concrete_concrete>
     <concrete label="FrameworkBase" type="concrete" selected="true" id="586">
-      <mxCell style="" vertex="1" parent="feature">
+      <mxCell style="" parent="feature" vertex="1">
         <mxGeometry x="10" y="82.5" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <rel_concrete_root type="relation" relType="mandatory" id="587">
-      <mxCell edge="1" parent="feature" source="586" target="1">
+      <mxCell parent="feature" source="586" target="1" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_root>
-    <mxCell id="component" parent="0"/>
+    <mxCell id="component" parent="0" visible="0"/>
     <component label="Google" type="component" id="104">
       <mxCell style="shape=component" parent="component" vertex="1">
         <mxGeometry x="2884" y="150" width="100" height="40" as="geometry"/>
@@ -488,7 +488,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ControlBase_LectorBase" type="file" filename="LectorBase.cs" destination="Emuladores/LectorBase.cs" id="211">
+    <file label="ControlBase_LectorBase" type="file" filename="LectorBase.cs" destination="IoT.Emuladores/LectorBase.cs" id="211">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="76" y="1194.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -498,7 +498,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ControlBase_LectorDiario" type="file" filename="LectorDiario.cs" destination="Emuladores/LectorDiario.cs" id="213">
+    <file label="ControlBase_LectorDiario" type="file" filename="LectorDiario.cs" destination="IoT.Emuladores/LectorDiario.cs" id="213">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="200" y="1215.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -508,7 +508,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="ControlBase_TipoAccion" type="file" filename="TipoAccion.cs" destination="Emuladores/TipoAccion.cs" id="215">
+    <file label="ControlBase_TipoAccion" type="file" filename="TipoAccion.cs" destination="IoT.Emuladores/TipoAccion.cs" id="215">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="343.5" y="1215.5" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -950,7 +950,7 @@
     </rel_fragment_file>
     <fragment label="ActuadorTemp_ActuadoresAmbiente" type="fragment" filename="ActuadoresAmbiente.frag" id="304">
       <mxCell style="shape=fragment" parent="component" vertex="1">
-        <mxGeometry x="2155" y="188.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2170" y="190" width="100" height="40" as="geometry"/>
       </mxCell>
     </fragment>
     <rel_fragment_component type="relation" id="305">
@@ -2251,22 +2251,22 @@
       </mxCell>
     </rel_fragment_file>
     <rel_fragment_component type="relation" id="585">
-      <mxCell edge="1" parent="component" source="307" target="111">
+      <mxCell parent="component" source="307" target="111" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_fragment_component>
     <component label="FrameworkBase" type="component" id="588">
-      <mxCell style="shape=component" vertex="1" parent="component">
+      <mxCell style="shape=component" parent="component" vertex="1">
         <mxGeometry x="423.5" y="50.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
-    <file label="FrameworkBase" type="file" filename="FrameworkBase.zip" destination="FrameworkBase.zip" id="589">
-      <mxCell style="shape=file" vertex="1" parent="component">
+    <file label="FrameworkBase" type="file" filename="FrameworkBase.zip" destination="/" id="589">
+      <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="590" y="81.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="590">
-      <mxCell edge="1" parent="component" source="589" target="588">
+      <mxCell parent="component" source="589" target="588" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
@@ -2487,27 +2487,27 @@
       </mxCell>
     </rel_concrete_component>
     <rel_concrete_component type="relation" id="583">
-      <mxCell edge="1" parent="binding_feature_component" source="clon156" target="clon113">
+      <mxCell parent="binding_feature_component" source="clon156" target="clon113" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
     <rel_concrete_component type="relation" id="584">
-      <mxCell edge="1" parent="binding_feature_component" source="clon153" target="clon117">
+      <mxCell parent="binding_feature_component" source="clon153" target="clon117" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
     <concrete label="FrameworkBase" type="concrete" selected="true" id="clon586">
-      <mxCell style="fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="538.5" y="35" width="100" height="35" as="geometry"/>
       </mxCell>
     </concrete>
     <component label="FrameworkBase" type="component" id="clon588">
-      <mxCell style="shape=component;fillColor=#DCDCDC;" vertex="1" parent="binding_feature_component">
+      <mxCell style="shape=component;fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
         <mxGeometry x="376" y="31.5" width="100" height="40" as="geometry"/>
       </mxCell>
     </component>
     <rel_concrete_component type="relation" id="591">
-      <mxCell edge="1" parent="binding_feature_component" source="clon586" target="clon588">
+      <mxCell parent="binding_feature_component" source="clon586" target="clon588" edge="1">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_concrete_component>
