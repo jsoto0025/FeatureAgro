@@ -695,7 +695,7 @@
     </rel_file_component>
     <file label="LecturaHum_HumedadChart" type="file" filename="HumedadChart.js" destination="FutureAgro/wwwroot/js/Hubs/HumedadChart.js" id="253">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="2354" y="1829.5" width="100" height="40" as="geometry"/>
+        <mxGeometry x="2380" y="1810" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="254">
@@ -753,7 +753,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LecturaLum_ChartLuminosidadHome" type="file" filename="ChartLuminosidadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.jss" id="265">
+    <file label="LecturaLum_ChartLuminosidadHome" type="file" filename="ChartLuminosidadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartLuminosidadHome.js" id="265">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="1033.5" y="1780" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -833,7 +833,7 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
-    <file label="LecturaTemp_ChartTemperaturaHome" type="file" filename="ChartTemperaturaHome.js" destination="FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss" id="281">
+    <file label="LecturaTemp_ChartTemperaturaHome" type="file" filename="ChartTemperaturaHome.js" destination="FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.js" id="281">
       <mxCell style="shape=file" parent="component" vertex="1">
         <mxGeometry x="3648" y="1460" width="100" height="40" as="geometry"/>
       </mxCell>
@@ -2290,6 +2290,16 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_custom_component>
+    <file label="LecturaHum_ChartHumedadHome" type="file" filename="ChartHumedadHome.js" destination="FutureAgro/wwwroot/js/Home/ChartHumedadHome.js" id="598">
+      <mxCell style="shape=file" vertex="1" parent="component">
+        <mxGeometry x="2410" y="1880" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </file>
+    <rel_file_component type="relation" id="599">
+      <mxCell edge="1" parent="component" source="598" target="115">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_file_component>
     <mxCell id="binding_feature_component" parent="0" visible="0"/>
     <concrete label="Google" type="concrete" selected="true" id="clon8">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
