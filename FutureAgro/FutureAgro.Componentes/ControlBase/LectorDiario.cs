@@ -9,9 +9,9 @@ namespace FutureAgro.IoT.Emuladores
     public abstract class LectorDiario<T> : LectorBase<T>
     {
 
-        /*BCP-CPLDiario */
+        /*BCP-CPLDiario*/
         private const int _updateDailyInterval = 86400;
-        /*ECP-CPLDiario */
+        /*ECP-CPLDiario*/
 
         public LectorDiario(IEnumerable<T> listado) : base(listado, TimeSpan.FromSeconds(_updateDailyInterval))
         {

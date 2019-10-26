@@ -9,15 +9,15 @@ namespace FutureAgro.IoT.Emuladores
     public abstract class LectorDiario<T> : LectorBase<T>
     {
 
-        /*BCP - CustomizationPoint */
+        /*BCP-CPLDiario*/
         private const int _updateDailyInterval = 86400;
-        /*ECP - CustomizationPoint */
+        /*ECP-CPLDiario*/
 
         public LectorDiario(IEnumerable<T> listado) : base(listado, TimeSpan.FromSeconds(_updateDailyInterval))
         {
             _rangePercent = .05;
         }
-        
+
         protected override (bool exitoso, double NuevaMedicion) TryUpdateTemperatura(T medida)
         {
             double medidaActual = ObtenerMedidaActual(medida);
@@ -29,7 +29,7 @@ namespace FutureAgro.IoT.Emuladores
             var random = new Random();
             var percentChange = random.NextDouble() * _rangePercent;
             var change = Math.Round(100 * percentChange, 2);
-            
+
             double nuevaMedicion = Math.Round(medidaActual + change, 2);
             return (true, nuevaMedicion);
         }

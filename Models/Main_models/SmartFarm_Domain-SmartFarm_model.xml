@@ -2270,6 +2270,26 @@
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
+    <custom label="ControlBase_Custom" type="custom" id="592">
+      <mxCell style="shape=custom" vertex="1" parent="component">
+        <mxGeometry x="30" y="1060" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </custom>
+    <rel_custom_component type="relation" id="593">
+      <mxCell edge="1" parent="component" source="592" target="109">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_custom_component>
+    <custom label="ArchivosBasicos_Custom" type="custom" id="596">
+      <mxCell style="shape=custom" vertex="1" parent="component">
+        <mxGeometry x="900" y="360" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </custom>
+    <rel_custom_component type="relation" id="597">
+      <mxCell edge="1" parent="component" source="596" target="105">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_custom_component>
     <mxCell id="binding_feature_component" parent="0" visible="0"/>
     <concrete label="Google" type="concrete" selected="true" id="clon8">
       <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
