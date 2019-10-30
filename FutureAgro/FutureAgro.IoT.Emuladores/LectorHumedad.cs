@@ -28,5 +28,12 @@ namespace FutureAgro.IoT.Emuladores
         {
             return humedad.Medida > 0 ? humedad.Medida : 50;
         }
+        
+        public void LanzarLectura(Humedad humedad, double nuevaMedicion)
+        {
+            humedad.Medida = nuevaMedicion;
+            humedad.Fecha = DateTime.Now.ToLongTimeString();
+            Lectura?.Invoke("updateHumedad", humedad);
+        }
     }
 }

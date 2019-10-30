@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureAgro.Web", "FutureAgr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureAgro.DataAccess", "FutureAgro.DataAccess\FutureAgro.DataAccess.csproj", "{B0E687FC-6750-41BE-B0B3-92EB9CB80F2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureAgro.IoT.Emuladores", "FutureAgro.IoT.Emuladores\FutureAgro.IoT.Emuladores.csproj", "{5C0F6046-0C1F-46D2-8012-AA25F6238E7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureAgro.IoT.Emuladores", "FutureAgro.IoT.Emuladores\FutureAgro.IoT.Emuladores.csproj", "{5C0F6046-0C1F-46D2-8012-AA25F6238E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureAgro.IoT.Contratos", "FutureAgro.IoT.Contratos\FutureAgro.IoT.Contratos.csproj", "{F2114F5A-BCF6-434E-8D2F-5D73E89D4511}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureAgro.IoT.Contratos", "FutureAgro.IoT.Contratos\FutureAgro.IoT.Contratos.csproj", "{F2114F5A-BCF6-434E-8D2F-5D73E89D4511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureAgro.UnitTests", "FutureAgro.UnitTests\FutureAgro.UnitTests.csproj", "{289CD4C7-F4CC-4EE6-BCFD-1BE40D3CFEA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F2114F5A-BCF6-434E-8D2F-5D73E89D4511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2114F5A-BCF6-434E-8D2F-5D73E89D4511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2114F5A-BCF6-434E-8D2F-5D73E89D4511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{289CD4C7-F4CC-4EE6-BCFD-1BE40D3CFEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{289CD4C7-F4CC-4EE6-BCFD-1BE40D3CFEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{289CD4C7-F4CC-4EE6-BCFD-1BE40D3CFEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{289CD4C7-F4CC-4EE6-BCFD-1BE40D3CFEA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

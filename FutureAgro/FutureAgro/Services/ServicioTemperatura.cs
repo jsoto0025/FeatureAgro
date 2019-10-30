@@ -17,7 +17,7 @@ namespace FutureAgro.Web.Services
             lectorTemperatura.Lectura += LectorTemperatura_Lectura;
         }
 
-        private void LectorTemperatura_Lectura(string method, object dato)
+        public virtual void LectorTemperatura_Lectura(string method, object dato)
         {
             Temperatura temp = (Temperatura)dato;
             var medida = new Medida
