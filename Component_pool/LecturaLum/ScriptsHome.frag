@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_ScriptsHome {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: ScriptsHome
 	Destinations: ArchivosBasicos_Index

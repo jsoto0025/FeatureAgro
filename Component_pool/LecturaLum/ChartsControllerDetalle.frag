@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_ChartsControllerDetalle {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: ChartsControllerDetalle
 	Destinations: ArchivosBasicos_ModulosController

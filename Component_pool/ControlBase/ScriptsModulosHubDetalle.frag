@@ -8,7 +8,7 @@
 		<script src="~/lib/signalr/signalr.js"></script>
 		<script src="~/js/Hubs/BaseHub.js"></script>
 
-		<!--B-ScriptsModulosDetale-->
+		<!--B-ScriptsModulosDetalle-->
 
 		<script src="~/js/Hubs/ErrorHub.js"></script>
 	[/ALTERCODE-FRAG]

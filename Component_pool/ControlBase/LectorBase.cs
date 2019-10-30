@@ -10,9 +10,9 @@ namespace FutureAgro.IoT.Emuladores
     public abstract class LectorBase<T>
     {
 
-        /*BCP - CustomizationPoint */
+        /*BCP-CPBase*/
         private const int _defaultUpdateInterval = 3600;
-        /*ECP - CustomizationPoint */
+        /*ECP-CPBase*/
 
         private TimeSpan _updateInterval;
 
@@ -28,7 +28,7 @@ namespace FutureAgro.IoT.Emuladores
 
         private IEnumerable<T> _listado;
 
-        public LectorBase(IEnumerable<T> listado): this(listado, TimeSpan.FromSeconds(_defaultUpdateInterval))
+        public LectorBase(IEnumerable<T> listado) : this(listado, TimeSpan.FromSeconds(_defaultUpdateInterval))
         {
         }
 
@@ -38,7 +38,7 @@ namespace FutureAgro.IoT.Emuladores
             _listado = listado;
             _timer = new Timer(UpdateTemperatura, null, _updateInterval, _updateInterval);
         }
-        
+
         private void UpdateTemperatura(object state)
         {
             lock (_updateTemperaturaLock)

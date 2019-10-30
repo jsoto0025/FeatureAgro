@@ -56,7 +56,7 @@
 
 		private void CargarLimites()
 		{
-			/*BCP - CustomizationPoint */
+			/*BCP-CustomizationPoint */
 
 			ViewData["TemperaturaLimiteSuperior"] = (double)22;
 			ViewData["TemperaturaLimiteInferior"] = (double)18;
@@ -65,7 +65,7 @@
 			ViewData["LuminosidadLimiteSuperior"] = 700;
 			ViewData["LuminosidadLimiteInferior"] = 450;
 
-			/*ECP - CustomizationPoint */
+			/*ECP-CustomizationPoint */
 		}
 
 	[/ALTERCODE-FRAG]

@@ -1,6 +1,6 @@
 ﻿Fragment LecturaHum_ScriptsAmbiente {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: html
 	FragmentationPoints: ScriptsAmbiente
 	Destinations: ControlAmbienteBase_Ambiente

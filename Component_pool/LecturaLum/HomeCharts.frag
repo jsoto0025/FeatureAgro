@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_HomeCharts {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: HomeCharts
 	Destinations: ArchivosBasicos_HomeController

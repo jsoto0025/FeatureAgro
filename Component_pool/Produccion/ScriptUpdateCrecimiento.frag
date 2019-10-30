@@ -1,7 +1,7 @@
 ﻿Fragment Produccion_ScriptUpdateCrecimiento {
 	Action: add
 	Priority: high
-	PointBracketsLan: html
+	PointBracketsLan: java
 	FragmentationPoints: ScriptUpdateCrecimiento
 	Destinations: Crecimiento_CrecimientoJS
 	SourceCode: [ALTERCODE-FRAG]				

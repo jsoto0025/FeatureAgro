@@ -1,4 +1,4 @@
-﻿Crecimiento.cs -> DataAccess/Models/Crecimiento.cs
+﻿Crecimiento.cs -> DataAccess/Models/Crecimiento.js
 LectorCrecimiento.cs -> IoT.Emuladores/LectorCrecimiento.cs
 CrecimientoJS.js -> FutureAgro/wwwroot/js/Hubs/Crecimiento.js
 ServicioCrecimiento.cs -> FutureAgro/Services/ServicioCrecimiento.cs

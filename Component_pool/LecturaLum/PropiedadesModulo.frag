@@ -1,6 +1,6 @@
 ﻿Fragment LecturaLum_PropiedadesModulo {
 	Action: add
-	Priority: Medium
+	Priority: medium
 	PointBracketsLan: java
 	FragmentationPoints: PropiedadesModulo
 	Destinations: ArchivosBasicos_Modulo
