@@ -3,3 +3,7 @@
 /FutureAgro/**/obj
 /FutureAgro/**/bin
 /FutureAgro/.vs
+/FutureAgro/FutureAgro/wwwroot/lib/signalr
+/FutureAgro/FutureAgro/wwwroot/lib/jquery-validation
+/FutureAgro/FutureAgro/wwwroot/lib/jquery
+/FutureAgro/FutureAgro/wwwroot/lib/jquery-validation-unobtrusive

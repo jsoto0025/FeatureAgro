@@ -2,7 +2,7 @@
 
 Aplicación para control de cultivos hidrofónicos.
 
-# Integrantes del Equipo
+## Integrantes del Equipo
 
 - [Raul Fernando Dominguez Marin](rfdomingum@eafit.edu.co)
 - [Jairo Alberto Soto Velásquez](jasotov@eafit.edu.co)
@@ -10,51 +10,46 @@ Aplicación para control de cultivos hidrofónicos.
 - [Alexandra Troyano Perenguez](atroyanop@eafit.edu.co)
 - [Fabio Andres Tangarife Alvarez](fatangaria@eafit.edu.co)
 
-# Sitios del proyecto
+# Información general del proyecto
 
-[Proyecto en Azure DevOps](https://dev.azure.com/jasotov-eafit/FutureAgro)
+## Lenguajes de software utilizados en la elaboración de los componentes
 
-[Grupo de Recursos en Azure](https://portal.azure.com/#@recordlaboutlook.onmicrosoft.com/resource/subscriptions/71b48ca7-ff64-4f69-8e94-de0d40a7c7c6/resourceGroups/FUTUREAGRO/overviewo)
+Para el desarrollo de los componentes de backend de la aplicación se utilizaron los siguientes framweroks.
 
-[Documentos Google Drive](https://drive.google.com/drive/folders/1yf9pmmHMKh9kFmhu8_8VTCe0MooUW861?usp=sharing)
+- C#
+- SQL
+- JavaScript
+- CSS
 
-# Terminos
+## Componentes desarrollados por terceros. 
 
-**Hydroponic farming**
+### jQuery JavaScript Library v3.3.1
 
-Is a method of growing plants using mineral nutrient solutions, in water, without soil. The hydroponic gardener regulates the composition of nutrients in the liquid solution used to water the plants. He/She also regulates the frequency of supplying the nutrients to the plants. Simply, the hydroponic gardener controls the growing environment of the plants. The system is highly automated of course but still requires to be well managed.
-	
-# Enlaces
+Biblioteca de JavaScript rápida, pequeña y rica en funciones. Hace que cosas como el desplazamiento y la manipulación de documentos HTML, el manejo de eventos, la animación y Ajax sean mucho más simples con una API fácil de usar que funciona en una multitud de navegadores.
 
-[Documentación en Google Drive](https://drive.google.com/drive/folders/1yf9pmmHMKh9kFmhu8_8VTCe0MooUW861?usp=sharing)
+### Microsoft.AspNetCore.Identity.EntityFrameworkCore 2.1.6
 
-[Variamos Web](https://variamos.com/variamosweb/#/)
+Proveedor de ASP.NET Core Identity que usa Entity Framework Core.
 
-## Hydroponic Farming 
+### ASP.NET Core SignalR
 
-[Introduction to Hydroponic Farming](https://www.cleantechloops.com/hydroponic-farming/)
+Componente para la actualización en tiempo real, para habilitar la capacidad de hacer que su código del lado del servidor envíe contenido a los clientes conectados como sucede, en tiempo real.
 
-## IoT
-[Azure IoT reference architecture](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/iot/)
+### Lamar 3.2.0
 
-[Rise of the SMACK Stack](https://sweetcode.io/rise-of-smack-stack/)
+Herramienta IoC compatible con ASP.Net Core rápida, sucesora de StructureMap
 
-[Azure IoT Documentation](https://docs.microsoft.com/en-us/azure/iot-fundamentals/)
+### Microsoft.AspNetCore.Razor.Design 2.2.0
 
-[Technical Case Studies](https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured)
+Razor Pages puede hacer que la codificación de escenarios centrados en páginas sea más fácil y más productiva que el uso de controladores y vistas.
 
-[Internet of Things (IoT) technologies and solutions: PaaS and SaaS](https://docs.microsoft.com/en-us/azure/iot-fundamentals/iot-services-and-technologies)
+## Frameworks base
 
-## Arduino
+### Asp .Net Core MVC
 
-[AUTODESK TINKERCAD](https://www.tinkercad.com)
+Framework de código abierto multiplataforma de alto rendimiento para crear aplicaciones modernas, basadas en la nube y conectadas a Internet
 
-[Fab Labs](https://www.fablabs.io/)
+## Enlace repositorio
 
-## Cursos
+[FeatureAgro en GitHub](https://github.com/jsoto0025/FeatureAgro)
 
-[Arduino Programming, from novice to ninja](https://courses.edx.org/courses/course-v1:IMTx+DMx102+3T2018/courseware/983b22ff8ba44406a9900ff91df1dcc8/237a13f37ad74c4caa3841b6eaa5e8e3/?child=first)
-
-## Arquitectura
-
-[Architecture styles](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/)
