@@ -29,5 +29,12 @@ namespace FutureAgro.IoT.Emuladores
         {
             return temperatura.Medida > 0 ? temperatura.Medida : 19;
         }
+
+        public virtual void LanzarLectura(Temperatura temperatura, double nuevaMedicion)
+        {
+            temperatura.Medida = nuevaMedicion;
+            temperatura.Fecha = DateTime.Now.ToLongTimeString();
+            Lectura?.Invoke("updateTemperatura", temperatura);
+        }
     }
 }

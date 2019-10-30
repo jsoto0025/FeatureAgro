@@ -17,7 +17,7 @@ namespace FutureAgro.Web.Services
             lectorHumedad.Lectura += LectorHumedad_Lectura;
         }
 
-        private void LectorHumedad_Lectura(string method, object dato)
+        public virtual void LectorHumedad_Lectura(string method, object dato)
         {
             Humedad humedad = (Humedad)dato;
             var medida = new Medida

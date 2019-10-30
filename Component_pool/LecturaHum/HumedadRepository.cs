@@ -14,7 +14,7 @@ namespace FutureAgro.DataAccess.Repositories
             _context = context;
         }
 
-        public IEnumerable<Humedad> Get()
+        public virtual IEnumerable<Humedad> Get()
         {
             return _context.Modulos
                         .Include(r => r.Medidas)
