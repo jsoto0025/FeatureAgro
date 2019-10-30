@@ -7,3 +7,5 @@ ChartHumedadHome.js -> FutureAgro/wwwroot/js/Home/ChartHumedadHome.jss
 Humedad.js -> FutureAgro/wwwroot/js/Hubs/Humedad.js
 HumedadChart.js -> FutureAgro/wwwroot/js/Hubs/HumedadChart.js
 ServicioHumedad.cs -> FutureAgro/Services/ServicioHumedad.cs
+
+ServicioHumedadTests.cs -> UnitTests/ServicioHumedadTests.cs
