@@ -16,7 +16,7 @@ namespace FutureAgro.DataAccess.Repositories
             _context = context;
         }
 
-        public IEnumerable<Temperatura> Get()
+        public virtual IEnumerable<Temperatura> Get()
         {
             return _context.Modulos
                         .Include(r => r.Medidas)
