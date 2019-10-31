@@ -1,1 +1,1 @@
-segun doc entrega 2
+Esta derivacion contiene todos los componentes del sistema. Solo se necesita abrir el proyecto en Visual Studio con .net Core 2.1 

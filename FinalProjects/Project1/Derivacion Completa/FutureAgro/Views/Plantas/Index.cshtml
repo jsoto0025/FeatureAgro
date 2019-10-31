@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FutureAgro.DataAccess.Models.Planta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Viva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Crecimiento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modulo.IdModulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Viva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Crecimiento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPlanta">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPlanta">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPlanta">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

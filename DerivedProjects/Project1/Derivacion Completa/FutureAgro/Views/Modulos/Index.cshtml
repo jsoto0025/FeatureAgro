@@ -1,0 +1,160 @@
+﻿@model IEnumerable<FutureAgro.DataAccess.Models.Modulo>
+
+@{
+    ViewData["Title"] = "Index";
+
+    /*B-LimitesIndex*/
+
+/*Code injected by: LecturaHum_LimitesIndex*/
+int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
+		int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
+/*Code injected by: LecturaHum_LimitesIndex*/
+
+
+/*Code injected by: LecturaLum_LimitesIndex*/
+int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
+		int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
+/*Code injected by: LecturaLum_LimitesIndex*/
+
+
+/*Code injected by: LecturaTemp_LimitesIndex*/
+double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
+		double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+/*Code injected by: LecturaTemp_LimitesIndex*/
+
+}
+@section scripts{
+
+    <!--B-ScriptsModulosHubIndex-->
+
+<!--Code injected by: ControlBase_ScriptsModulosHubIndex-->
+<script src="~/lib/signalr/signalr.js"></script>
+		<script src="~/js/Hubs/BaseHub.js"></script>
+
+		<!--B-ScriptsModulosIndex-->
+
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+<script>
+			var superiorTemp = @superiorTemp;
+			var inferiorTemp = @inferiorTemp;
+		</script>
+		<script src="~/js/Hubs/Temperatura.js"></script>
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+
+
+<!--Code injected by: LecturaLum_ScriptsModulosIndex-->
+<script>
+			var superiorLuz = @superiorLuz;
+			var inferiorLuz = @inferiorLuz;
+		</script>
+		<script src="~/js/Hubs/Luminosidad.js"></script>
+<!--Code injected by: LecturaLum_ScriptsModulosIndex-->
+
+
+<!--Code injected by: LecturaHum_ScriptsModulosIndex-->
+<script>
+			var superiorHum = @superiorHum;
+			var inferiorHum = @inferiorHum;
+		</script>
+		<script src="~/js/Hubs/Humedad.js"></script>
+<!--Code injected by: LecturaHum_ScriptsModulosIndex-->
+
+
+		<script src="~/js/Hubs/ErrorHub.js"></script>
+<!--Code injected by: ControlBase_ScriptsModulosHubIndex-->
+
+}
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdModulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plantas)
+            </th>
+            <!--B-TitulosColumnasModulosIndex-->
+
+<!--Code injected by: LecturaTemp_TitulosColumnasModulosIndex-->
+<th>
+			@Html.DisplayNameFor(model => model.Temperatura)
+		</th>
+<!--Code injected by: LecturaTemp_TitulosColumnasModulosIndex-->
+
+
+<!--Code injected by: LecturaHum_TitulosColumnasModulosIndex-->
+<th>
+			@Html.DisplayNameFor(model => model.Humedad)
+		</th>
+<!--Code injected by: LecturaHum_TitulosColumnasModulosIndex-->
+
+
+<!--Code injected by: LecturaLum_TitulosColumnasModulosIndex-->
+<th>
+			@Html.DisplayNameFor(model => model.Luminosidad)
+		</th>
+<!--Code injected by: LecturaLum_TitulosColumnasModulosIndex-->
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plantas.Count)
+                </td>
+                <!--B-ColumnasModulosIndex-->
+
+<!--Code injected by: LecturaTemp_ColumnasModulosIndex-->
+<td>
+			@{
+				var colorTemp = item.Temperatura <= superiorTemp && item.Temperatura >= inferiorTemp ? "success" : "danger";
+			}
+			<div class="badge badge-@colorTemp" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
+		</td>
+<!--Code injected by: LecturaTemp_ColumnasModulosIndex-->
+
+
+<!--Code injected by: LecturaHum_ColumnasModulosIndex-->
+<td>
+			@{
+				var colorHum = item.Humedad <= superiorHum && item.Humedad >= inferiorHum ? "success" : "danger";
+			}
+			<div class="badge badge-@colorHum" id="divHumedad-@item.IdModulo">@item.Humedad%</div>
+		</td>
+<!--Code injected by: LecturaHum_ColumnasModulosIndex-->
+
+
+<!--Code injected by: LecturaLum_ColumnasModulosIndex-->
+<td>
+			@{
+				var colorLuz = item.Luminosidad <= superiorLuz && item.Luminosidad >= inferiorLuz ? "success" : "danger";
+			}
+			<div class="badge badge-@colorLuz" id="divLumens-@item.IdModulo">@item.Luminosidad Lumens</div>
+		</td>
+<!--Code injected by: LecturaLum_ColumnasModulosIndex-->
+
+
+<!--Code injected by: ControlAmbienteBase_ColumnasModulosIndex-->
+<td>
+			<a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
+		</td>
+<!--Code injected by: ControlAmbienteBase_ColumnasModulosIndex-->
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

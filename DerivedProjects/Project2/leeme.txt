@@ -1,1 +1,1 @@
-segun doc entrega 2
+Esta derivacion no incluye los componentes Crecimiento, Plantas Muertas y Produccion

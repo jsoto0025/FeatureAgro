@@ -1,1 +1,2 @@
-segun doc entrega 2
+Esta derivacion no incluye los componentes Crecimiento, Plantas Muertas y Produccion.
+Solo se necesita abrir el proyecto en Visual Studio con .net Core 2.1 

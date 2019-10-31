@@ -1,0 +1,27 @@
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Esta seguro que desea borrar el módulo?</h3>
+<div>
+    <h4>Modulo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Capacidad)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdModulo" />
+        <input type="submit" value="Borrar" class="btn btn-default" /> |
+        <a asp-action="Index">Lista</a>
+    </form>
+</div>

@@ -1,0 +1,198 @@
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
+    ViewData["Title"] = "Details";
+
+    /*B-LimitesDetalle*/
+
+/*Code injected by: LecturaHum_LimitesIndex*/
+int superiorHum = (int)ViewData["HumedadLimiteSuperior"];
+		int inferiorHum = (int)ViewData["HumedadLimiteInferior"];
+/*Code injected by: LecturaHum_LimitesIndex*/
+
+
+/*Code injected by: LecturaLum_LimitesIndex*/
+int superiorLuz = (int)ViewData["LuminosidadLimiteSuperior"];
+		int inferiorLuz = (int)ViewData["LuminosidadLimiteInferior"];
+/*Code injected by: LecturaLum_LimitesIndex*/
+
+
+/*Code injected by: LecturaTemp_LimitesIndex*/
+double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
+		double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+/*Code injected by: LecturaTemp_LimitesIndex*/
+
+}
+@section scripts{
+
+    <!--B-ScriptsModulosHubDetalle-->
+
+<!--Code injected by: ControlBase_ScriptsModulosHubDetalle-->
+<script src="~/lib/signalr/signalr.js"></script>
+		<script src="~/js/Hubs/BaseHub.js"></script>
+
+		<!--B-ScriptsModulosDetalle-->
+
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+<script>
+			var superiorTemp = @superiorTemp;
+			var inferiorTemp = @inferiorTemp;
+		</script>
+		<script src="~/js/Hubs/Temperatura.js"></script>
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+
+
+<!--Code injected by: LecturaHum_ScriptsModulosIndex-->
+<script>
+			var superiorHum = @superiorHum;
+			var inferiorHum = @inferiorHum;
+		</script>
+		<script src="~/js/Hubs/Humedad.js"></script>
+<!--Code injected by: LecturaHum_ScriptsModulosIndex-->
+
+
+<!--Code injected by: LecturaLum_ScriptsModulosIndex-->
+<script>
+			var superiorLuz = @superiorLuz;
+			var inferiorLuz = @inferiorLuz;
+		</script>
+		<script src="~/js/Hubs/Luminosidad.js"></script>
+<!--Code injected by: LecturaLum_ScriptsModulosIndex-->
+
+
+		<script src="~/js/Hubs/ErrorHub.js"></script>
+<!--Code injected by: ControlBase_ScriptsModulosHubDetalle-->
+
+}
+<div class="container-fluid">
+    <h4>Modulo @Html.DisplayFor(model => model.IdModulo)</h4>
+
+    <div>
+        <a asp-action="Index">Lista</a>
+        <!--B-BotonesModulosDetalle-->
+
+<!--Code injected by: ControlAmbienteBase_BotonesModulosDetalle-->
+|
+		<a asp-action="Ambiente" asp-route-id="@Model.IdModulo">Ambiente</a>
+<!--Code injected by: ControlAmbienteBase_BotonesModulosDetalle-->
+
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-7">
+            <div class="card border-0">
+                <h5>@Html.DisplayFor(model => model.Plantas.Count) Plantas</h5>
+                <div class="card-body">
+
+                    @foreach (var item in Model.Plantas)
+                    {
+                        <div class="media m-1 mt-2">
+                            <img id="img-@item.IdPlanta" src="~/Images/@(item.Tipo.Nombre).png" height="100" width="100" class="mr-3 @(item.Viva?"":"disabled")" alt="Lechugas">
+                            <div class="media-body">
+                                <h5 class="media-title">@item.Tipo.Nombre @item.IdPlanta <span id="plantamuerta-@item.IdPlanta" class="text-danger @(item.Viva?"invisible":"")">Planta muerta</span></h5>
+                                <!--B-DetallePlanta-->
+                            </div>
+                        </div>
+                        <hr />
+                    }
+                </div>
+            </div>
+        </div>
+        <!--B-PanelModulosDetalle-->
+
+<!--Code injected by: ControlAmbienteBase_PanelModulosDetalle-->
+<div class="offset-1 col-4">
+			<h5 class="mb-4">Control de ambiente</h5>
+			<!--B-ControlAmbienteDetalleTemp-->
+
+<!--Code injected by: LecturaTemp_ControlAmbienteDetalle-->
+@{
+			var colorTemp = Model.Temperatura <= superiorTemp && Model.Temperatura >= inferiorTemp ? "success" : "danger";
+		}
+		<div class="row">
+			<h6 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h6>
+			<!--B-ActuadorTemperatura-->
+
+<!--Code injected by: ActuadorTemp_ActuadorTemperatura-->
+<h6 class="col-6 text-right align-text-bottom small">
+            <span class="mdl-switch__label" style="left:0;">Calefacción</span>
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+                <input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+            </label>
+        </h6>
+<!--Code injected by: ActuadorTemp_ActuadorTemperatura-->
+
+		</div>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><div class="badge badge-@colorTemp" id="divTemp-@Model.IdModulo">@Model.Temperatura°C</div></td>
+				</tr>
+			</tbody>
+		</table>
+<!--Code injected by: LecturaTemp_ControlAmbienteDetalle-->
+
+			<!--B-ControlAmbienteDetalleHum-->
+
+<!--Code injected by: LecturaHum_ControlAmbienteDetalle-->
+@{
+			var colorHum = Model.Humedad <= superiorHum && Model.Humedad >= inferiorHum ? "success" : "danger";
+		}
+		<div class="row">
+			<h6 class="col-6"><i class="fas fa-tint"></i> Humedad</h6>
+			<!--B-ActuadorHumedad-->
+
+<!--Code injected by: ActuadorHum_ActuadorHumedad-->
+<h6 class="col-6 text-right align-text-bottom small">
+			<span class="mdl-switch__label" style="left:0;">Aspersores</span>
+			<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+				<input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
+			</label>
+		</h6>
+<!--Code injected by: ActuadorHum_ActuadorHumedad-->
+
+		</div>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><div class="badge badge-@colorHum" id="divHumedad-@Model.IdModulo">@Model.Humedad%</div></td>
+				</tr>
+			</tbody>
+		</table>
+<!--Code injected by: LecturaHum_ControlAmbienteDetalle-->
+
+			<!--B-ControlAmbienteDetalleLum-->
+
+<!--Code injected by: LecturaLum_ControlAmbienteDetalle-->
+@{
+			var colorLuz = Model.Luminosidad <= superiorLuz && Model.Luminosidad >= inferiorLuz ? "success" : "danger";
+		}
+		<div class="row">
+			<h6 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h6>
+			<!--B-ActuadorLuminosidad-->
+
+<!--Code injected by: ActuadorLum_ActuadorLuminosidad-->
+<h6 class="col-6 text-right align-text-bottom small">
+			<span class="mdl-switch__label" style="left:0;">Luces</span>
+			<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+				<input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+			</label>
+		</h6>
+<!--Code injected by: ActuadorLum_ActuadorLuminosidad-->
+
+		</div>
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><div class="badge badge-@colorLuz" id="divLumens-@Model.IdModulo">@Model.Luminosidad Lumens</div></td>
+				</tr>
+			</tbody>
+		</table>
+<!--Code injected by: LecturaLum_ControlAmbienteDetalle-->
+
+		</div>
+<!--Code injected by: ControlAmbienteBase_PanelModulosDetalle-->
+
+    </div>
+
+</div>

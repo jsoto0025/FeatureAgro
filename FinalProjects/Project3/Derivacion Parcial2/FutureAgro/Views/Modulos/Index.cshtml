@@ -1,0 +1,96 @@
+﻿@model IEnumerable<FutureAgro.DataAccess.Models.Modulo>
+
+@{
+    ViewData["Title"] = "Index";
+
+    /*B-LimitesIndex*/
+
+/*Code injected by: LecturaTemp_LimitesIndex*/
+double superiorTemp = (double)ViewData["TemperaturaLimiteSuperior"];
+		double inferiorTemp = (double)ViewData["TemperaturaLimiteInferior"];
+/*Code injected by: LecturaTemp_LimitesIndex*/
+
+}
+@section scripts{
+
+    <!--B-ScriptsModulosHubIndex-->
+
+<!--Code injected by: ControlBase_ScriptsModulosHubIndex-->
+<script src="~/lib/signalr/signalr.js"></script>
+		<script src="~/js/Hubs/BaseHub.js"></script>
+
+		<!--B-ScriptsModulosIndex-->
+
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+<script>
+			var superiorTemp = @superiorTemp;
+			var inferiorTemp = @inferiorTemp;
+		</script>
+		<script src="~/js/Hubs/Temperatura.js"></script>
+<!--Code injected by: LecturaTemp_ScriptsModulosIndex-->
+
+
+		<script src="~/js/Hubs/ErrorHub.js"></script>
+<!--Code injected by: ControlBase_ScriptsModulosHubIndex-->
+
+}
+<h2>Index</h2>
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdModulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plantas)
+            </th>
+            <!--B-TitulosColumnasModulosIndex-->
+
+<!--Code injected by: LecturaTemp_TitulosColumnasModulosIndex-->
+<th>
+			@Html.DisplayNameFor(model => model.Temperatura)
+		</th>
+<!--Code injected by: LecturaTemp_TitulosColumnasModulosIndex-->
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.IdModulo">@Html.DisplayFor(modelItem => item.IdModulo)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plantas.Count)
+                </td>
+                <!--B-ColumnasModulosIndex-->
+
+<!--Code injected by: LecturaTemp_ColumnasModulosIndex-->
+<td>
+			@{
+				var colorTemp = item.Temperatura <= superiorTemp && item.Temperatura >= inferiorTemp ? "success" : "danger";
+			}
+			<div class="badge badge-@colorTemp" id="divTemp-@item.IdModulo">@item.Temperatura°C</div>
+		</td>
+<!--Code injected by: LecturaTemp_ColumnasModulosIndex-->
+
+
+<!--Code injected by: ControlAmbienteBase_ColumnasModulosIndex-->
+<td>
+			<a asp-action="Ambiente" asp-route-id="@item.IdModulo">Ver Ambiente</a>
+		</td>
+<!--Code injected by: ControlAmbienteBase_ColumnasModulosIndex-->
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdModulo">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdModulo">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

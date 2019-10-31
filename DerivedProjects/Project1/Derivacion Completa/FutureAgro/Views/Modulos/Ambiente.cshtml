@@ -1,0 +1,126 @@
+﻿@model FutureAgro.DataAccess.Models.Modulo
+
+@{
+    ViewData["Title"] = "Detail";
+}
+@section Scripts
+    {
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/Hubs/BaseHub.js"></script>
+
+    <!--B-ScriptsAmbiente-->
+
+<!--Code injected by: LecturaTemp_ScriptsAmbiente-->
+<script>        
+			var chartDataTemperatura = @Html.Raw(Json.Serialize(ViewData["DatosTemperatura"]));
+		</script>
+		<script src="~/js/Ambiente/ChartsTemperatura.js"></script>
+		<script src="~/js/Hubs/TemperaturaChart.js?v=4"></script>
+<!--Code injected by: LecturaTemp_ScriptsAmbiente-->
+
+
+<!--Code injected by: LecturaLum_ScriptsAmbiente-->
+<script>        
+			var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
+		</script>
+		<script src="~/js/Ambiente/ChartsLuminosidad.js?v=4"></script>
+		<script src="~/js/Hubs/LuminosidadChart.js"></script>
+<!--Code injected by: LecturaLum_ScriptsAmbiente-->
+
+
+<!--Code injected by: LecturaHum_ScriptsAmbiente-->
+<script>        
+			var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
+		</script>
+
+		<script src="~/js/Ambiente/ChartsHumedad.js?v=4"></script>
+		<script src="~/js/Hubs/HumedadChart.js"></script>
+<!--Code injected by: LecturaHum_ScriptsAmbiente-->
+
+    <script>
+        var chartObjModulo = @Model.IdModulo;
+    </script>
+
+    <script src="~/js/Hubs/ErrorHub.js"></script>
+}
+
+<div class="container-fluid">
+    <h3>Control de ambiente</h3>
+    <div>
+        <a asp-action="Index">Lista</a> |
+        <a asp-action="Details" asp-route-id="@Model.IdModulo">Detalle</a>
+    </div>
+    <hr />
+    <div class="media">
+        <div class="media-body">
+            <h5 class="media-title">
+                Módulo @Html.DisplayFor(model => model.IdModulo)
+            </h5>
+            <div class="row mt-4 mb-1">
+
+                <!--B-ActuadoresAmbiente-->
+
+<!--Code injected by: ActuadorTemp_ActuadoresAmbiente-->
+<div class="col-4">
+			<span class="mdl-switch__label" style="left:0;">Calefacción</span>
+			<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Calefaccion">
+				<input type="checkbox" id="switch-Calefaccion" class="mdl-switch__input">
+			</label>
+		</div>
+<!--Code injected by: ActuadorTemp_ActuadoresAmbiente-->
+
+
+<!--Code injected by: ActuadorHum_ActuadoresAmbiente-->
+<div class="col-4">
+			<span class="mdl-switch__label" style="left:0;">Aspersores</span>
+			<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Aspersores">
+				<input type="checkbox" id="switch-Aspersores" class="mdl-switch__input" checked />
+			</label>
+		</div>
+<!--Code injected by: ActuadorHum_ActuadoresAmbiente-->
+
+
+<!--Code injected by: ActuadorLum_ActuadoresAmbiente-->
+<div class="col-4">
+			<span class="mdl-switch__label" style="left:0;">Luces</span>
+			<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect w-25" for="switch-Luces">
+				<input type="checkbox" id="switch-Luces" class="mdl-switch__input">
+			</label>
+		</div>
+<!--Code injected by: ActuadorLum_ActuadoresAmbiente-->
+
+
+            </div>
+            <hr />
+            <div class="row">
+                <!--B-ChartsAmbiente-->
+
+<!--Code injected by: LecturaTemp_ChartsAmbiente-->
+<div class="col-6">
+			<h5 class="col-6"><i class="fas fa-thermometer-half"></i> Temperatura</h5>
+			<canvas id="ChartTemperatura" height="150"></canvas>
+		</div>
+<!--Code injected by: LecturaTemp_ChartsAmbiente-->
+
+
+<!--Code injected by: LecturaHum_ChartsAmbiente-->
+<div class="col-6">
+			<h5 class="col-6"><i class="fas fa-tint"></i> Humedad</h5>
+			<canvas id="ChartHumedad" height="150"></canvas>
+		</div>
+<!--Code injected by: LecturaHum_ChartsAmbiente-->
+
+
+<!--Code injected by: LecturaLum_ChartsAmbiente-->
+<div class="col-6">
+			<h5 class="col-6"><i class="fas fa-lightbulb"></i> Luminosidad</h5>
+			<canvas id="ChartLuminosidad" height="150"></canvas>
+		</div>
+<!--Code injected by: LecturaLum_ChartsAmbiente-->
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

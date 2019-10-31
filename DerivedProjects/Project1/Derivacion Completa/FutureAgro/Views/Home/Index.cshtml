@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section Scripts
+{
+    <!--B-ScriptsHome-->
+
+<!--Code injected by: Produccion_ScriptsHome-->
+<script src="~/js/Home/Charts.js"></script>
+<!--Code injected by: Produccion_ScriptsHome-->
+
+
+<!--Code injected by: LecturaHum_ScriptsHome-->
+<script>        
+			var chartDataHumedad = @Html.Raw(Json.Serialize(ViewData["DatosHumedad"]));
+		</script>
+		<script src="~/js/Home/ChartHumedadHome.js"></script>
+<!--Code injected by: LecturaHum_ScriptsHome-->
+
+
+<!--Code injected by: LecturaLum_ScriptsHome-->
+<script>        
+			var chartDataLuminosidad = @Html.Raw(Json.Serialize(ViewData["DatosLuminosidad"]));
+		</script>
+		<script src="~/js/Home/ChartLuminosidadHome.js"></script>
+<!--Code injected by: LecturaLum_ScriptsHome-->
+
+
+<!--Code injected by: LecturaTemp_ScriptsHome-->
+<script>        
+			var chartDataTemperatura = @Html.Raw(Json.Serialize(ViewData["DatosTemperatura"]));
+		</script>
+		<script src="~/js/Home/ChartTemperaturaHome.js"></script>
+<!--Code injected by: LecturaTemp_ScriptsHome-->
+
+}
+<div class="container-fluid">
+    <div class="row">
+        <!--B-IndicadoresHome-->
+
+<!--Code injected by: Produccion_IndicadoresHome-->
+<div class="col-2 border-right">
+			<small class="text-black-50">Listas para cosecha</small>
+			<br />
+			<h2 class="text-black-50">40</h2>
+		</div>
+<!--Code injected by: Produccion_IndicadoresHome-->
+
+
+<!--Code injected by: Crecimiento_IndicadoresHome-->
+<div class="col-2 border-right">
+			<small class="text-black-50">En crecimiento</small>
+			<br />
+			<h2 class="text-black-50">200</h2>
+		</div>
+<!--Code injected by: Crecimiento_IndicadoresHome-->
+
+
+<!--Code injected by: PlantasMuertas_IndicadoresHome-->
+<div class="col-2 border-right">
+		<small class="text-black-50">Plantas Vivas</small>
+		<br />
+		<h2 class="text-black-50">250</h2>
+	</div>
+	<div class="col-2 border-right">
+		<small class="text-black-50">Plantas Muertas</small>
+		<br />
+		<h2 class="text-black-50">30</h2>
+	</div>
+<!--Code injected by: PlantasMuertas_IndicadoresHome-->
+
+    </div>
+    <div class="row pt-3">
+        <!--B-ChartsHome-->
+
+<!--Code injected by: Produccion_ChartsHome-->
+<div class="col-6">
+			<canvas id="ChartCosecha" height="120"></canvas>
+		</div>
+<!--Code injected by: Produccion_ChartsHome-->
+
+
+<!--Code injected by: LecturaTemp_ChartsHome-->
+<div class="col-6 border-right border-bottom">
+			<canvas id="ChartTemperatura" height="120"></canvas>
+		</div>
+<!--Code injected by: LecturaTemp_ChartsHome-->
+
+
+<!--Code injected by: LecturaHum_ChartsHome-->
+<div class="col-6 border-bottom">
+			<canvas id="ChartHumedad" height="120"></canvas>
+		</div>
+<!--Code injected by: LecturaHum_ChartsHome-->
+
+
+<!--Code injected by: LecturaLum_ChartsHome-->
+<div class="col-6 border-right">
+			<canvas id="ChartLuz" height="120"></canvas>
+		</div>
+<!--Code injected by: LecturaLum_ChartsHome-->
+
+    </div>
+</div>

@@ -1,1 +1,1 @@
-segun doc entrega 2
+Esta derivacion no incluye los componentes referentes a control de luminosidad ni de humedad (Lectura - Actuador)

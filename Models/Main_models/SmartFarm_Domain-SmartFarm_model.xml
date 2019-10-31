@@ -665,7 +665,7 @@
     </rel_file_component>
     <file label="LecturaHum_LectorHumedad" type="file" filename="LectorHumedad.cs" destination="IoT.Emuladores/LectorHumedad.cs" id="247">
       <mxCell style="shape=file" parent="component" vertex="1">
-        <mxGeometry x="1846" y="1880" width="100" height="40" as="geometry"/>
+        <mxGeometry x="1780" y="1860" width="100" height="40" as="geometry"/>
       </mxCell>
     </file>
     <rel_file_component type="relation" id="248">
@@ -2297,6 +2297,26 @@
     </file>
     <rel_file_component type="relation" id="599">
       <mxCell edge="1" parent="component" source="598" target="115">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_file_component>
+    <file label="LecturaHum_ServicioHumedadTest" type="file" filename="ServicioHumedadTests.cs" destination="UnitTests/ServicioHumedadTests.cs" id="600">
+      <mxCell style="shape=file" vertex="1" parent="component">
+        <mxGeometry x="1860" y="1920" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </file>
+    <rel_file_component type="relation" id="601">
+      <mxCell edge="1" parent="component" source="600" target="115">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </rel_file_component>
+    <file label="LecturaTemp_ServicioTemperaturaTest" type="file" filename="ServicioTemperaturaTests.cs" destination="UnitTests/ServicioTemperaturaTests.cs" id="602">
+      <mxCell style="shape=file" vertex="1" parent="component">
+        <mxGeometry x="3460" y="1650" width="100" height="40" as="geometry"/>
+      </mxCell>
+    </file>
+    <rel_file_component type="relation" id="603">
+      <mxCell edge="1" parent="component" source="602" target="110">
         <mxGeometry relative="1" as="geometry"/>
       </mxCell>
     </rel_file_component>
