@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FutureAgro.DataAccess\FutureAgro.DataAccess.csproj" />
-    <ProjectReference Include="..\FutureAgro.IoT.Contratos\FutureAgro.IoT.Contratos.csproj" />
+    <ProjectReference Include="..\DataAccess\FutureAgro.DataAccess.csproj" />
+    <ProjectReference Include="..\IoT.Contratos\FutureAgro.IoT.Contratos.csproj" />
   </ItemGroup>
 
 </Project>

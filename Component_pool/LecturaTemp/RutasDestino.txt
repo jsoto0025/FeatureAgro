@@ -7,3 +7,5 @@ ChartTemperaturaHome.js -> FutureAgro/wwwroot/js/Home/ChartTemperaturaHome.jss
 Temperatura.js -> FutureAgro/wwwroot/js/Hubs/Temperatura.js
 TemperaturaChart.js -> FutureAgro/wwwroot/js/Hubs/TemperaturaChart.js
 ServicioTemperatura.cs -> FutureAgro/Services/ServicioTemperatura.cs
+
+ServicioTemperaturaTests.cs -> UnitTests/ServicioTemperaturaTests.cs

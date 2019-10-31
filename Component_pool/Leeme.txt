@@ -1,1 +1,0 @@
-Component_pool: dentro de este directorio deberán subir los componentes reutilizables y sus archivos.

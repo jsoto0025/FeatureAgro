@@ -18,7 +18,7 @@ namespace FutureAgro.UnitTests
         {
             var humRepository = new Mock<HumedadRepository>(null);
             humRepository.Setup(r => r.Get()).Returns(new List<Humedad>());
-            var mockLector = new Mock<LectorHumedad>(humRepository.Object);
+            var mockLector = new Mock<LectorHumedad>(humRepository.Object) { CallBase = true };
             var humedad = new Mock<ServicioHumedad>(mockLector.Object, null)
             {
                 CallBase = true
