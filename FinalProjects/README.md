@@ -2,7 +2,7 @@
 
 ## Requisitos
 
-1. Visual Studio 2019 Express Edition ó posterior.
+1. Visual Studio 2017 Community Edition ó posterior.
 2. .Net Core 2.1 instalado.
 3. SQL Server 2015 o posterior.
 
@@ -18,7 +18,7 @@
 ## Ejecución de un proyecto derivado.
 
 1. Abrir el contenido de la carpeta: DerivedProjects\Project#\Derivacion Completa, donde # es el consecutivo del proyecto que se derivo.
-2. Abrir Visual Studio 2019.
+2. Abrir Visual Studio.
 3. Abrir la solució FutureAgro.sln que esta en la raiz del directorio del paso 1.
 4. Limpiar la solución.
 5. Compilar la solución.
